@@ -29,7 +29,7 @@ const cases = [
 
 export function Cases() {
   return (
-    <section id="cases" className="bg-[#070f1c] py-20 text-white lg:py-28">
+    <section id="cases" className="scroll-mt-24 bg-[#070f1c] py-20 text-white lg:py-28">
       <div className="mx-auto max-w-7xl px-6">
         <header className="mx-auto mb-14 max-w-2xl text-center">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#4d9fff]">

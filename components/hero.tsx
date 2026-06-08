@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-[#0a1628] pt-32 pb-20 text-white lg:pt-40 lg:pb-28"
+      className="relative scroll-mt-24 overflow-hidden bg-[#0a1628] pt-32 pb-20 text-white lg:pt-40 lg:pb-28"
     >
       {/* decorative gradient glow */}
       <div

@@ -32,7 +32,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contato" className="bg-background py-20 lg:py-28">
+    <section id="contato" className="scroll-mt-24 bg-background py-20 lg:py-28">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2">
         <div className="max-w-md">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">

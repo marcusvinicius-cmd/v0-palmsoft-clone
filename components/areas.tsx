@@ -36,7 +36,7 @@ const areas = [
 
 export function Areas() {
   return (
-    <section id="areas" className="bg-background py-20 lg:py-28">
+    <section id="areas" className="scroll-mt-24 bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6">
         <header className="mx-auto mb-14 max-w-2xl text-center">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">

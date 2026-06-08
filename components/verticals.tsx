@@ -27,15 +27,13 @@ const features = [
 
 export function Verticals() {
   return (
-    <section
-      id="aegis"
-      className="bg-gradient-to-b from-[#0a1628] to-[#102544] py-20 text-white lg:py-28"
-    >
+    <section className="bg-gradient-to-b from-[#0a1628] to-[#102544] py-20 text-white lg:py-28">
       <div className="mx-auto flex max-w-7xl flex-col gap-12 px-6">
         {features.map((f, i) => (
           <div
             key={f.id}
-            className={`grid items-center gap-8 lg:grid-cols-2 ${
+            id={f.id}
+            className={`grid scroll-mt-24 items-center gap-8 lg:grid-cols-2 ${
               i % 2 === 1 ? "lg:[&>div:first-child]:order-2" : ""
             }`}
           >
