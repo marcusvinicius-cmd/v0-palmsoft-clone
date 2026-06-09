@@ -104,7 +104,9 @@ export function SiteFooter() {
             <p>Saco Grande, Florianópolis-SC</p>
             <p className="mt-4 font-medium text-white/80">E-mail:</p>
             <a
-              href="mailto:contato@palmsoft.com.br?subject=Contato%20via%20site"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=contato@palmsoft.com.br&su=Contato%20via%20site"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-[#4d9fff] hover:underline"
             >
               contato@palmsoft.com.br
