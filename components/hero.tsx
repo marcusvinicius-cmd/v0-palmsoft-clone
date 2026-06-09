@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 import { ChevronDownIcon } from "lucide-react"
 import Image from "next/image"
 
@@ -28,16 +27,13 @@ export function Hero() {
             que incorporam apps de alta tecnologia.
           </p>
           <div className="mt-8">
-            <Button
-              asChild
-              variant="ghost"
-              className="group h-auto gap-2 px-0 text-white hover:bg-transparent hover:text-white/80"
+            <a
+              href="#estrategia"
+              className="group inline-flex h-auto items-center gap-2 px-0 text-white transition-colors hover:text-white/80"
             >
-              <a href="#estrategia">
-                Continue lendo
-                <ChevronDownIcon className="size-4 transition-transform group-hover:translate-y-0.5" />
-              </a>
-            </Button>
+              Continue lendo
+              <ChevronDownIcon className="size-4 transition-transform group-hover:translate-y-0.5" />
+            </a>
           </div>
         </div>
 

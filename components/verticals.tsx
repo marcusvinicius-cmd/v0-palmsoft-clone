@@ -67,12 +67,12 @@ export function Verticals() {
                 </ul>
               )}
 
-              <Button
-                asChild
-                className="mt-7 rounded-full bg-[#1d6fff] px-7 hover:bg-[#1860e0]"
+              <a
+                href="#contato"
+                className="mt-7 inline-flex items-center justify-center rounded-full bg-[#1d6fff] px-7 py-2 text-sm font-medium text-white transition-colors hover:bg-[#1860e0]"
               >
-                <a href="#contato">{f.cta}</a>
-              </Button>
+                {f.cta}
+              </a>
             </div>
 
             <div className="flex justify-center">
