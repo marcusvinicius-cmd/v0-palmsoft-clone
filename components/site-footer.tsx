@@ -1,13 +1,26 @@
+"use client"
+
 import { Logo } from "@/components/logo"
 
 const siteLinks = [
-  "Home",
-  "Áreas de Atuação",
-  "I.A.",
-  "Aegis",
-  "Cases",
-  "Contato",
+  { label: "Home", href: "#home" },
+  { label: "Áreas de Atuação", href: "#areas" },
+  { label: "I.A.", href: "#ia" },
+  { label: "Aegis", href: "#aegis" },
+  { label: "Cases", href: "#cases" },
+  { label: "Contato", href: "#contato" },
 ]
+
+function scrollToSection(href: string) {
+  const id = href.replace("#", "")
+  const el = document.getElementById(id)
+  if (!el) return
+  const header = document.querySelector("header")
+  const offset = header ? header.offsetHeight : 0
+  const top = el.getBoundingClientRect().top + window.scrollY - offset
+  window.scrollTo({ top, behavior: "smooth" })
+  history.pushState(null, "", href)
+}
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -36,9 +49,9 @@ function LinkedinIcon({ className }: { className?: string }) {
 }
 
 const socials = [
-  { label: "Instagram", icon: InstagramIcon, href: "#" },
-  { label: "WhatsApp", icon: WhatsappIcon, href: "#" },
-  { label: "LinkedIn", icon: LinkedinIcon, href: "#" },
+  { label: "Instagram", icon: InstagramIcon, href: "https://www.instagram.com/palmsoft_/" },
+  { label: "WhatsApp", icon: WhatsappIcon, href: "https://wa.me/5548991158147?text=Gostaria%20de%20saber%20mais%20sobre%20a%20Palmsoft." },
+  { label: "LinkedIn", icon: LinkedinIcon, href: "https://www.linkedin.com/company/palmsoft-tecnologia" },
 ]
 
 export function SiteFooter() {
@@ -53,6 +66,8 @@ export function SiteFooter() {
                 key={s.label}
                 href={s.href}
                 aria-label={s.label}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex size-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-[#4d9fff] hover:text-[#4d9fff]"
               >
                 <s.icon className="size-4" />
@@ -67,13 +82,13 @@ export function SiteFooter() {
           </h3>
           <ul className="mt-5 space-y-3">
             {siteLinks.map((l) => (
-              <li key={l}>
-                <a
-                  href="#"
+              <li key={l.label}>
+                <button
+                  onClick={() => scrollToSection(l.href)}
                   className="text-sm text-white/60 transition-colors hover:text-white"
                 >
-                  {l}
-                </a>
+                  {l.label}
+                </button>
               </li>
             ))}
           </ul>
@@ -89,7 +104,7 @@ export function SiteFooter() {
             <p>Saco Grande, Florianópolis-SC</p>
             <p className="mt-4 font-medium text-white/80">E-mail:</p>
             <a
-              href="mailto:contato@palmsoft.com.br"
+              href="mailto:contato@palmsoft.com.br?subject=Contato%20via%20site"
               className="text-[#4d9fff] hover:underline"
             >
               contato@palmsoft.com.br
