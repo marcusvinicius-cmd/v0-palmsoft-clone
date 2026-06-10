@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
 const features = [
   {
@@ -29,15 +30,17 @@ export function Verticals() {
   return (
     <section
       id="aegis"
-      className="bg-gradient-to-b from-[#0a1628] to-[#102544] py-20 text-white lg:py-28"
+      className="bg-linear-to-b from-[#0a1628] to-[#102544] py-20 text-white lg:py-28"
     >
       <div className="mx-auto flex max-w-7xl flex-col gap-12 px-6">
         {features.map((f, i) => (
           <div
+            id={f.id}
             key={f.id}
-            className={`grid items-center gap-8 lg:grid-cols-2 ${
-              i % 2 === 1 ? "lg:[&>div:first-child]:order-2" : ""
-            }`}
+            className={cn(
+              "grid items-center gap-8 lg:grid-cols-2",
+              i % 2 === 1 && "lg:[&>div:first-child]:order-2",
+            )}
           >
             <div className="max-w-xl">
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#4d9fff]">
@@ -64,16 +67,16 @@ export function Verticals() {
                 </ul>
               )}
 
-              <Button
-                asChild
-                className="mt-7 rounded-full bg-[#1d6fff] px-7 hover:bg-[#1860e0]"
+              <a
+                href="#contato"
+                className="mt-7 inline-flex items-center justify-center rounded-full bg-[#1d6fff] px-7 py-2 text-sm font-medium text-white transition-colors hover:bg-[#1860e0]"
               >
-                <a href="#contato">{f.cta}</a>
-              </Button>
+                {f.cta}
+              </a>
             </div>
 
             <div className="flex justify-center">
-              <div className="flex aspect-video w-full max-w-md items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm">
+              <div className="flex aspect-video w-full max-w-md items-center justify-center rounded-2xl border border-white/10 bg-white/4 backdrop-blur-sm">
                 <span className="text-4xl font-semibold tracking-tight text-white/30">
                   {f.eyebrow.split(" ")[0]}
                 </span>

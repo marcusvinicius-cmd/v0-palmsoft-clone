@@ -2,17 +2,15 @@
 
 import { useState, useEffect } from "react"
 import { Logo } from "@/components/logo"
-import { Button } from "@/components/ui/button"
 import { MenuIcon, XIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const navItems = [
   { label: "Home", href: "#home" },
   { label: "Áreas de Atuação", href: "#areas" },
-  { label: "I.A.", href: "#ia" },
+  { label: "I.A.", href: "#aegis" },
   { label: "Aegis", href: "#aegis" },
   { label: "Cases", href: "#cases" },
-  { label: "Contato", href: "#contato" },
 ]
 
 export function SiteHeader() {
@@ -29,8 +27,8 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
-        scrolled ? "bg-[#0a1628]/90 backdrop-blur-md shadow-lg" : "bg-transparent",
+        "fixed inset-x-0 top-0 z-50 bg-[#0a1628]/95 backdrop-blur-md transition-shadow duration-300",
+        scrolled && "shadow-lg",
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 text-white">
@@ -51,12 +49,12 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button
-            asChild
-            className="rounded-full bg-white px-6 text-[#0a1628] hover:bg-white/90"
+          <a
+            href="#contato"
+            className="inline-flex items-center justify-center rounded-full bg-white px-6 py-1.5 text-sm font-medium text-[#0a1628] transition-colors hover:bg-white/90"
           >
-            <a href="#contato">Contato</a>
-          </Button>
+            Contato
+          </a>
         </div>
 
         <button
@@ -87,14 +85,13 @@ export function SiteHeader() {
               </li>
             ))}
             <li className="mt-2">
-              <Button
-                asChild
-                className="w-full rounded-full bg-white text-[#0a1628] hover:bg-white/90"
+              <a
+                href="#contato"
+                onClick={() => setOpen(false)}
+                className="inline-flex w-full items-center justify-center rounded-full bg-white px-6 py-1.5 text-sm font-medium text-[#0a1628] transition-colors hover:bg-white/90"
               >
-                <a href="#contato" onClick={() => setOpen(false)}>
-                  Contato
-                </a>
-              </Button>
+                Contato
+              </a>
             </li>
           </ul>
         </nav>
