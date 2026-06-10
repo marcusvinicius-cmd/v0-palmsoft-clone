@@ -12,30 +12,48 @@ const areas = [
   "Jogos e Gamificação",
   "Score de Crédito",
   "Inteligência Artificial",
+  "Controle de acesso",
 ]
+
+function buildCalendlyUrl(data: FormData) {
+  const area = (data.get("area") as string) ?? ""
+  const baseUrl =
+    area === "Controle de acesso"
+      ? process.env.NEXT_PUBLIC_CALENDLY_URL_ACESSO!
+      : process.env.NEXT_PUBLIC_CALENDLY_URL_GERAL!
+
+  const params = new URLSearchParams({
+    name: (data.get("nome") as string) ?? "",
+    email: (data.get("email") as string) ?? "",
+    a1: area,
+    a2: (data.get("orcamento") as string) ?? "",
+    a3: (data.get("telefone") as string) ?? "",
+  })
+
+  return `${baseUrl}?${params.toString()}`
+}
 
 export function Contact() {
   const [sent, setSent] = useState(false)
+  const [calendlyUrl, setCalendlyUrl] = useState("")
   const formRef = useRef<HTMLFormElement>(null)
 
   function handleSend() {
-    console.log("handleSend chamado")
     const form = formRef.current
-    console.log("form ref:", form)
-    if (!form) {
-      console.log("form é null, abortando")
-      return
-    }
+    if (!form) return
+
     const valid = form.checkValidity()
-    console.log("form válido:", valid)
     if (!valid) {
       form.reportValidity()
       return
     }
-    console.log("setando sent=true e redirecionando...")
+
+    const url = buildCalendlyUrl(new FormData(form))
+
+    setCalendlyUrl(url)
     setSent(true)
     setTimeout(() => {
-      window.location.href = process.env.NEXT_PUBLIC_CALENDLY_URL!
+      window.location.href = url
     }, 2000)
   }
 
@@ -65,7 +83,7 @@ export function Contact() {
                 Redirecionando para agendar uma reunião com nossa equipe...
               </p>
               <a
-                href={process.env.NEXT_PUBLIC_CALENDLY_URL}
+                href={calendlyUrl}
                 className="mt-6 text-xs text-primary underline underline-offset-4"
               >
                 Clique aqui se não for redirecionado
