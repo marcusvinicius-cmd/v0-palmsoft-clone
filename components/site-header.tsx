@@ -6,11 +6,11 @@ import { MenuIcon, XIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "Áreas de Atuação", href: "#areas" },
-  { label: "I.A.", href: "#aegis" },
-  { label: "Aegis", href: "#aegis" },
-  { label: "Cases", href: "#cases" },
+  { label: "Home", href: "/#home" },
+  { label: "Áreas de Atuação", href: "/#areas" },
+  { label: "I.A.", href: "/ia" },
+  { label: "Aegis", href: "/#aegis" },
+  { label: "Cases", href: "/#cases" },
 ]
 
 export function SiteHeader() {
@@ -32,7 +32,7 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 text-white">
-        <a href="#home" aria-label="PalmSoft - Início">
+        <a href="/#home" aria-label="PalmSoft - Início">
           <Logo />
         </a>
 
@@ -50,7 +50,7 @@ export function SiteHeader() {
 
         <div className="hidden lg:block">
           <a
-            href="#contato"
+            href="/#contato"
             className="inline-flex items-center justify-center rounded-full bg-white px-6 py-1.5 text-sm font-medium text-[#0a1628] transition-colors hover:bg-white/90"
           >
             Contato
@@ -86,7 +86,7 @@ export function SiteHeader() {
             ))}
             <li className="mt-2">
               <a
-                href="#contato"
+                href="/#contato"
                 onClick={() => setOpen(false)}
                 className="inline-flex w-full items-center justify-center rounded-full bg-white px-6 py-1.5 text-sm font-medium text-[#0a1628] transition-colors hover:bg-white/90"
               >

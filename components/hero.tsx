@@ -1,5 +1,6 @@
 import { ChevronDownIcon } from "lucide-react"
 import Image from "next/image"
+import { PolygonBackground } from "@/components/polygon-background"
 
 export function Hero() {
   return (
@@ -16,6 +17,9 @@ export function Hero() {
         aria-hidden="true"
         className="pointer-events-none absolute -left-40 bottom-0 h-[500px] w-[500px] rounded-full bg-[#0ea5e9]/10 blur-[120px]"
       />
+
+      {/* interactive low-poly mesh */}
+      <PolygonBackground />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
         <div className="max-w-xl">

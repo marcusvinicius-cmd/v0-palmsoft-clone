@@ -5,16 +5,24 @@ import { Logo } from "@/components/logo"
 const siteLinks = [
   { label: "Home", href: "#home" },
   { label: "Áreas de Atuação", href: "#areas" },
-  { label: "I.A.", href: "#ia" },
+  { label: "I.A.", href: "/ia" },
   { label: "Aegis", href: "#aegis" },
   { label: "Cases", href: "#cases" },
   { label: "Contato", href: "#contato" },
 ]
 
 function scrollToSection(href: string) {
+  if (!href.startsWith("#")) {
+    window.location.assign(href)
+    return
+  }
   const id = href.replace("#", "")
   const el = document.getElementById(id)
-  if (!el) return
+  if (!el) {
+    // anchor belongs to the home page; navigate there
+    window.location.assign(`/${href}`)
+    return
+  }
   const header = document.querySelector("header")
   const offset = header ? header.offsetHeight : 0
   const top = el.getBoundingClientRect().top + window.scrollY - offset

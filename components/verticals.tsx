@@ -8,6 +8,7 @@ const features = [
     title: "Conheça a Deepen, spin off da PalmSoft",
     body: "A Deepen é uma vertical da PalmSoft advinda do projeto chamado inicialmente de G4D (Graphics For Decision), atualmente focada nos ramos de Big Data e Inteligência Artificial.",
     cta: "Explorar",
+    href: "/ia",
   },
   {
     id: "lms",
@@ -68,7 +69,7 @@ export function Verticals() {
               )}
 
               <a
-                href="#contato"
+                href={f.href ?? "#contato"}
                 className="mt-7 inline-flex items-center justify-center rounded-full bg-[#1d6fff] px-7 py-2 text-sm font-medium text-white transition-colors hover:bg-[#1860e0]"
               >
                 {f.cta}
