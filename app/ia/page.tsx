@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import { ArrowRightIcon, CheckIcon } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
@@ -210,15 +211,15 @@ export default function IAPage() {
         <section className="relative overflow-hidden bg-[#0a1628] pt-32 pb-24 text-white lg:pt-44 lg:pb-32">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-40 top-0 h-[600px] w-[600px] rounded-full bg-[#1d4ed8]/20 blur-[120px]"
+            className="pointer-events-none absolute -right-40 top-0 h-150 w-150 rounded-full bg-[#1d4ed8]/20 blur-[120px]"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -left-40 bottom-0 h-[500px] w-[500px] rounded-full bg-[#0ea5e9]/10 blur-[120px]"
+            className="pointer-events-none absolute -left-40 bottom-0 h-125 w-125 rounded-full bg-[#0ea5e9]/10 blur-[120px]"
           />
           <PolygonBackground />
 
-          <div className="relative mx-auto max-w-7xl px-6">
+          <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
             <div className="max-w-2xl">
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#4d9fff]">
                 Deepen — Inteligência Artificial & Big Data
@@ -247,44 +248,186 @@ export default function IAPage() {
                 </a>
               </div>
             </div>
+
+            {/* composição de cards de vidro sobre a malha */}
+            <div
+              aria-hidden="true"
+              className="relative mx-auto h-[430px] w-full max-w-md select-none sm:h-[480px]"
+            >
+              {/* card: rede neural */}
+              <div className="absolute left-0 top-0 w-[265px] rounded-2xl border border-white/10 bg-white/5 p-5 shadow-2xl backdrop-blur-md [--float-rotate:-4deg] motion-safe:animate-[hero-float_8s_ease-in-out_infinite] motion-reduce:-rotate-4">
+                <div className="flex items-center justify-between">
+                  <p className="text-xs font-medium uppercase tracking-[0.16em] text-white/60">
+                    Deep Learning
+                  </p>
+                  <span className="flex items-center gap-1.5 rounded-full bg-emerald-400/10 px-2.5 py-0.5 text-[11px] font-medium text-emerald-300">
+                    <span className="size-1.5 animate-pulse rounded-full bg-emerald-400" />
+                    treinando
+                  </span>
+                </div>
+                <svg
+                  viewBox="0 0 220 110"
+                  className="mt-4 w-full"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <g stroke="#4d9fff" strokeOpacity="0.25">
+                    {[20, 55, 90].map((y1) =>
+                      [12, 41, 69, 98].map((y2) => (
+                        <path
+                          key={`a-${y1}-${y2}`}
+                          d={`M30 ${y1} L110 ${y2}`}
+                        />
+                      )),
+                    )}
+                    {[12, 41, 69, 98].map((y1) =>
+                      [35, 75].map((y2) => (
+                        <path
+                          key={`b-${y1}-${y2}`}
+                          d={`M110 ${y1} L190 ${y2}`}
+                        />
+                      )),
+                    )}
+                  </g>
+                  {[20, 55, 90].map((y) => (
+                    <circle key={`i-${y}`} cx="30" cy={y} r="6" fill="#1d6fff" fillOpacity="0.55" />
+                  ))}
+                  {[12, 41, 69, 98].map((y) => (
+                    <circle key={`h-${y}`} cx="110" cy={y} r="6" fill="#4d9fff" fillOpacity="0.75" />
+                  ))}
+                  {[35, 75].map((y) => (
+                    <circle key={`o-${y}`} cx="190" cy={y} r="6" fill="#7dd3fc" />
+                  ))}
+                </svg>
+                <div className="mt-4 flex items-end justify-between">
+                  <div>
+                    <p className="text-2xl font-semibold text-white">época 12/20</p>
+                    <p className="text-xs text-white/50">loss 0.081 e caindo</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* card: consulta com insight */}
+              <div className="absolute right-0 top-40 w-[250px] rounded-2xl border border-white/10 bg-[#0a1628]/80 p-5 shadow-2xl backdrop-blur-md [--float-rotate:3deg] motion-safe:animate-[hero-float_9s_ease-in-out_1.2s_infinite] motion-reduce:rotate-3 sm:top-44">
+                <p className="text-xs font-medium uppercase tracking-[0.16em] text-white/60">
+                  Consulta
+                </p>
+                <p className="mt-2 text-sm leading-snug text-white/85">
+                  Qual a previsão de demanda para o próximo trimestre?
+                </p>
+                <div className="mt-4 flex h-16 items-end gap-1.5">
+                  {[38, 52, 44, 60, 48, 72, 64].map((h, i) => (
+                    <div
+                      key={i}
+                      style={{ height: `${h}%` }}
+                      className={
+                        i === 5
+                          ? "flex-1 rounded-t bg-[#4d9fff]"
+                          : "flex-1 rounded-t bg-white/15"
+                      }
+                    />
+                  ))}
+                </div>
+                <p className="mt-3 text-sm font-semibold text-[#4d9fff]">
+                  +18%{" "}
+                  <span className="font-normal text-white/50">
+                    projetados para julho
+                  </span>
+                </p>
+              </div>
+
+              {/* card: pipeline de dados */}
+              <div className="absolute bottom-0 left-4 w-[190px] rounded-2xl border border-white/10 bg-white/5 p-4 shadow-2xl backdrop-blur-md [--float-rotate:-2deg] motion-safe:animate-[hero-float_7s_ease-in-out_0.6s_infinite] motion-reduce:-rotate-2">
+                <p className="text-xs font-medium uppercase tracking-[0.16em] text-white/60">
+                  Pipeline
+                </p>
+                <ul className="mt-3 space-y-2.5 text-[13px]">
+                  <li className="flex items-center gap-2 text-white/80">
+                    <CheckIcon className="size-3.5 text-emerald-300" />
+                    Coleta de dados
+                  </li>
+                  <li className="flex items-center gap-2 text-white/80">
+                    <CheckIcon className="size-3.5 text-emerald-300" />
+                    Tratamento
+                  </li>
+                  <li className="flex items-center gap-2 text-white">
+                    <span className="size-3.5 animate-pulse rounded-full border-2 border-[#4d9fff]" />
+                    Modelo preditivo
+                  </li>
+                  <li className="flex items-center gap-2 text-white/40">
+                    <span className="size-3.5 rounded-full border-2 border-white/20" />
+                    Insights
+                  </li>
+                </ul>
+              </div>
+
+              {/* badge: consultas processadas */}
+              <div className="absolute bottom-10 right-2 flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 py-2 pl-3 pr-4 shadow-xl backdrop-blur-md [--float-rotate:2deg] motion-safe:animate-[hero-float_6s_ease-in-out_2s_infinite] motion-reduce:rotate-2 sm:bottom-12">
+                <span className="flex size-8 items-center justify-center rounded-full bg-[#1d6fff]/25 text-sm font-semibold text-[#4d9fff]">
+                  40M
+                </span>
+                <div className="leading-tight">
+                  <p className="text-sm font-semibold text-white">consultas</p>
+                  <p className="text-[11px] text-white/55">
+                    processadas em produção
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* seja data driven */}
         <section id="sobre-ia" className="bg-background py-20 lg:py-28">
-          <div className="mx-auto grid max-w-7xl items-start gap-12 px-6 lg:grid-cols-2">
-            <div>
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
-                Seja data driven
-              </p>
-              <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-                Seus concorrentes estão usando dados para mais do que gerar
-                simples relatórios
-              </h2>
-              <div className="mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground">
-                <p>
-                  Torne-se data driven, data informed e data inspired: formas de
-                  fornecer insights relevantes para equipes que precisam tomar
-                  decisões e realizar seu trabalho com base em informações
-                  concretas.
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="grid items-center gap-12 lg:grid-cols-2">
+              <div>
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
+                  Seja data driven
                 </p>
-                <p>
-                  Somos experts em Machine Learning, Big Data, Inteligência
-                  Artificial e Business Intelligence. Te ajudamos a encontrar
-                  insights, melhores predições de mercado e recomendações que
-                  possibilitam tomar as melhores decisões para o seu negócio.
-                </p>
-                <p>
-                  Aplicamos técnicas de Machine Learning, Deep Learning,
-                  Inteligência Artificial e Big Data para criar soluções
-                  exclusivas que transformam seus dados em informações que
-                  aceleram e otimizam a tomada de decisões e a eficiência
-                  operacional.
-                </p>
+                <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+                  Seus concorrentes estão usando dados para mais do que gerar
+                  simples relatórios
+                </h2>
+                <div className="mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground">
+                  <p>
+                    Torne-se data driven, data informed e data inspired: formas
+                    de fornecer insights relevantes para equipes que precisam
+                    tomar decisões e realizar seu trabalho com base em
+                    informações concretas.
+                  </p>
+                  <p>
+                    Somos experts em Machine Learning, Big Data, Inteligência
+                    Artificial e Business Intelligence. Te ajudamos a encontrar
+                    insights, melhores predições de mercado e recomendações que
+                    possibilitam tomar as melhores decisões para o seu negócio.
+                  </p>
+                  <p>
+                    Aplicamos técnicas de Machine Learning, Deep Learning,
+                    Inteligência Artificial e Big Data para criar soluções
+                    exclusivas que transformam seus dados em informações que
+                    aceleram e otimizam a tomada de decisões e a eficiência
+                    operacional.
+                  </p>
+                  <p className="font-medium text-foreground">
+                    Como um iceberg, a maior parte do valor dos seus dados está
+                    abaixo da superfície — nós mergulhamos para encontrá-lo.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex justify-center">
+                <Image
+                  src="/deepen-iceberg.avif"
+                  alt="Iceberg com a maior parte submersa, representando o valor oculto nos dados"
+                  width={600}
+                  height={763}
+                  className="w-full max-w-sm"
+                />
               </div>
             </div>
 
-            <ul className="grid gap-4 rounded-2xl bg-card p-8 ring-1 ring-border">
+            <ul className="mt-16 grid gap-4 rounded-2xl bg-card p-8 ring-1 ring-border sm:grid-cols-2 lg:grid-cols-3">
               {benefits.map((b) => (
                 <li key={b} className="flex items-start gap-3">
                   <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
@@ -329,7 +472,16 @@ export default function IAPage() {
 
         {/* história e tecnologias */}
         <section className="bg-background py-20 lg:py-28">
-          <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2">
+          <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-3">
+            <div className="relative order-last hidden overflow-hidden rounded-2xl ring-1 ring-border lg:block">
+              <Image
+                src="/deepen-earth.avif"
+                alt="A Terra vista do espaço com um satélite em órbita"
+                fill
+                sizes="(min-width: 1024px) 33vw, 100vw"
+                className="object-cover"
+              />
+            </div>
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
                 Nossa história
@@ -404,7 +556,7 @@ export default function IAPage() {
                     "group flex flex-col rounded-2xl border p-7 transition-colors",
                     s.featured
                       ? "border-[#4d9fff]/40 bg-[#1d6fff]/10 sm:col-span-2 lg:col-span-1"
-                      : "border-white/10 bg-white/[0.03] hover:border-[#4d9fff]/40 hover:bg-white/[0.06]",
+                      : "border-white/10 bg-white/3 hover:border-[#4d9fff]/40 hover:bg-white/6",
                   )}
                 >
                   <h3 className="text-lg font-semibold">{s.title}</h3>
@@ -489,7 +641,7 @@ export default function IAPage() {
               {sectors.map((s) => (
                 <article
                   key={s.title}
-                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-7"
+                  className="rounded-2xl border border-white/10 bg-white/3 p-7"
                 >
                   <h3 className="text-lg font-semibold">{s.title}</h3>
                   <ul className="mt-4 space-y-2.5">
@@ -513,7 +665,7 @@ export default function IAPage() {
         <section className="relative overflow-hidden bg-[#0a1628] py-24 text-white lg:py-32">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-[#1d4ed8]/20 blur-[120px]"
+            className="pointer-events-none absolute -left-40 top-0 h-125 w-125 rounded-full bg-[#1d4ed8]/20 blur-[120px]"
           />
           <PolygonBackground className="mask-[linear-gradient(to_top,black_55%,transparent)]" />
 
