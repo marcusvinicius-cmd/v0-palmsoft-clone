@@ -15,27 +15,53 @@ const areas = [
   "Controle de acesso",
 ]
 
-function buildCalendlyUrl(data: FormData) {
+// Integração com Calendly em stand by, aguardando aprovação de custo.
+// function buildCalendlyUrl(data: FormData) {
+//   const area = (data.get("area") as string) ?? ""
+//   const baseUrl =
+//     area === "Controle de acesso"
+//       ? process.env.NEXT_PUBLIC_CALENDLY_URL_ACESSO!
+//       : process.env.NEXT_PUBLIC_CALENDLY_URL_GERAL!
+//
+//   const params = new URLSearchParams({
+//     name: (data.get("nome") as string) ?? "",
+//     email: (data.get("email") as string) ?? "",
+//     a1: area,
+//     a2: (data.get("orcamento") as string) ?? "",
+//     a3: (data.get("telefone") as string) ?? "",
+//   })
+//
+//   return `${baseUrl}?${params.toString()}`
+// }
+
+function buildContactEmailUrl(data: FormData) {
   const area = (data.get("area") as string) ?? ""
-  const baseUrl =
-    area === "Controle de acesso"
-      ? process.env.NEXT_PUBLIC_CALENDLY_URL_ACESSO!
-      : process.env.NEXT_PUBLIC_CALENDLY_URL_GERAL!
+  const nome = (data.get("nome") as string) ?? ""
+  const email = (data.get("email") as string) ?? ""
+  const orcamento = (data.get("orcamento") as string) ?? ""
+  const telefone = (data.get("telefone") as string) ?? ""
+
+  const body = [
+    `Área de interesse: ${area}`,
+    `Nome completo: ${nome}`,
+    `E-mail: ${email}`,
+    `Orçamento previsto: ${orcamento}`,
+    `Telefone: ${telefone}`,
+  ].join("\n")
 
   const params = new URLSearchParams({
-    name: (data.get("nome") as string) ?? "",
-    email: (data.get("email") as string) ?? "",
-    a1: area,
-    a2: (data.get("orcamento") as string) ?? "",
-    a3: (data.get("telefone") as string) ?? "",
+    view: "cm",
+    fs: "1",
+    to: "contato@palmsoft.com.br",
+    su: "Novo contato pelo site",
+    body,
   })
 
-  return `${baseUrl}?${params.toString()}`
+  return `https://mail.google.com/mail/?${params.toString()}`
 }
 
 export function Contact() {
   const [sent, setSent] = useState(false)
-  const [calendlyUrl, setCalendlyUrl] = useState("")
   const formRef = useRef<HTMLFormElement>(null)
 
   function handleSend() {
@@ -48,13 +74,10 @@ export function Contact() {
       return
     }
 
-    const url = buildCalendlyUrl(new FormData(form))
+    const url = buildContactEmailUrl(new FormData(form))
 
-    setCalendlyUrl(url)
+    window.open(url, "_blank", "noopener,noreferrer")
     setSent(true)
-    setTimeout(() => {
-      window.location.href = url
-    }, 2000)
   }
 
   return (
@@ -80,14 +103,9 @@ export function Contact() {
                 Mensagem enviada!
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                Redirecionando para agendar uma reunião com nossa equipe...
+                Abrimos um e-mail com seus dados para a nossa equipe. É só
+                revisar e enviar.
               </p>
-              <a
-                href={calendlyUrl}
-                className="mt-6 text-xs text-primary underline underline-offset-4"
-              >
-                Clique aqui se não for redirecionado
-              </a>
             </div>
           ) : (
             <form ref={formRef} onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-5">
