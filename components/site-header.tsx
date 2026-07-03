@@ -10,7 +10,7 @@ const navItems = [
   { label: "Áreas de Atuação", href: "/#areas" },
   { label: "I.A.", href: "/ia" },
   { label: "Aegis", href: "/#aegis" },
-  { label: "Cases", href: "/#cases" },
+  { label: "Cases", href: "/cases" },
 ]
 
 export function SiteHeader() {
