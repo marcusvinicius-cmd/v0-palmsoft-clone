@@ -1,12 +1,13 @@
 "use client"
 
 import { Logo } from "@/components/logo"
+import { PolygonBackground } from "@/components/polygon-background"
 
 const siteLinks = [
   { label: "Home", href: "#home" },
   { label: "Áreas de Atuação", href: "#areas" },
   { label: "I.A.", href: "/ia" },
-  { label: "Aegis", href: "#aegis" },
+  { label: "Aegis", href: "/aegis" },
   { label: "Cases", href: "/cases" },
   { label: "Contato", href: "#contato" },
 ]
@@ -64,8 +65,14 @@ const socials = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[#070f1c] text-white">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-3">
+    <footer className="relative overflow-hidden bg-[#070f1c] text-white">
+      {/* malha rala fechando o site com a mesma assinatura do hero */}
+      <PolygonBackground
+        spacing={140}
+        intensity={0.55}
+        className="mask-[linear-gradient(to_top,black_35%,transparent)]"
+      />
+      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-3">
         <div>
           <Logo />
           <div className="mt-6 flex gap-3">
@@ -123,7 +130,7 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div className="border-t border-white/10">
+      <div className="relative border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 py-6">
           <p className="text-xs text-white/40">
             © 2002-2025, PalmSoft Tecnologia. Todos os direitos reservados.

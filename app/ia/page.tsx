@@ -4,6 +4,11 @@ import { ArrowRightIcon, CheckIcon } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { PolygonBackground } from "@/components/polygon-background"
+import { CountUp } from "@/components/count-up"
+import { Reveal } from "@/components/reveal"
+import { ScrollProgressLine } from "@/components/scroll-progress-line"
+import { SpotlightCard } from "@/components/spotlight-card"
+import { Tilt } from "@/components/tilt"
 import { cn } from "@/lib/utils"
 
 export const metadata: Metadata = {
@@ -250,12 +255,10 @@ export default function IAPage() {
             </div>
 
             {/* composição de cards de vidro sobre a malha */}
-            <div
-              aria-hidden="true"
-              className="relative mx-auto h-[430px] w-full max-w-md select-none sm:h-[480px]"
-            >
+            <Tilt className="relative mx-auto h-107.5 w-full max-w-md select-none sm:h-120">
+              <div aria-hidden="true" className="relative size-full">
               {/* card: rede neural */}
-              <div className="absolute left-0 top-0 w-[265px] rounded-2xl border border-white/10 bg-white/5 p-5 shadow-2xl backdrop-blur-md [--float-rotate:-4deg] motion-safe:animate-[hero-float_8s_ease-in-out_infinite] motion-reduce:-rotate-4">
+              <div className="absolute left-0 top-0 w-66.25 rounded-2xl border border-white/10 bg-white/5 p-5 shadow-2xl backdrop-blur-md [--float-rotate:-4deg] motion-safe:animate-[hero-float_8s_ease-in-out_infinite] motion-reduce:-rotate-4">
                 <div className="flex items-center justify-between">
                   <p className="text-xs font-medium uppercase tracking-[0.16em] text-white/60">
                     Deep Learning
@@ -308,7 +311,7 @@ export default function IAPage() {
               </div>
 
               {/* card: consulta com insight */}
-              <div className="absolute right-0 top-40 w-[250px] rounded-2xl border border-white/10 bg-[#0a1628]/80 p-5 shadow-2xl backdrop-blur-md [--float-rotate:3deg] motion-safe:animate-[hero-float_9s_ease-in-out_1.2s_infinite] motion-reduce:rotate-3 sm:top-44">
+              <div className="absolute right-0 top-40 w-62.5 rounded-2xl border border-white/10 bg-[#0a1628]/80 p-5 shadow-2xl backdrop-blur-md [--float-rotate:3deg] motion-safe:animate-[hero-float_9s_ease-in-out_1.2s_infinite] motion-reduce:rotate-3 sm:top-44">
                 <p className="text-xs font-medium uppercase tracking-[0.16em] text-white/60">
                   Consulta
                 </p>
@@ -337,7 +340,7 @@ export default function IAPage() {
               </div>
 
               {/* card: pipeline de dados */}
-              <div className="absolute bottom-0 left-4 w-[190px] rounded-2xl border border-white/10 bg-white/5 p-4 shadow-2xl backdrop-blur-md [--float-rotate:-2deg] motion-safe:animate-[hero-float_7s_ease-in-out_0.6s_infinite] motion-reduce:-rotate-2">
+              <div className="absolute bottom-0 left-4 w-47.5 rounded-2xl border border-white/10 bg-white/5 p-4 shadow-2xl backdrop-blur-md [--float-rotate:-2deg] motion-safe:animate-[hero-float_7s_ease-in-out_0.6s_infinite] motion-reduce:-rotate-2">
                 <p className="text-xs font-medium uppercase tracking-[0.16em] text-white/60">
                   Pipeline
                 </p>
@@ -364,7 +367,7 @@ export default function IAPage() {
               {/* badge: consultas processadas */}
               <div className="absolute bottom-10 right-2 flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 py-2 pl-3 pr-4 shadow-xl backdrop-blur-md [--float-rotate:2deg] motion-safe:animate-[hero-float_6s_ease-in-out_2s_infinite] motion-reduce:rotate-2 sm:bottom-12">
                 <span className="flex size-8 items-center justify-center rounded-full bg-[#1d6fff]/25 text-sm font-semibold text-[#4d9fff]">
-                  40M
+                  <CountUp value={40} suffix="M" duration={1800} />
                 </span>
                 <div className="leading-tight">
                   <p className="text-sm font-semibold text-white">consultas</p>
@@ -373,7 +376,8 @@ export default function IAPage() {
                   </p>
                 </div>
               </div>
-            </div>
+              </div>
+            </Tilt>
           </div>
         </section>
 
@@ -381,7 +385,7 @@ export default function IAPage() {
         <section id="sobre-ia" className="bg-background py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-6">
             <div className="grid items-center gap-12 lg:grid-cols-2">
-              <div>
+              <Reveal>
                 <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
                   Seja data driven
                 </p>
@@ -414,9 +418,9 @@ export default function IAPage() {
                     abaixo da superfície — nós mergulhamos para encontrá-lo.
                   </p>
                 </div>
-              </div>
+              </Reveal>
 
-              <div className="flex justify-center">
+              <Reveal delay={150} className="flex justify-center">
                 <Image
                   src="/deepen-iceberg.avif"
                   alt="Iceberg com a maior parte submersa, representando o valor oculto nos dados"
@@ -424,9 +428,10 @@ export default function IAPage() {
                   height={763}
                   className="w-full max-w-sm"
                 />
-              </div>
+              </Reveal>
             </div>
 
+            <Reveal>
             <ul className="mt-16 grid gap-4 rounded-2xl bg-card p-8 ring-1 ring-border sm:grid-cols-2 lg:grid-cols-3">
               {benefits.map((b) => (
                 <li key={b} className="flex items-start gap-3">
@@ -439,24 +444,34 @@ export default function IAPage() {
                 </li>
               ))}
             </ul>
+            </Reveal>
           </div>
         </section>
 
         {/* como transformamos dados */}
         <section className="bg-[#070f1c] py-20 text-white lg:py-28">
           <div className="mx-auto max-w-7xl px-6">
-            <header className="mb-14 max-w-2xl">
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#4d9fff]">
-                Como funciona
-              </p>
-              <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-                Dos dados brutos aos resultados
-              </h2>
-            </header>
+            <Reveal>
+              <header className="mb-10 max-w-2xl">
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#4d9fff]">
+                  Como funciona
+                </p>
+                <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+                  Dos dados brutos aos resultados
+                </h2>
+              </header>
+            </Reveal>
+
+            {/* linha que se preenche conforme o scroll percorre os passos */}
+            <ScrollProgressLine className="mb-10" />
 
             <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
               {dataSteps.map((s, i) => (
-                <div key={s.title} className="border-t border-white/10 pt-6">
+                <Reveal
+                  key={s.title}
+                  delay={(i % 3) * 100}
+                  className="border-t border-white/10 pt-6"
+                >
                   <span className="text-sm font-semibold text-[#4d9fff]">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -464,7 +479,7 @@ export default function IAPage() {
                   <p className="mt-2 text-sm leading-relaxed text-white/60">
                     {s.body}
                   </p>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -473,7 +488,10 @@ export default function IAPage() {
         {/* história e tecnologias */}
         <section className="bg-background py-20 lg:py-28">
           <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-3">
-            <div className="relative order-last hidden overflow-hidden rounded-2xl ring-1 ring-border lg:block">
+            <Reveal
+              delay={200}
+              className="relative order-last hidden overflow-hidden rounded-2xl ring-1 ring-border lg:block"
+            >
               <Image
                 src="/deepen-earth.avif"
                 alt="A Terra vista do espaço com um satélite em órbita"
@@ -481,8 +499,8 @@ export default function IAPage() {
                 sizes="(min-width: 1024px) 33vw, 100vw"
                 className="object-cover"
               />
-            </div>
-            <div>
+            </Reveal>
+            <Reveal>
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
                 Nossa história
               </p>
@@ -503,9 +521,9 @@ export default function IAPage() {
                   programa Link Lab da ACATE.
                 </p>
               </div>
-            </div>
+            </Reveal>
 
-            <div>
+            <Reveal delay={100}>
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
                 Nossas tecnologias
               </p>
@@ -528,7 +546,7 @@ export default function IAPage() {
                   baseadas em algoritmos.
                 </p>
               </div>
-            </div>
+            </Reveal>
           </div>
         </section>
 
@@ -538,39 +556,46 @@ export default function IAPage() {
           className="bg-linear-to-b from-[#0a1628] to-[#102544] py-20 text-white lg:py-28"
         >
           <div className="mx-auto max-w-7xl px-6">
-            <header className="mx-auto mb-14 max-w-2xl text-center">
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#4d9fff]">
-                Soluções Deepen
-              </p>
-              <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-                Big Data, Inteligência Artificial, Machine Learning e Análises
-                Preditivas
-              </h2>
-            </header>
+            <Reveal>
+              <header className="mx-auto mb-14 max-w-2xl text-center">
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#4d9fff]">
+                  Soluções Deepen
+                </p>
+                <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+                  Big Data, Inteligência Artificial, Machine Learning e Análises
+                  Preditivas
+                </h2>
+              </header>
+            </Reveal>
 
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {solutions.map((s) => (
-                <article
+              {solutions.map((s, i) => (
+                <Reveal
                   key={s.title}
-                  className={cn(
-                    "group flex flex-col rounded-2xl border p-7 transition-colors",
-                    s.featured
-                      ? "border-[#4d9fff]/40 bg-[#1d6fff]/10 sm:col-span-2 lg:col-span-1"
-                      : "border-white/10 bg-white/3 hover:border-[#4d9fff]/40 hover:bg-white/6",
-                  )}
+                  delay={(i % 3) * 100}
+                  className={cn(s.featured && "sm:col-span-2 lg:col-span-1")}
                 >
-                  <h3 className="text-lg font-semibold">{s.title}</h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-white/70">
-                    {s.body}
-                  </p>
-                  <a
-                    href="/#contato"
-                    className="mt-6 inline-flex w-fit items-center gap-1.5 text-sm font-medium text-[#4d9fff]"
+                  <SpotlightCard
+                    className={cn(
+                      "group h-full rounded-2xl border p-7 transition-colors",
+                      s.featured
+                        ? "border-[#4d9fff]/40 bg-[#1d6fff]/10"
+                        : "border-white/10 bg-white/3 hover:border-[#4d9fff]/40 hover:bg-white/6",
+                    )}
                   >
-                    Entre em contato
-                    <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
-                  </a>
-                </article>
+                    <h3 className="text-lg font-semibold">{s.title}</h3>
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-white/70">
+                      {s.body}
+                    </p>
+                    <a
+                      href="/#contato"
+                      className="mt-6 inline-flex w-fit items-center gap-1.5 text-sm font-medium text-[#4d9fff]"
+                    >
+                      Entre em contato
+                      <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
+                    </a>
+                  </SpotlightCard>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -579,21 +604,21 @@ export default function IAPage() {
         {/* consultorias */}
         <section className="bg-background py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-6">
-            <header className="mx-auto mb-14 max-w-2xl text-center">
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
-                Consultorias
-              </p>
-              <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-                Passo a passo do nosso processo de desenvolvimento
-              </h2>
-            </header>
+            <Reveal>
+              <header className="mx-auto mb-14 max-w-2xl text-center">
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
+                  Consultorias
+                </p>
+                <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+                  Passo a passo do nosso processo de desenvolvimento
+                </h2>
+              </header>
+            </Reveal>
 
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {consultingSteps.map((s, i) => (
-                <article
-                  key={s.title}
-                  className="rounded-2xl bg-card p-7 ring-1 ring-border"
-                >
+                <Reveal key={s.title} delay={(i % 3) * 100}>
+                  <article className="h-full rounded-2xl bg-card p-7 ring-1 ring-border">
                   <span className="text-sm font-semibold text-primary">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -603,11 +628,12 @@ export default function IAPage() {
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                     {s.body}
                   </p>
-                </article>
+                  </article>
+                </Reveal>
               ))}
             </div>
 
-            <div className="mt-16 text-center">
+            <Reveal className="mt-16 text-center">
               <h3 className="text-xl font-semibold text-foreground">
                 Modelos de consultoria disponíveis
               </h3>
@@ -621,73 +647,69 @@ export default function IAPage() {
                   </span>
                 ))}
               </div>
-            </div>
+            </Reveal>
           </div>
         </section>
 
         {/* setores */}
         <section className="bg-[#070f1c] py-20 text-white lg:py-28">
           <div className="mx-auto max-w-7xl px-6">
-            <header className="mx-auto mb-14 max-w-2xl text-center">
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#4d9fff]">
-                Setores
-              </p>
-              <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-                O que podemos fazer pelo seu negócio?
-              </h2>
-            </header>
+            <Reveal>
+              <header className="mx-auto mb-14 max-w-2xl text-center">
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#4d9fff]">
+                  Setores
+                </p>
+                <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+                  O que podemos fazer pelo seu negócio?
+                </h2>
+              </header>
+            </Reveal>
 
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {sectors.map((s) => (
-                <article
-                  key={s.title}
-                  className="rounded-2xl border border-white/10 bg-white/3 p-7"
-                >
-                  <h3 className="text-lg font-semibold">{s.title}</h3>
-                  <ul className="mt-4 space-y-2.5">
-                    {s.items.map((it) => (
-                      <li
-                        key={it}
-                        className="flex items-start gap-2 text-sm leading-relaxed text-white/70"
-                      >
-                        <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-[#4d9fff]" />
-                        {it}
-                      </li>
-                    ))}
-                  </ul>
-                </article>
+              {sectors.map((s, i) => (
+                <Reveal key={s.title} delay={(i % 3) * 100}>
+                  <SpotlightCard className="h-full rounded-2xl border border-white/10 bg-white/3 p-7">
+                    <h3 className="text-lg font-semibold">{s.title}</h3>
+                    <ul className="mt-4 space-y-2.5">
+                      {s.items.map((it) => (
+                        <li
+                          key={it}
+                          className="flex items-start gap-2 text-sm leading-relaxed text-white/70"
+                        >
+                          <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-[#4d9fff]" />
+                          {it}
+                        </li>
+                      ))}
+                    </ul>
+                  </SpotlightCard>
+                </Reveal>
               ))}
             </div>
           </div>
         </section>
 
         {/* cta final */}
-        <section className="relative overflow-hidden bg-[#0a1628] py-24 text-white lg:py-32">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -left-40 top-0 h-125 w-125 rounded-full bg-[#1d4ed8]/20 blur-[120px]"
-          />
-          <PolygonBackground className="mask-[linear-gradient(to_top,black_55%,transparent)]" />
-
-          <div className="relative mx-auto max-w-4xl px-6 text-center">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#4d9fff]">
+        <section className="bg-background py-24 lg:py-32">
+          <div className="mx-auto max-w-4xl px-6 text-center">
+            <Reveal>
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
               Quem confia na Deepen
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-x-8 gap-y-3">
               {clients.map((c) => (
                 <span
                   key={c}
-                  className="text-sm font-semibold uppercase tracking-wide text-white/50"
+                  className="text-sm font-semibold uppercase tracking-wide text-muted-foreground/70"
                 >
                   {c}
                 </span>
               ))}
             </div>
 
-            <h2 className="mt-14 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="mt-14 text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
               Pronto para transformar seus dados em decisões?
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-pretty text-sm leading-relaxed text-white/70">
+            <p className="mx-auto mt-4 max-w-xl text-pretty text-sm leading-relaxed text-muted-foreground">
               Planejamos e executamos PoCs (proof of concept) para validação
               dos projetos. Fale com a gente e descubra o que a Inteligência
               Artificial pode fazer pelo seu negócio.
@@ -699,6 +721,7 @@ export default function IAPage() {
               Entre em contato
               <ArrowRightIcon className="size-4" />
             </a>
+            </Reveal>
           </div>
         </section>
       </main>

@@ -5,6 +5,7 @@ import { ArrowRightIcon } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { PolygonBackground } from "@/components/polygon-background"
+import { Reveal } from "@/components/reveal"
 import { caseStudies } from "@/lib/cases-data"
 
 export const metadata: Metadata = {
@@ -58,11 +59,11 @@ export default function CasesPage() {
         <section className="bg-background py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-6">
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {caseStudies.map((c) => (
+              {caseStudies.map((c, i) => (
+                <Reveal key={c.slug} delay={(i % 3) * 100}>
                 <Link
-                  key={c.slug}
                   href={`/cases/${c.slug}`}
-                  className="group flex flex-col overflow-hidden rounded-2xl bg-card ring-1 ring-border transition-all hover:-translate-y-1 hover:shadow-xl hover:ring-primary/40"
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl bg-card ring-1 ring-border transition-all hover:-translate-y-1 hover:shadow-xl hover:ring-primary/40"
                 >
                   <div className="aspect-video overflow-hidden">
                     <Image
@@ -112,15 +113,17 @@ export default function CasesPage() {
                     </span>
                   </div>
                 </Link>
+                </Reveal>
               ))}
             </div>
           </div>
         </section>
 
         {/* cta */}
-        <section className="relative overflow-hidden bg-[#0a1628] py-20 text-white lg:py-28">
-          <PolygonBackground className="mask-[linear-gradient(to_top,black_55%,transparent)]" />
+        <section className="relative overflow-hidden bg-linear-to-b from-[#0a1628] to-[#070f1c] py-20 text-white lg:py-28">
+          <PolygonBackground className="mask-[linear-gradient(to_top,transparent,black_18%,black_60%,transparent)]" />
           <div className="relative mx-auto max-w-3xl px-6 text-center">
+            <Reveal>
             <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
               Quer construir o próximo case com a gente?
             </h2>
@@ -135,6 +138,7 @@ export default function CasesPage() {
               Entre em contato
               <ArrowRightIcon className="size-4" />
             </a>
+            </Reveal>
           </div>
         </section>
       </main>

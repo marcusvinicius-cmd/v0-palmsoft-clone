@@ -25,7 +25,17 @@ type Point = {
 
 type Pulse = { x: number; y: number; born: number }
 
-export function PolygonBackground({ className }: { className?: string }) {
+export function PolygonBackground({
+  className,
+  spacing = SPACING,
+  intensity = 1,
+}: {
+  className?: string
+  /** distância entre os vértices da malha (px); maior = mais rala */
+  spacing?: number
+  /** multiplicador de opacidade das linhas e preenchimentos (0 a 1) */
+  intensity?: number
+}) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -61,14 +71,14 @@ export function PolygonBackground({ className }: { className?: string }) {
       ctx!.setTransform(dpr, 0, 0, dpr, 0, 0)
 
       // one extra ring of points beyond every edge so the mesh has no border
-      cols = Math.ceil(width / SPACING) + 3
-      rows = Math.ceil(height / SPACING) + 3
+      cols = Math.ceil(width / spacing) + 3
+      rows = Math.ceil(height / spacing) + 3
 
       points = []
       for (let j = 0; j < rows; j++) {
         for (let i = 0; i < cols; i++) {
-          const bx = (i - 1) * SPACING + (Math.random() - 0.5) * SPACING * JITTER
-          const by = (j - 1) * SPACING + (Math.random() - 0.5) * SPACING * JITTER
+          const bx = (i - 1) * spacing + (Math.random() - 0.5) * spacing * JITTER
+          const by = (j - 1) * spacing + (Math.random() - 0.5) * spacing * JITTER
           points.push({
             bx,
             by,
@@ -141,11 +151,11 @@ export function PolygonBackground({ className }: { className?: string }) {
       ctx!.lineTo(c.x, c.y)
       ctx!.closePath()
       ctx!.fillStyle = `hsla(${218 - glow * 22}, 90%, ${58 + glow * 10}%, ${
-        shade * 0.045 + glow * 0.16
+        (shade * 0.045 + glow * 0.16) * intensity
       })`
       ctx!.fill()
       ctx!.strokeStyle = `hsla(${216 - glow * 24}, 85%, 70%, ${
-        0.05 + glow * 0.38
+        (0.05 + glow * 0.38) * intensity
       })`
       ctx!.stroke()
     }
@@ -175,7 +185,7 @@ export function PolygonBackground({ className }: { className?: string }) {
         if (p.glow < 0.03) continue
         ctx!.beginPath()
         ctx!.arc(p.x, p.y, 1.1 + p.glow * 1.6, 0, Math.PI * 2)
-        ctx!.fillStyle = `hsla(200, 95%, 78%, ${p.glow * 0.85})`
+        ctx!.fillStyle = `hsla(200, 95%, 78%, ${p.glow * 0.85 * intensity})`
         ctx!.fill()
       }
     }
@@ -264,14 +274,14 @@ export function PolygonBackground({ className }: { className?: string }) {
       )
       document.removeEventListener("visibilitychange", onVisibility)
     }
-  }, [])
+  }, [spacing, intensity])
 
   return (
     <canvas
       ref={canvasRef}
       aria-hidden="true"
       className={cn(
-        "pointer-events-none absolute inset-0 size-full mask-[linear-gradient(to_bottom,black_55%,transparent)]",
+        "pointer-events-none absolute inset-0 size-full mask-[linear-gradient(to_bottom,black_70%,transparent)]",
         className,
       )}
     />

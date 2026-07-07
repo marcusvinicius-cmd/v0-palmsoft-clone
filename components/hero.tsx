@@ -1,5 +1,7 @@
 import { ChevronDownIcon } from "lucide-react"
+import { CountUp } from "@/components/count-up"
 import { PolygonBackground } from "@/components/polygon-background"
+import { Tilt } from "@/components/tilt"
 
 export function Hero() {
   return (
@@ -41,12 +43,10 @@ export function Hero() {
         </div>
 
         {/* composição de cards de vidro sobre a malha */}
-        <div
-          aria-hidden="true"
-          className="relative mx-auto h-[420px] w-full max-w-md select-none sm:h-[470px]"
-        >
+        <Tilt className="relative mx-auto h-105 w-full max-w-md select-none sm:h-117.5">
+          <div aria-hidden="true" className="relative size-full">
           {/* card: modelo preditivo (IA) */}
-          <div className="absolute left-0 top-2 w-[280px] rounded-2xl border border-white/10 bg-white/5 p-5 shadow-2xl backdrop-blur-md [--float-rotate:-4deg] motion-safe:animate-[hero-float_8s_ease-in-out_infinite] motion-reduce:-rotate-4">
+          <div className="absolute left-0 top-2 w-70 rounded-2xl border border-white/10 bg-white/5 p-5 shadow-2xl backdrop-blur-md [--float-rotate:-4deg] motion-safe:animate-[hero-float_8s_ease-in-out_infinite] motion-reduce:-rotate-4">
             <div className="flex items-center justify-between">
               <p className="text-xs font-medium uppercase tracking-[0.16em] text-white/60">
                 Modelo preditivo
@@ -92,7 +92,7 @@ export function Hero() {
           </div>
 
           {/* card: código */}
-          <div className="absolute right-0 top-36 w-[250px] rounded-2xl border border-white/10 bg-[#0a1628]/80 p-5 font-mono text-[13px] leading-6 shadow-2xl backdrop-blur-md [--float-rotate:3deg] motion-safe:animate-[hero-float_9s_ease-in-out_1.2s_infinite] motion-reduce:rotate-3 sm:top-40">
+          <div className="absolute right-0 top-36 w-62.5 rounded-2xl border border-white/10 bg-[#0a1628]/80 p-5 font-mono text-[13px] leading-6 shadow-2xl backdrop-blur-md [--float-rotate:3deg] motion-safe:animate-[hero-float_9s_ease-in-out_1.2s_infinite] motion-reduce:rotate-3 sm:top-40">
             <div className="mb-3 flex gap-1.5">
               <span className="size-2.5 rounded-full bg-white/15" />
               <span className="size-2.5 rounded-full bg-white/15" />
@@ -127,7 +127,7 @@ export function Hero() {
           </div>
 
           {/* card: app mobile */}
-          <div className="absolute bottom-0 left-6 w-[150px] rounded-[1.4rem] border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur-md [--float-rotate:-2deg] motion-safe:animate-[hero-float_7s_ease-in-out_0.6s_infinite] motion-reduce:-rotate-2">
+          <div className="absolute bottom-0 left-6 w-37.5 rounded-[1.4rem] border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur-md [--float-rotate:-2deg] motion-safe:animate-[hero-float_7s_ease-in-out_0.6s_infinite] motion-reduce:-rotate-2">
             <div className="mx-auto mb-3 h-1 w-10 rounded-full bg-white/15" />
             <div className="space-y-2">
               <div className="h-14 rounded-lg bg-linear-to-br from-[#1d6fff]/60 to-[#0ea5e9]/30" />
@@ -144,14 +144,15 @@ export function Hero() {
           {/* badge: desde 2002 */}
           <div className="absolute bottom-14 right-2 flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 py-2 pl-3 pr-4 shadow-xl backdrop-blur-md [--float-rotate:2deg] motion-safe:animate-[hero-float_6s_ease-in-out_2s_infinite] motion-reduce:rotate-2 sm:bottom-16">
             <span className="flex size-8 items-center justify-center rounded-full bg-[#1d6fff]/25 text-sm font-semibold text-[#4d9fff]">
-              +20
+              <CountUp value={20} prefix="+" duration={1800} />
             </span>
             <div className="leading-tight">
               <p className="text-sm font-semibold text-white">anos</p>
               <p className="text-[11px] text-white/55">inovando desde 2002</p>
             </div>
           </div>
-        </div>
+          </div>
+        </Tilt>
       </div>
     </section>
   )
