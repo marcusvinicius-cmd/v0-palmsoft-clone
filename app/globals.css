@@ -132,3 +132,13 @@
     scroll-margin-top: 60px;
   }
 }
+
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--float-rotate, 0deg));
+  }
+  50% {
+    transform: translateY(-10px) rotate(var(--float-rotate, 0deg));
+  }
+}

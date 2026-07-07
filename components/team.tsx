@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Reveal } from "@/components/reveal"
 
 const colLeft = [
   "Desde 2002, a PalmSoft desenvolve soluções em tecnologia, com foco em Mobile, Games, Cloud e sistemas baseados na web.",
@@ -17,7 +18,7 @@ const colRight = [
 
 export function Team() {
   return (
-    <section className="bg-[#0a1628] text-white">
+    <section className="bg-linear-to-b from-[#070f1c] to-[#0a1628] text-white">
       <div className="relative h-64 w-full sm:h-80 lg:h-96">
         <Image
           src="/team-office.png"
@@ -25,34 +26,36 @@ export function Team() {
           fill
           className="object-cover opacity-50"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/40 via-transparent to-[#0a1628]" />
+        <div className="absolute inset-0 bg-linear-to-b from-[#070f1c]/60 via-transparent to-[#0a1628]" />
       </div>
 
       <div className="mx-auto max-w-7xl px-6 pb-20 lg:pb-28">
-        <header className="mx-auto mb-12 max-w-2xl text-center">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#4d9fff]">
-            Equipe
-          </p>
-          <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-            Desenvolvendo tecnologias desde 2002
-          </h2>
-        </header>
+        <Reveal>
+          <header className="mx-auto mb-12 max-w-2xl text-center">
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#4d9fff]">
+              Equipe
+            </p>
+            <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+              Desenvolvendo tecnologias desde 2002
+            </h2>
+          </header>
+        </Reveal>
 
         <div className="grid gap-x-12 gap-y-6 md:grid-cols-2">
-          <div className="space-y-5">
+          <Reveal className="space-y-5">
             {colLeft.map((t, i) => (
               <p key={i} className="text-sm leading-relaxed text-white/70">
                 {t}
               </p>
             ))}
-          </div>
-          <div className="space-y-5">
+          </Reveal>
+          <Reveal delay={120} className="space-y-5">
             {colRight.map((t, i) => (
               <p key={i} className="text-sm leading-relaxed text-white/70">
                 {t}
               </p>
             ))}
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

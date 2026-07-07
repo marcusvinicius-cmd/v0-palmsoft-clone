@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import { Reveal } from "@/components/reveal"
 import { cn } from "@/lib/utils"
 
 const features = [
@@ -8,6 +9,7 @@ const features = [
     title: "Conheça a Deepen, spin off da PalmSoft",
     body: "A Deepen é uma vertical da PalmSoft advinda do projeto chamado inicialmente de G4D (Graphics For Decision), atualmente focada nos ramos de Big Data e Inteligência Artificial.",
     cta: "Explorar",
+    href: "/ia",
   },
   {
     id: "lms",
@@ -22,6 +24,7 @@ const features = [
     title: "Áreas de fornecimento de know-how e tecnologias",
     body: "Torne seu negócio mais rápido, simples e com melhor custo-benefício com contratos eletrônicos.",
     cta: "Explorar",
+    href: "/aegis",
     items: ["Assinatura de Documentos", "Enriquecimento de Leads", "Alocação de Squad"],
   },
 ]
@@ -30,18 +33,18 @@ export function Verticals() {
   return (
     <section
       id="aegis"
-      className="bg-linear-to-b from-[#0a1628] to-[#102544] py-20 text-white lg:py-28"
+      className="bg-linear-to-b from-[#070f1c] to-[#102544] py-20 text-white lg:py-28"
     >
       <div className="mx-auto flex max-w-7xl flex-col gap-12 px-6">
         {features.map((f, i) => (
-          <div
-            id={f.id}
-            key={f.id}
-            className={cn(
-              "grid items-center gap-8 lg:grid-cols-2",
-              i % 2 === 1 && "lg:[&>div:first-child]:order-2",
-            )}
-          >
+          <Reveal key={f.id}>
+            <div
+              id={f.id}
+              className={cn(
+                "grid items-center gap-8 lg:grid-cols-2",
+                i % 2 === 1 && "lg:[&>div:first-child]:order-2",
+              )}
+            >
             <div className="max-w-xl">
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#4d9fff]">
                 {f.eyebrow}
@@ -68,7 +71,7 @@ export function Verticals() {
               )}
 
               <a
-                href="#contato"
+                href={f.href ?? "#contato"}
                 className="mt-7 inline-flex items-center justify-center rounded-full bg-[#1d6fff] px-7 py-2 text-sm font-medium text-white transition-colors hover:bg-[#1860e0]"
               >
                 {f.cta}
@@ -82,7 +85,8 @@ export function Verticals() {
                 </span>
               </div>
             </div>
-          </div>
+            </div>
+          </Reveal>
         ))}
       </div>
     </section>
