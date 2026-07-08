@@ -1,5 +1,14 @@
-import { ArrowRightIcon } from "lucide-react"
+import {
+  ArrowRightIcon,
+  BarChart3Icon,
+  CodeIcon,
+  Gamepad2Icon,
+  GaugeIcon,
+  WalletIcon,
+  ZapIcon,
+} from "lucide-react"
 import { Reveal } from "@/components/reveal"
+import { SpotlightCard } from "@/components/spotlight-card"
 import { cn } from "@/lib/utils"
 
 const areas = [
@@ -7,31 +16,37 @@ const areas = [
     title: "Fintechs",
     body: "Desenvolvimento de aplicativos móveis para sistemas de crédito empresariais e soluções financeiras. Criação de portais web para bancos digitais.",
     dark: false,
+    icon: WalletIcon,
   },
   {
     title: "Desenvolvimento Sob Demanda",
     body: "Soluções modularizadas a pedido do cliente e super apps com múltiplas integrações customizáveis.",
     dark: false,
+    icon: CodeIcon,
   },
   {
     title: "Energia",
     body: "Criações de portais e ambientes de monitoramento para as principais plataformas de contratos energéticos.",
     dark: true,
+    icon: ZapIcon,
   },
   {
     title: "Dashboards",
     body: "Dashboards de visualização de dados, plataformas e ambientes administrativos para gestão de clientes e tomadas de decisões estratégicas.",
     dark: true,
+    icon: BarChart3Icon,
   },
   {
     title: "Jogos e Gamificação",
     body: "Aplicativos com mecânicas de gamificação para engajamento de usuários, advergames e minijogos para apoio e treinamento de equipes.",
     dark: false,
+    icon: Gamepad2Icon,
   },
   {
     title: "Score de Crédito",
     body: "Soluções para análise de perfis de clientes com base em modelos preditivos de I.A., sistema administrativo para tomadas de decisões e recomendação de crédito.",
     dark: true,
+    icon: GaugeIcon,
   },
 ]
 
@@ -53,34 +68,46 @@ export function Areas() {
         <div className="grid gap-6 sm:grid-cols-2">
           {areas.map((a, i) => (
             <Reveal key={a.title} delay={(i % 2) * 100}>
-              <article
+              <SpotlightCard
                 className={cn(
-                  "group flex h-full flex-col rounded-2xl p-8 transition-shadow hover:shadow-xl",
+                  "group h-full rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl",
                   a.dark
-                    ? "bg-[#0a1628] text-white"
-                    : "bg-card text-card-foreground ring-1 ring-border",
+                    ? "bg-[#0a1628] text-white hover:shadow-[#1d6fff]/15"
+                    : "bg-card text-card-foreground ring-1 ring-border hover:ring-primary/40",
                 )}
               >
-              <h3 className="text-xl font-semibold">{a.title}</h3>
-              <p
-                className={cn(
-                  "mt-3 flex-1 text-sm leading-relaxed",
-                  a.dark ? "text-white/70" : "text-muted-foreground",
-                )}
-              >
-                {a.body}
-              </p>
-              <a
-                href="#contato"
-                className={cn(
-                  "mt-6 inline-flex w-fit items-center gap-1.5 text-sm font-medium",
-                  a.dark ? "text-[#4d9fff]" : "text-primary",
-                )}
-              >
-                Ver mais
-                <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
-              </a>
-              </article>
+                <div className="flex items-center gap-4">
+                  <span
+                    className={cn(
+                      "flex size-11 shrink-0 items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110",
+                      a.dark
+                        ? "bg-[#1d6fff]/15 text-[#4d9fff] group-hover:bg-[#1d6fff] group-hover:text-white"
+                        : "bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground",
+                    )}
+                  >
+                    <a.icon className="size-5" />
+                  </span>
+                  <h3 className="text-xl font-semibold">{a.title}</h3>
+                </div>
+                <p
+                  className={cn(
+                    "mt-4 flex-1 text-sm leading-relaxed",
+                    a.dark ? "text-white/70" : "text-muted-foreground",
+                  )}
+                >
+                  {a.body}
+                </p>
+                <a
+                  href="#contato"
+                  className={cn(
+                    "mt-6 inline-flex w-fit items-center gap-1.5 text-sm font-medium",
+                    a.dark ? "text-[#4d9fff]" : "text-primary",
+                  )}
+                >
+                  Ver mais
+                  <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
+                </a>
+              </SpotlightCard>
             </Reveal>
           ))}
         </div>
