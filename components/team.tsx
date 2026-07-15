@@ -19,12 +19,13 @@ const colRight = [
 export function Team() {
   return (
     <section className="bg-linear-to-b from-[#070f1c] to-[#0a1628] text-white">
-      <div className="relative h-64 w-full sm:h-80 lg:h-96">
+      <div className="relative w-full">
         <Image
-          src="/team-office.png"
+          src="/img-time.png"
           alt="Equipe PalmSoft trabalhando no escritório"
-          fill
-          className="object-cover opacity-50"
+          width={1920}
+          height={962}
+          className="w-full opacity-50"
         />
         <div className="absolute inset-0 bg-linear-to-b from-[#070f1c]/60 via-transparent to-[#0a1628]" />
       </div>
