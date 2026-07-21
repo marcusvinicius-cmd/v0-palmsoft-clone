@@ -55,67 +55,65 @@ export default function CasesPage() {
           </div>
         </section>
 
-        {/* grid de cases */}
+        {/* lista de cases */}
         <section className="bg-background py-20 lg:py-28">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {caseStudies.map((c, i) => (
-                <Reveal key={c.slug} delay={(i % 3) * 100}>
+          <div className="mx-auto max-w-7xl space-y-6 px-6">
+            {caseStudies.map((c, i) => (
+              <Reveal key={c.slug} delay={(i % 3) * 80}>
                 <Link
                   href={`/cases/${c.slug}`}
-                  className="group flex h-full flex-col overflow-hidden rounded-2xl bg-card ring-1 ring-border transition-all hover:-translate-y-1 hover:shadow-xl hover:ring-primary/40"
+                  className="group grid overflow-hidden rounded-3xl bg-card ring-1 ring-border transition-colors duration-500 hover:bg-[#0a1628] hover:ring-[#0a1628] md:grid-cols-2"
                 >
-                  <div className="aspect-video overflow-hidden">
-                    <Image
-                      src={c.image}
-                      alt={c.imageAlt}
-                      width={1099}
-                      height={635}
-                      className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-
-                  <div className="flex flex-1 flex-col p-7">
+                  <div className="flex flex-col justify-center gap-6 p-10 lg:p-14">
                     {c.logo ? (
-                      <Image
-                        src={c.logo}
-                        alt={c.client}
-                        width={100}
-                        height={28}
-                        className="h-5 w-auto self-start object-contain"
-                      />
-                    ) : (
-                      <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-                        {c.client}
+                      <span className="inline-flex w-fit items-center rounded-xl bg-white px-4 py-2.5 shadow-sm">
+                        <Image
+                          src={c.logo}
+                          alt={c.client}
+                          width={120}
+                          height={32}
+                          className="h-6 w-auto object-contain"
+                        />
                       </span>
+                    ) : (
+                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary transition-colors duration-500 group-hover:text-[#4d9fff]">
+                        {c.client}
+                      </p>
                     )}
-                    <h2 className="mt-3 text-xl font-semibold text-foreground">
-                      {c.title}
-                    </h2>
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                      {c.tagline}
-                    </p>
 
-                    <div className="mt-5 flex flex-wrap gap-2">
-                      {c.technologies.map((t) => (
+                    <div className="flex flex-wrap gap-2">
+                      {c.technologies.slice(0, 3).map((t) => (
                         <span
                           key={t}
-                          className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground"
+                          className="rounded-full bg-white px-4 py-1.5 text-sm font-medium text-[#0a1628] shadow-sm"
                         >
                           {t}
                         </span>
                       ))}
                     </div>
 
-                    <span className="mt-6 inline-flex w-fit items-center gap-1.5 text-sm font-medium text-primary">
-                      Ver case
+                    <h2 className="text-balance text-2xl font-semibold leading-snug text-foreground transition-colors duration-500 group-hover:text-white sm:text-3xl">
+                      {c.tagline}
+                    </h2>
+
+                    <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border px-6 py-2.5 text-sm font-medium text-foreground transition-colors duration-500 group-hover:border-white/30 group-hover:text-white">
+                      Ver estudo de caso
                       <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-1" />
                     </span>
                   </div>
+
+                  <div className="relative min-h-70 overflow-hidden md:min-h-0">
+                    <Image
+                      src={c.image}
+                      alt={c.imageAlt}
+                      fill
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
                 </Link>
-                </Reveal>
-              ))}
-            </div>
+              </Reveal>
+            ))}
           </div>
         </section>
 

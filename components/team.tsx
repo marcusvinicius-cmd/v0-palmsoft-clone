@@ -1,19 +1,12 @@
 import Image from "next/image"
+import { ArrowRightIcon } from "lucide-react"
 import { Reveal } from "@/components/reveal"
 
-const colLeft = [
-  "Desde 2002, a PalmSoft desenvolve soluções em tecnologia, com foco em Mobile, Games, Cloud e sistemas baseados na web.",
-  "Começamos criando apps comerciais para PDAs e jogos para celular, com mais de 1,6 milhão de downloads e premiações internacionais.",
-  "Entre 2005 e 2009, criamos 26 jogos, tecnologias próprias e o portal Arena 41, com mais de 100 mil assinantes.",
-  "Lançamos produtos inovadores como o G4Decision (Big Data) e um app de criptografia com registro no INPI.",
-  "Também atuamos em projetos em parceria, como o MSN Mobile, e seguimos com uma equipe técnica premiada e experiente.",
-]
-
-const colRight = [
-  "Como destaque, o G4Decision, para a visualização de grandes volumes de dados (Big Data), onde desenvolveu 100% das tecnologias utilizadas e hoje é uma empresa do grupo.",
-  "A partir de 2010, iniciamos o desenvolvimento de apps e games empresariais também para redes sociais; neste período desenvolvemos ainda um app de criptografia com registro no INPI.",
-  "Os empreendedores da PalmSoft também participaram do desenvolvimento de projetos em parceria com outras empresas, criando diversas inovações, tecnologias e soluções, com destaque para o MSN Mobile.",
-  "Estes empreendedores hoje são alguns dos diferenciais de nossa equipe técnica, altamente qualificada e com destaques, premiações e reconhecimentos de diversas entidades.",
+const paragraphs = [
+  "Por trás de cada solução da PalmSoft está uma equipe técnica altamente qualificada: engenheiros e desenvolvedores seniores que constroem tecnologia desde 2002 e já passaram por praticamente todos os ciclos de inovação do mercado — de apps para PDAs a Inteligência Artificial.",
+  "São profissionais premiados e reconhecidos por diversas entidades do setor, com experiência que vai de aplicativos móveis e jogos a plataformas de Big Data, dashboards e sistemas financeiros de missão crítica.",
+  "Essa bagagem não é teórica: o time já criou mais de 26 jogos, apps que somam mais de 1,6 milhão de downloads com premiações internacionais, e tecnologias 100% próprias — como o G4Decision, plataforma de visualização de grandes volumes de dados que hoje é uma empresa do grupo, a Deepen.",
+  "Nossos empreendedores também participaram de projetos ao lado de grandes empresas, como o MSN Mobile, e desenvolveram um aplicativo de criptografia com registro no INPI. É essa combinação de senioridade, curiosidade técnica e histórico comprovado que garante que cada projeto seja conduzido por quem já resolveu problemas difíceis antes.",
 ]
 
 export function Team() {
@@ -42,22 +35,22 @@ export function Team() {
           </header>
         </Reveal>
 
-        <div className="grid gap-x-12 gap-y-6 md:grid-cols-2">
-          <Reveal className="space-y-5">
-            {colLeft.map((t, i) => (
-              <p key={i} className="text-sm leading-relaxed text-white/70">
-                {t}
-              </p>
-            ))}
-          </Reveal>
-          <Reveal delay={120} className="space-y-5">
-            {colRight.map((t, i) => (
-              <p key={i} className="text-sm leading-relaxed text-white/70">
-                {t}
-              </p>
-            ))}
-          </Reveal>
-        </div>
+        <Reveal className="mx-auto max-w-3xl space-y-5 text-center">
+          {paragraphs.map((t, i) => (
+            <p key={i} className="text-sm leading-relaxed text-white/70">
+              {t}
+            </p>
+          ))}
+          <div className="pt-4">
+            <a
+              href="/sobre"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-2.5 text-sm font-medium text-white transition-colors hover:border-[#4d9fff] hover:text-[#4d9fff]"
+            >
+              Conheça nossa história
+              <ArrowRightIcon className="size-4" />
+            </a>
+          </div>
+        </Reveal>
       </div>
     </section>
   )
