@@ -3,10 +3,10 @@ import { ArrowRightIcon } from "lucide-react"
 import { Reveal } from "@/components/reveal"
 
 const paragraphs = [
-  "Por trás de cada solução da PalmSoft está uma equipe técnica altamente qualificada: engenheiros e desenvolvedores seniores que constroem tecnologia desde 2002 e já passaram por praticamente todos os ciclos de inovação do mercado — de apps para PDAs a Inteligência Artificial.",
-  "São profissionais premiados e reconhecidos por diversas entidades do setor, com experiência que vai de aplicativos móveis e jogos a plataformas de Big Data, dashboards e sistemas financeiros de missão crítica.",
-  "Essa bagagem não é teórica: o time já criou mais de 26 jogos, apps que somam mais de 1,6 milhão de downloads com premiações internacionais, e tecnologias 100% próprias — como o G4Decision, plataforma de visualização de grandes volumes de dados que hoje é uma empresa do grupo, a Deepen.",
-  "Nossos empreendedores também participaram de projetos ao lado de grandes empresas, como o MSN Mobile, e desenvolveram um aplicativo de criptografia com registro no INPI. É essa combinação de senioridade, curiosidade técnica e histórico comprovado que garante que cada projeto seja conduzido por quem já resolveu problemas difíceis antes.",
+  "Fundada em 2002, a Palmsoft Tecnologia possui uma trajetória consolidada no desenvolvimento de soluções digitais sob demanda. Ao longo dos anos, participamos de projetos em parceria com grandes empresas, incluindo iniciativas como o MSN Mobile, além de desenvolver aplicações móveis, sistemas web, soluções em nuvem e uma tecnologia de criptografia com registro no INPI.",
+  "Em 2016, a experiência acumulada no processamento e na visualização de grandes volumes de dados criamos a Deepen, empresa do grupo e nosso braço especializado em Inteligência Artificial e Big Data. Desde então, a Palmsoft ampliou sua atuação em aprendizado de máquina, modelagem preditiva, visão computacional, georreferenciamento, processamento distribuído e análise avançada de dados.",
+  "Atualmente, desenvolvemos soluções com LLMs, IA generativa, automação inteligente, análise documental, detecção de anomalias e sistemas de apoio à tomada de decisão. Trabalhamos bastante também com plataformas financeiras, análise de crédito, prevenção de fraudes em tempo real, gestão de riscos e aplicações para os setores de energia, fintechs, logística, varejo e monitoramento operacional.",
+  "Conduzimos vários, projetos personalizados para grandes empresas, desenvolvendo produtos próprios e também participamos em criações conjuntas de diversas soluções tecnológicas. Entre elas estão o Aegis Access Control, voltado ao controle de acesso com inteligência artificial, e o Labor Analytics, plataforma de análise e gestão operacional reconhecida pelo Prêmio BBM de Inovação, além de participações em vários outros produtos desenvolvidos em conjunto com parceiros e clientes.",
 ]
 
 export function Team() {
