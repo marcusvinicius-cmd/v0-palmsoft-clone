@@ -1,11 +1,12 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRightIcon } from "lucide-react"
+import { ArrowRightIcon, LockIcon } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { PolygonBackground } from "@/components/polygon-background"
 import { Reveal } from "@/components/reveal"
+import { Tilt } from "@/components/tilt"
 import { caseStudies } from "@/lib/cases-data"
 
 export const metadata: Metadata = {
@@ -42,16 +43,98 @@ export default function CasesPage() {
               </p>
             </div>
 
-            <div className="relative hidden justify-end lg:flex">
-              <Image
-                src="/main-image.avif"
-                alt="Ilustração isométrica de pilhas de dados sendo exploradas"
-                width={836}
-                height={375}
-                priority
-                className="w-full max-w-lg drop-shadow-2xl [--float-rotate:0deg] motion-safe:animate-[hero-float_8s_ease-in-out_infinite]"
-              />
-            </div>
+            {/* composição de cards representando os tipos de projeto */}
+            <Tilt className="relative mx-auto hidden h-105 w-full max-w-md select-none lg:block">
+              <div aria-hidden="true" className="relative size-full">
+                {/* card: on-demand */}
+                <div className="absolute left-0 top-0 w-64 rounded-2xl border border-white/10 bg-white/5 p-5 shadow-2xl backdrop-blur-md [--float-rotate:-4deg] motion-safe:animate-[hero-float_8s_ease-in-out_infinite] motion-reduce:-rotate-4">
+                  <div className="flex items-center justify-between">
+                    <p className="text-xs font-medium uppercase tracking-[0.16em] text-white/60">
+                      On-Demand
+                    </p>
+                    <span className="flex items-center gap-1.5 rounded-full bg-emerald-400/10 px-2 py-0.5 text-[10px] font-medium text-emerald-300">
+                      <span className="size-1.5 animate-pulse rounded-full bg-emerald-400" />
+                      em produção
+                    </span>
+                  </div>
+                  <p className="mt-3 text-sm font-semibold text-white">
+                    Novo módulo do sistema
+                  </p>
+                  <div className="mt-3 flex h-20 items-center justify-center rounded-lg bg-linear-to-br from-[#1d6fff]/70 to-[#0ea5e9]/30">
+                    <span className="text-xs font-medium text-white/80">
+                      Protótipo em revisão
+                    </span>
+                  </div>
+                  <p className="mt-3 text-xs leading-relaxed text-white/60">
+                    Painel personalizado, integrado ao seu fluxo de trabalho.
+                  </p>
+                  <div className="mt-3 grid grid-cols-2 gap-2">
+                    <div className="flex h-8 items-center justify-center rounded-lg bg-white/8 text-[11px] font-medium text-white/70">
+                      Editar
+                    </div>
+                    <div className="flex h-8 items-center justify-center rounded-lg bg-white/8 text-[11px] font-medium text-white/70">
+                      Exportar
+                    </div>
+                  </div>
+                  <div className="mt-3 flex h-8 items-center justify-center rounded-full bg-[#1d6fff]/80 text-xs font-semibold text-white">
+                    Solicitar orçamento
+                  </div>
+                </div>
+
+                {/* card: controle de acesso (Aegis) */}
+                <div className="absolute right-0 top-24 w-58 rounded-2xl border border-white/10 bg-[#0a1628]/80 p-5 shadow-2xl backdrop-blur-md [--float-rotate:3deg] motion-safe:animate-[hero-float_9s_ease-in-out_1.2s_infinite] motion-reduce:rotate-3">
+                  <p className="text-xs font-medium uppercase tracking-[0.16em] text-white/60">
+                    Controle de Acesso
+                  </p>
+                  <div className="relative mx-auto mt-5 flex size-20 items-center justify-center">
+                    <span className="absolute size-20 rounded-full bg-[#1d6fff]/25" />
+                    <span className="absolute size-13 rounded-full bg-[#1d6fff]/50" />
+                    <LockIcon className="relative size-7 text-white" />
+                  </div>
+                  <p className="mt-5 text-center text-sm font-medium text-white/60">
+                    Status:{" "}
+                    <span className="font-semibold text-emerald-300">
+                      Seguro
+                    </span>
+                  </p>
+                </div>
+
+                {/* card: I.A. as a Service */}
+                <div className="absolute bottom-0 left-8 w-58 rounded-2xl border border-white/10 bg-white/5 p-5 shadow-2xl backdrop-blur-md [--float-rotate:-2deg] motion-safe:animate-[hero-float_7s_ease-in-out_0.6s_infinite] motion-reduce:-rotate-2">
+                  <p className="text-xs font-medium uppercase tracking-[0.16em] text-white/60">
+                    I.A. as a Service
+                  </p>
+                  <svg
+                    viewBox="0 0 200 100"
+                    className="mt-4 w-full"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <g stroke="#4d9fff" strokeOpacity="0.3">
+                      {[15, 50, 85].map((y1) =>
+                        [10, 36, 64, 90].map((y2) => (
+                          <path key={`a-${y1}-${y2}`} d={`M25 ${y1} L100 ${y2}`} />
+                        )),
+                      )}
+                      {[10, 36, 64, 90].map((y1) =>
+                        [30, 70].map((y2) => (
+                          <path key={`b-${y1}-${y2}`} d={`M100 ${y1} L175 ${y2}`} />
+                        )),
+                      )}
+                    </g>
+                    {[15, 50, 85].map((y) => (
+                      <circle key={`i-${y}`} cx="25" cy={y} r="6" fill="#1d6fff" fillOpacity="0.6" />
+                    ))}
+                    {[10, 36, 64, 90].map((y) => (
+                      <circle key={`h-${y}`} cx="100" cy={y} r="6" fill="#4d9fff" fillOpacity="0.8" />
+                    ))}
+                    {[30, 70].map((y) => (
+                      <circle key={`o-${y}`} cx="175" cy={y} r="6" fill="#7dd3fc" />
+                    ))}
+                  </svg>
+                </div>
+              </div>
+            </Tilt>
           </div>
         </section>
 
