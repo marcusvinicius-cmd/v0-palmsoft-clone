@@ -1,5 +1,7 @@
-import { Button } from "@/components/ui/button"
+import Image from "next/image"
 import { Reveal } from "@/components/reveal"
+import { SpotlightCard } from "@/components/spotlight-card"
+import { Tilt } from "@/components/tilt"
 import { cn } from "@/lib/utils"
 
 const features = [
@@ -10,6 +12,10 @@ const features = [
     body: "A Deepen é uma vertical da PalmSoft advinda do projeto chamado inicialmente de G4D (Graphics For Decision), atualmente focada nos ramos de Big Data e Inteligência Artificial.",
     cta: "Explorar",
     href: "/ia",
+    logo: "/logo-deepen.avif",
+    logoAlt: "Deepen",
+    logoWidth: 757,
+    logoHeight: 445,
   },
   {
     id: "lms",
@@ -17,6 +23,11 @@ const features = [
     title: "Conheça a Labor Analytics, nossa parceria em soluções LMS",
     body: "Nossos parceiros oficiais no ramo de Labor Management System oferecem soluções com ampla aplicabilidade em diversos setores de negócio.",
     cta: "Visitar site",
+    logo: "/logo512-trimmed.png",
+    logoAlt: "Labor Analytics",
+    logoWidth: 488,
+    logoHeight: 192,
+    plainLogo: true,
   },
   {
     id: "aegis",
@@ -26,6 +37,10 @@ const features = [
     cta: "Explorar",
     href: "/aegis",
     items: ["Assinatura de Documentos", "Enriquecimento de Leads", "Alocação de Squad"],
+    logo: "/plurio_final_hd.png",
+    logoAlt: "Plurio",
+    logoWidth: 4200,
+    logoHeight: 1800,
   },
 ]
 
@@ -79,11 +94,26 @@ export function Verticals() {
             </div>
 
             <div className="flex justify-center">
-              <div className="flex aspect-video w-full max-w-md items-center justify-center rounded-2xl border border-white/10 bg-white/4 backdrop-blur-sm">
-                <span className="text-4xl font-semibold tracking-tight text-white/30">
-                  {f.eyebrow.split(" ")[0]}
-                </span>
-              </div>
+              <SpotlightCard
+                className={cn(
+                  "group aspect-video w-full max-w-md rounded-2xl border shadow-2xl transition-colors duration-300",
+                  f.plainLogo
+                    ? "border-white/10 bg-white/4 backdrop-blur-sm hover:border-[#4d9fff]/40"
+                    : "border-border bg-white hover:border-[#4d9fff]/40",
+                )}
+              >
+                <div className="flex size-full items-center justify-center p-10">
+                  <Tilt>
+                    <Image
+                      src={f.logo}
+                      alt={f.logoAlt}
+                      width={f.logoWidth}
+                      height={f.logoHeight}
+                      className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 sm:h-16"
+                    />
+                  </Tilt>
+                </div>
+              </SpotlightCard>
             </div>
             </div>
           </Reveal>
