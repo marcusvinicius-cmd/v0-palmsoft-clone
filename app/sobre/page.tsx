@@ -1,10 +1,48 @@
 import type { Metadata } from "next"
 import Image from "next/image"
-import { ArrowRightIcon } from "lucide-react"
+import {
+  ArrowRightIcon,
+  BrainCircuitIcon,
+  GlobeIcon,
+  MapPinIcon,
+  SmartphoneIcon,
+} from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { PolygonBackground } from "@/components/polygon-background"
 import { Reveal } from "@/components/reveal"
+import { Tilt } from "@/components/tilt"
+
+const milestoneCards = [
+  {
+    year: "2002",
+    title: "Nasce a PalmSoft",
+    icon: SmartphoneIcon,
+    position:
+      "left-0 top-0 w-52 [--float-rotate:-4deg] motion-safe:animate-[hero-float_8s_ease-in-out_infinite] motion-reduce:-rotate-4",
+  },
+  {
+    year: "2011",
+    title: "Expansão",
+    icon: GlobeIcon,
+    position:
+      "right-0 top-8 w-52 [--float-rotate:3deg] motion-safe:animate-[hero-float_9s_ease-in-out_1s_infinite] motion-reduce:rotate-3 sm:top-10",
+  },
+  {
+    year: "2014",
+    title: "Nova Sede",
+    icon: MapPinIcon,
+    position:
+      "bottom-20 left-6 w-52 [--float-rotate:-2deg] motion-safe:animate-[hero-float_7s_ease-in-out_0.6s_infinite] motion-reduce:-rotate-2 sm:bottom-24",
+  },
+  {
+    year: "2020",
+    title: "I.A. as a Service",
+    icon: BrainCircuitIcon,
+    position:
+      "right-2 bottom-0 w-56 [--float-rotate:2deg] motion-safe:animate-[hero-float_6s_ease-in-out_1.6s_infinite] motion-reduce:rotate-2",
+  },
+]
 
 export const metadata: Metadata = {
   title: "Sobre | PalmSoft Tecnologia",
@@ -53,7 +91,7 @@ export default function SobrePage() {
           />
           <PolygonBackground />
 
-          <div className="relative mx-auto max-w-7xl px-6">
+          <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
             <div className="max-w-2xl">
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#4d9fff]">
                 Sobre a PalmSoft
@@ -67,6 +105,28 @@ export default function SobrePage() {
                 constroem a PalmSoft desde 2002.
               </p>
             </div>
+
+            {/* composição de cards com os marcos da história */}
+            <Tilt className="relative mx-auto h-110 w-full max-w-md select-none sm:h-120">
+              <div aria-hidden="true" className="relative size-full">
+                {milestoneCards.map((m) => (
+                  <div
+                    key={m.year}
+                    className={`absolute rounded-2xl border border-white/10 bg-white/5 p-5 shadow-2xl backdrop-blur-md ${m.position}`}
+                  >
+                    <p className="text-2xl font-bold text-[#4d9fff]">
+                      {m.year}:
+                    </p>
+                    <p className="mt-1 text-lg font-semibold leading-snug text-white">
+                      {m.title}
+                    </p>
+                    <span className="mt-4 flex size-11 items-center justify-center rounded-xl bg-[#1d6fff]/15 text-[#4d9fff]">
+                      <m.icon className="size-5.5" />
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </Tilt>
           </div>
         </section>
 
