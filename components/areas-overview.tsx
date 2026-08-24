@@ -3,11 +3,6 @@ import { Reveal } from "@/components/reveal"
 
 const areas = [
   {
-    title: "Software Engineering",
-    body: "Sistemas web, mobile e APIs sob medida, construídos com arquitetura escalável e boas práticas de engenharia.",
-    icon: CodeIcon,
-  },
-  {
     title: "Data & Analytics",
     body: "Estruturação de dados, pipelines e dashboards que transformam dados brutos em decisões estratégicas.",
     icon: BarChart3Icon,
@@ -21,6 +16,11 @@ const areas = [
     title: "Integrações & Automação",
     body: "Conectamos sistemas, APIs e processos para eliminar retrabalho manual e acelerar a operação.",
     icon: WorkflowIcon,
+  },
+  {
+    title: "Software Engineering",
+    body: "Sistemas web, mobile e APIs sob medida, construídos com arquitetura escalável e boas práticas de engenharia.",
+    icon: CodeIcon,
   },
 ]
 
