@@ -1,9 +1,11 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 import { Logo } from "@/components/logo"
 import { ChevronDownIcon, MenuIcon, XIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { WHATSAPP_URL } from "@/lib/whatsapp"
 
 type NavItem = {
   label: string
@@ -13,6 +15,7 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   { label: "Home", href: "/#home" },
+  { label: "Cases", href: "/cases" },
   { label: "Sobre", href: "/sobre" },
   {
     label: "Áreas de Atuação",
@@ -22,12 +25,17 @@ const navItems: NavItem[] = [
       { label: "Aegis", href: "/aegis" },
     ],
   },
-  { label: "Cases", href: "/cases" },
 ]
 
 export function SiteHeader() {
+  const pathname = usePathname()
+  const isHome = pathname === "/"
+
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  // na home a logo do header some enquanto o hero (que já tem a logo grande) está
+  // visível, e volta suavemente assim que o usuário chega em outra seção
+  const [logoVisible, setLogoVisible] = useState(!isHome)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -35,6 +43,25 @@ export function SiteHeader() {
     window.addEventListener("scroll", onScroll)
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
+
+  useEffect(() => {
+    if (!isHome) {
+      setLogoVisible(true)
+      return
+    }
+    const heroEl = document.getElementById("home")
+    if (!heroEl) {
+      setLogoVisible(true)
+      return
+    }
+    const onScroll = () => {
+      // aparece assim que o fim do hero encosta no header fixo
+      setLogoVisible(heroEl.getBoundingClientRect().bottom <= 80)
+    }
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [isHome])
 
   return (
     <header
@@ -44,58 +71,74 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 text-white">
-        <a href="/#home" aria-label="PalmSoft - Início">
-          <Logo />
-        </a>
-
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Navegação principal">
-          {navItems.map((item) =>
-            item.children ? (
-              <div key={item.label} className="group relative">
-                <a
-                  href={item.href}
-                  aria-haspopup="menu"
-                  className="flex items-center gap-1 text-sm text-white/80 transition-colors hover:text-white"
-                >
-                  {item.label}
-                  <ChevronDownIcon className="size-3.5 transition-transform duration-200 group-hover:rotate-180" />
-                </a>
-                {/* pt-3 mantém o hover vivo no vão entre o botão e o painel */}
-                <div className="invisible absolute left-1/2 top-full -translate-x-1/2 translate-y-1 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-                  <ul className="min-w-44 rounded-xl border border-white/10 bg-[#0a1628]/95 p-1.5 shadow-xl backdrop-blur-md">
-                    {item.children.map((c) => (
-                      <li key={c.label}>
-                        <a
-                          href={c.href}
-                          className="block rounded-lg px-3 py-2 text-sm text-white/80 transition-colors hover:bg-white/5 hover:text-white"
-                        >
-                          {c.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ) : (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-sm text-white/80 transition-colors hover:text-white"
-              >
-                {item.label}
-              </a>
-            ),
-          )}
-        </nav>
-
-        <div className="hidden lg:block">
+        {/* flex-1 nos dois extremos centraliza o menu de verdade no meio da barra */}
+        <div className="flex flex-1 items-center">
           <a
-            href="/#contato"
-            className="inline-flex items-center justify-center rounded-full bg-white px-6 py-1.5 text-sm font-medium text-[#0a1628] transition-colors hover:bg-white/90"
+            href="/#home"
+            aria-label="PalmSoft - Início"
+            tabIndex={logoVisible ? 0 : -1}
+            className={cn(
+              "transition-opacity duration-500 ease-out",
+              logoVisible ? "opacity-100" : "pointer-events-none opacity-0",
+            )}
           >
-            Contato
+            <Logo />
           </a>
         </div>
+
+        <div className="hidden items-center gap-8 lg:flex">
+          <nav className="flex items-center gap-7" aria-label="Navegação principal">
+            {navItems.map((item) =>
+              item.children ? (
+                <div key={item.label} className="group relative">
+                  <a
+                    href={item.href}
+                    aria-haspopup="menu"
+                    className="flex items-center gap-1 text-sm text-white/80 transition-colors hover:text-white"
+                  >
+                    {item.label}
+                    <ChevronDownIcon className="size-3.5 transition-transform duration-200 group-hover:rotate-180" />
+                  </a>
+                  {/* pt-3 mantém o hover vivo no vão entre o botão e o painel */}
+                  <div className="invisible absolute left-1/2 top-full -translate-x-1/2 translate-y-1 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                    <ul className="min-w-44 rounded-xl border border-white/10 bg-[#0a1628]/95 p-1.5 shadow-xl backdrop-blur-md">
+                      {item.children.map((c) => (
+                        <li key={c.label}>
+                          <a
+                            href={c.href}
+                            className="block rounded-lg px-3 py-2 text-sm text-white/80 transition-colors hover:bg-white/5 hover:text-white"
+                          >
+                            {c.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ) : (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="text-sm text-white/80 transition-colors hover:text-white"
+                >
+                  {item.label}
+                </a>
+              ),
+            )}
+          </nav>
+
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-full bg-[#4d9fff] px-6 py-2 text-sm leading-none font-medium text-white transition-colors hover:bg-[#4d9fff]/90"
+          >
+            Fale com Especialista
+          </a>
+        </div>
+
+        {/* espaçador invisível: equilibra o peso do logo pra centralizar o bloco acima */}
+        <div className="hidden flex-1 lg:block" aria-hidden="true" />
 
         <button
           className="lg:hidden"
@@ -141,11 +184,13 @@ export function SiteHeader() {
             ))}
             <li className="mt-2">
               <a
-                href="/#contato"
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="inline-flex w-full items-center justify-center rounded-full bg-white px-6 py-1.5 text-sm font-medium text-[#0a1628] transition-colors hover:bg-white/90"
+                className="inline-flex w-full items-center justify-center rounded-full bg-[#4d9fff] px-6 py-2 text-sm leading-none font-medium text-white transition-colors hover:bg-[#4d9fff]/90"
               >
-                Contato
+                Fale com Especialista
               </a>
             </li>
           </ul>
