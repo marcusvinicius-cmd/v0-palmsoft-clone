@@ -4,10 +4,10 @@ import { cn } from "@/lib/utils"
 export function Logo({ className }: { className?: string }) {
   return (
     <Image
-      src="/LOGOPALM.avif"
+      src="/palm-nova-export-02.png"
       alt="PalmSoft Tecnologia"
-      width={246}
-      height={64}
+      width={1548}
+      height={412}
       priority
       className={cn("h-8 w-auto", className)}
     />
