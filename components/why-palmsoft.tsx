@@ -25,9 +25,6 @@ export function WhyPalmsoft() {
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
           <header className="mx-auto mb-14 max-w-2xl text-center">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#4d9fff]">
-              Por que Contratar a Palmsoft
-            </p>
             <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
               Por que escolher a Palmsoft
             </h2>

@@ -31,10 +31,10 @@ export function Testimonials() {
         <Reveal>
           <header className="mx-auto mb-14 max-w-2xl text-center">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
-              Depoimentos
+              EXPERIÊNCIAS REAIS
             </p>
             <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-              Quem já trabalhou com a gente
+              O que dizem nossos clientes e parceiros
             </h2>
           </header>
         </Reveal>

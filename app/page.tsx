@@ -21,8 +21,8 @@ export default function Page() {
         <VerticalCards />
         <WhyPalmsoft />
         <Testimonials />
-        <Strategy />
         <HowWeWork />
+        <Strategy />
         <Contact />
       </main>
       <SiteFooter />
