@@ -1,0 +1,54 @@
+<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow4" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- brain outline (cerebrum gyri + cerebellum bump) -->
+  <path d="M100,44
+           C90,36 74,38 68,50
+           C56,50 48,60 50,72
+           C38,76 34,90 42,100
+           C34,108 34,122 46,128
+           C42,140 50,152 64,152
+           C64,166 78,176 92,170
+           C98,180 114,180 120,170
+           C132,178 148,170 148,156
+           C160,154 166,142 160,130
+           C168,124 168,110 158,102
+           C164,90 158,76 144,74
+           C142,60 128,52 116,58
+           C112,48 106,42 100,44 Z"
+        fill="none" stroke="#6BC2FF" stroke-width="2.6" stroke-linejoin="round" filter="url(#glow4)"/>
+  <!-- corpus callosum divide -->
+  <path d="M100,50 C96,90 96,130 100,168" fill="none" stroke="#6BC2FF" stroke-width="1.6" opacity="0.55"/>
+
+  <!-- circuit traces inside/around -->
+  <g stroke="#5FB8FF" stroke-width="1.6" fill="none" opacity="0.85">
+    <path d="M95,80 L95,100 L115,100 L115,120"/>
+    <path d="M130,85 L118,85 L118,105"/>
+    <path d="M75,110 L90,110 L90,130 L108,130"/>
+    <path d="M140,115 L128,115 L128,140 L112,140"/>
+    <path d="M100,150 L100,165"/>
+    <path d="M135,150 L145,150 L145,135"/>
+  </g>
+
+  <!-- node dots at circuit endpoints -->
+  <g fill="#9FE8FF" filter="url(#glow4)">
+    <circle cx="95" cy="80" r="2.2"/>
+    <circle cx="115" cy="120" r="2.2"/>
+    <circle cx="130" cy="85" r="1.8"/>
+    <circle cx="118" cy="105" r="1.8"/>
+    <circle cx="75" cy="110" r="2"/>
+    <circle cx="108" cy="130" r="2"/>
+    <circle cx="140" cy="115" r="2"/>
+    <circle cx="112" cy="140" r="2"/>
+    <circle cx="100" cy="165" r="2.2"/>
+    <circle cx="145" cy="135" r="2"/>
+  </g>
+</svg>
