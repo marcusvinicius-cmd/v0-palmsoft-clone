@@ -20,7 +20,7 @@ export function Hero() {
       <div className="relative flex min-h-140 items-center pt-28 pb-12 lg:min-h-190 lg:pt-36 lg:pb-14">
         {/* foto de fundo, sangrando por toda a seção */}
         <Image
-          src="/hero-network2.jpeg"
+          src="/hero-network2.jpg"
           alt="Rede global de dados e inteligência artificial conectando informações em tempo real"
           fill
           sizes="100vw"
