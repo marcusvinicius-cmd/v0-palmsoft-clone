@@ -33,7 +33,7 @@ export function AreasOverview() {
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
           <header className="mb-14 max-w-2xl">
-            <h2 className="text-balance text-[#4d9fff] text-2xl font-semibold tracking-tight sm:text-3xl">
+            <h2 className="text-balance text-2xl font-semibold tracking-tight sm:text-3xl">
               Expertise Palmsoft
             </h2>
           </header>
