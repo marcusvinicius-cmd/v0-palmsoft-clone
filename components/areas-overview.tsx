@@ -32,6 +32,13 @@ export function AreasOverview() {
     <section className="bg-[#0a1628] pb-20 pt-4 text-white lg:pb-24">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
+          <header className="mb-14 max-w-2xl">
+            <h2 className="text-balance text-[#4d9fff] text-2xl font-semibold tracking-tight sm:text-3xl">
+              Expertise Palmsoft
+            </h2>
+          </header>
+        </Reveal>
+        <Reveal>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {areas.map((a, i) => (
               <div
