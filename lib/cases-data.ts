@@ -1,10 +1,14 @@
+import type { VerticalSlug } from "@/lib/verticals-data"
+
 export type CaseStudy = {
   slug: string
   client: string
   title: string
   tagline: string
+  vertical: VerticalSlug
   technologies: string[]
   roles: string[]
+  before: string
   challenge: string
   solution: string
   results: string
@@ -19,12 +23,15 @@ export const caseStudies: CaseStudy[] = [
     client: "CTG Brasil",
     title: "CTG Conecta",
     tagline: "Hub de informações comerciais e estruturação de dados.",
+    vertical: "energy",
     technologies: ["Java", "Docker", "React", "Azure"],
     roles: [
       "Criação de Hub de Informações",
       "Estruturação de Dados",
       "Implementação de IA",
     ],
+    before:
+      "As informações de contratos e prospects comerciais estavam espalhadas entre diferentes sistemas e planilhas, exigindo que a equipe comercial dependesse de processos manuais e demorados para consolidar dados de clientes.",
     challenge:
       "Desenvolver uma plataforma para agilizar a comercialização e o gerenciamento de contratos de energia, com foco no relacionamento entre os clientes e prospects, centralizando as informações necessárias para os agentes da área comercial, visando promover maior agilidade à equipe comercial e autogestão dos contratos para os clientes.",
     solution:
@@ -41,8 +48,11 @@ export const caseStudies: CaseStudy[] = [
     client: "AMCRED-SUL",
     title: "AMCRED",
     tagline: "Avaliação de score de crédito.",
+    vertical: "financial-services",
     technologies: ["Java", "Docker", "React", "Azure", "Python"],
     roles: ["Avaliação de Score de Crédito", "Ferramentas de IA"],
+    before:
+      "Os agentes de crédito dos bancos de microcrédito associados avaliavam solicitações de forma manual, sem um critério padronizado e sem apoio de modelos preditivos para embasar a decisão.",
     challenge:
       "Auxiliar a tomada de decisão de agentes de crédito de bancos de microcrédito utilizando ferramentas de IA para a geração de scores.",
     solution:
@@ -59,8 +69,11 @@ export const caseStudies: CaseStudy[] = [
     client: "ACATE",
     title: "Data Tech",
     tagline: "Data analytics e dashboards.",
+    vertical: "enterprise",
     technologies: ["Java", "React", "Azure"],
     roles: ["Data Analytics", "Dashboards"],
+    before:
+      "A ACATE não possuía uma visão consolidada do ecossistema de empresas de tecnologia de Florianópolis, o que dificultava a geração de relatórios de inteligência de mercado para associados e interessados.",
     challenge:
       'Criação de um "censo tecnológico" apresentado em uma plataforma compreensível e com dashboards analíticos.',
     solution:
@@ -77,8 +90,11 @@ export const caseStudies: CaseStudy[] = [
     client: "Deepen",
     title: "Flow de Dados",
     tagline: "Análise e predição em real time.",
+    vertical: "financial-services",
     technologies: ["Java", "Azure"],
     roles: ["Criação de Ferramenta para Big Data", "Detecção de Fraude"],
+    before:
+      "A companhia não tinha uma forma escalável de identificar fraudes em tempo real dentro de um volume de dados que ultrapassa 11 bilhões de registros por mês, dependendo de verificações pontuais e reativas.",
     challenge:
       "Criar uma ferramenta para detecção de fraude em tempo real para big data em aplicativos de celular utilizando o streaming de dados.",
     solution:
@@ -94,12 +110,15 @@ export const caseStudies: CaseStudy[] = [
     client: "CTG Brasil",
     title: "CTG Riscos",
     tagline: "Modelagem preditiva avançada para compliance.",
+    vertical: "energy",
     technologies: ["Java", "Docker", "React", "Azure", "Python"],
     roles: [
       "Cálculo de Riscos Padronizados",
       "Criação de Modelo Preditivo",
       "Algoritmo de Simulação de Cenários",
     ],
+    before:
+      "A área de risco da companhia avaliava cenários de mercado sem uma metodologia padronizada de cálculo de risco nem modelos preditivos, o que tornava a apresentação de cenários ao board pouco intuitiva.",
     challenge:
       "Identificar novas tecnologias visando desenvolver um produto para atender a área de risco da companhia, considerando diferentes cenários de mercado e posicionamentos da empresa, com o auxílio de modelos preditivos e algoritmos de simulação de cenários, apresentando-os de forma intuitiva em uma aplicação web.",
     solution:
@@ -116,8 +135,11 @@ export const caseStudies: CaseStudy[] = [
     client: "GAM",
     title: "GAM",
     tagline: "Score de crédito para farmácias.",
+    vertical: "industry-logistics",
     technologies: ["Java", "Spring Boot"],
     roles: ["Avaliação de Score de Crédito", "API para Integrar Sistemas"],
+    before:
+      "A distribuidora liberava crédito para farmácias parceiras com base em avaliações pontuais, sem um sistema de recomendação integrado aos processos comerciais já usados pela companhia.",
     challenge:
       "Desenvolver uma metodologia de análise e pontuação de crédito para farmácias, disponibilizando os resultados de forma rápida para consulta pela GAM com um sistema de recomendações de crédito.",
     solution:
@@ -134,8 +156,11 @@ export const caseStudies: CaseStudy[] = [
     client: "SEBRAE",
     title: "SEBRAE",
     tagline: "Clusterização de competidores e predição de tendências.",
+    vertical: "enterprise",
     technologies: ["Java", "React", "Python"],
     roles: ["Desenvolvimento de Relatórios", "Análises de Tendências"],
+    before:
+      "A análise de concorrência e de tendências de mercado era feita de forma majoritariamente qualitativa, sem o apoio de Inteligência Artificial para identificar padrões em grandes volumes de dados públicos.",
     challenge:
       "Criar relatórios de inteligência de mercado utilizando novas tecnologias, como Inteligência Artificial, para o auxílio à tomada de decisão e análise de tendências do mercado.",
     solution:
@@ -151,8 +176,11 @@ export const caseStudies: CaseStudy[] = [
     client: "Marisol",
     title: "Marisol",
     tagline: "Mix de produtos e recomendações.",
+    vertical: "industry-logistics",
     technologies: ["Java"],
     roles: ["Algoritmos de Análises de Produtos"],
+    before:
+      "As decisões sobre disposição e mix de produtos eram tomadas com base em experiência da equipe comercial, sem uma análise sistemática das relações entre vendas, características e lucratividade dos produtos.",
     challenge:
       "Identificar possibilidades de melhoria e disposição dos produtos da Marisol, analisando as relações, vendas e características de todos os produtos.",
     solution:
@@ -168,4 +196,8 @@ export const caseStudies: CaseStudy[] = [
 
 export function getCaseStudy(slug: string) {
   return caseStudies.find((c) => c.slug === slug)
+}
+
+export function getCaseStudiesByVertical(vertical: string) {
+  return caseStudies.filter((c) => c.vertical === vertical)
 }

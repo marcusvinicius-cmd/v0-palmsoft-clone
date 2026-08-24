@@ -119,30 +119,46 @@ export default async function CaseDetailPage({
           </div>
         </section>
 
-        {/* desafio e solução */}
+        {/* 1. antes do projeto */}
         <section className="bg-background py-20 lg:py-28">
-          <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2">
-            <div>
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
-                Desafio
-              </p>
-              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                {c.challenge}
-              </p>
+          <div className="mx-auto max-w-3xl px-6">
+            <div className="flex items-start gap-5">
+              <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
+                1
+              </span>
+              <div>
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
+                  Antes do Projeto
+                </p>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                  {c.before}
+                </p>
+              </div>
             </div>
-            <div>
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
-                Solução
-              </p>
-              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                {c.solution}
-              </p>
+          </div>
+        </section>
+
+        {/* 2. o desafio */}
+        <section className="bg-card py-20 lg:py-28">
+          <div className="mx-auto max-w-3xl px-6">
+            <div className="flex items-start gap-5">
+              <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
+                2
+              </span>
+              <div>
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
+                  O Desafio
+                </p>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                  {c.challenge}
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
         {/* imagem do projeto */}
-        <section className="bg-background pb-20 lg:pb-28">
+        <section className="bg-background py-20 lg:py-28">
           <div className="mx-auto max-w-5xl px-6">
             <Image
               src={c.image}
@@ -154,17 +170,57 @@ export default async function CaseDetailPage({
           </div>
         </section>
 
-        {/* resultados */}
+        {/* 3. tecnologias & métodos */}
+        <section className="bg-card pb-20 lg:pb-28">
+          <div className="mx-auto max-w-3xl px-6">
+            <div className="flex items-start gap-5">
+              <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
+                3
+              </span>
+              <div>
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
+                  Tecnologias &amp; Métodos
+                </p>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                  {c.solution}
+                </p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {c.technologies.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-full border border-border bg-background px-4 py-1.5 text-sm text-foreground"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 4. impacto */}
         <section className="bg-[#070f1c] py-20 text-white lg:py-28">
           <div className="mx-auto max-w-3xl px-6 text-center">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#4d9fff]">
-              Resultados
+            <span className="mx-auto flex size-9 items-center justify-center rounded-full bg-[#1d6fff]/15 text-sm font-semibold text-[#4d9fff]">
+              4
+            </span>
+            <p className="mt-4 text-sm font-medium uppercase tracking-[0.2em] text-[#4d9fff]">
+              Impacto
             </p>
             <p className="mt-6 text-pretty text-base leading-relaxed text-white/80">
               {c.results}
             </p>
+          </div>
+        </section>
 
-            <div className="mt-12 flex flex-wrap justify-center gap-4">
+        {/* 5. chamada para ação */}
+        <section className="bg-linear-to-b from-[#070f1c] to-[#0a1628] py-20 text-white lg:py-28">
+          <div className="mx-auto max-w-3xl px-6 text-center">
+            <h2 className="text-balance text-2xl font-semibold tracking-tight sm:text-3xl">
+              Quer um resultado parecido no seu negócio?
+            </h2>
+            <div className="mt-9 flex flex-wrap justify-center gap-4">
               <Link
                 href="/cases"
                 className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-2.5 text-sm font-medium text-white transition-colors hover:border-white/50"

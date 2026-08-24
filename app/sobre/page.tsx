@@ -170,8 +170,24 @@ export default function SobrePage() {
 
         {/* equipe */}
         <section className="relative overflow-hidden bg-linear-to-b from-[#0a1628] to-[#102544] py-20 text-white lg:py-28">
-          <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
+          <div className="mx-auto max-w-7xl px-6">
             <Reveal>
+              <header className="mx-auto mb-12 max-w-2xl text-center">
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#4d9fff]">
+                  Nossa Equipe
+                </p>
+                <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+                  Gente que já resolveu problemas difíceis antes
+                </h2>
+              </header>
+            </Reveal>
+
+            {/*
+              TODO: substituir por foto real e atualizada da equipe.
+              Basta sobrescrever public/img-time.png com o novo arquivo (mesmo nome)
+              que a troca é refletida automaticamente aqui e no restante do site.
+            */}
+            <Reveal delay={80}>
               <Image
                 src="/img-time.png"
                 alt="Equipe PalmSoft reunida no escritório"
@@ -180,26 +196,55 @@ export default function SobrePage() {
                 className="w-full rounded-2xl border border-white/10 shadow-2xl"
               />
             </Reveal>
-            <Reveal delay={120}>
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#4d9fff]">
-                Nossa equipe
+
+            <Reveal delay={160} className="mx-auto mt-10 max-w-3xl space-y-5 text-center">
+              <p className="text-sm leading-relaxed text-white/70">
+                Fundada em 2002, a Palmsoft Tecnologia possui uma trajetória
+                consolidada no desenvolvimento de soluções digitais sob
+                demanda. Ao longo dos anos, participamos de projetos em
+                parceria com grandes empresas, incluindo iniciativas como o
+                MSN Mobile, além de desenvolver aplicações móveis, sistemas
+                web, soluções em nuvem e uma tecnologia de criptografia com
+                registro no INPI.
               </p>
-              <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-                Gente que já resolveu problemas difíceis antes
-              </h2>
-              <div className="mt-6 space-y-4 text-sm leading-relaxed text-white/70">
-                <p>
-                  Engenheiros e desenvolvedores seniores, premiados e
-                  reconhecidos por diversas entidades do setor, com experiência
-                  que vai de aplicativos móveis e jogos a plataformas de Big
-                  Data, dashboards e sistemas financeiros de missão crítica.
-                </p>
-                <p>
-                  É essa combinação de senioridade, curiosidade técnica e
-                  histórico comprovado que garante que cada projeto seja
-                  conduzido com excelência, do planejamento à entrega.
-                </p>
-              </div>
+              <p className="text-sm leading-relaxed text-white/70">
+                Em 2016, a experiência acumulada no processamento e na
+                visualização de grandes volumes de dados criamos a Deepen,
+                empresa do grupo e nosso braço especializado em Inteligência
+                Artificial e Big Data. Desde então, a Palmsoft ampliou sua
+                atuação em aprendizado de máquina, modelagem preditiva, visão
+                computacional, georreferenciamento, processamento distribuído
+                e análise avançada de dados.
+              </p>
+              <p className="text-sm leading-relaxed text-white/70">
+                Atualmente, desenvolvemos soluções com LLMs, IA generativa,
+                automação inteligente, análise documental, detecção de
+                anomalias e sistemas de apoio à tomada de decisão. Trabalhamos
+                bastante também com plataformas financeiras, análise de
+                crédito, prevenção de fraudes em tempo real, gestão de riscos
+                e aplicações para os setores de energia, fintechs, logística,
+                varejo e monitoramento operacional.
+              </p>
+              <p className="text-sm leading-relaxed text-white/70">
+                Conduzimos vários projetos personalizados para grandes
+                empresas, desenvolvendo produtos próprios e também
+                participamos em criações conjuntas de diversas soluções
+                tecnológicas. Entre elas estão o Aegis Access Control, voltado
+                ao controle de acesso com inteligência artificial, e o Labor
+                Analytics, plataforma de análise e gestão operacional
+                reconhecida pelo Prêmio BBM de Inovação, além de participações
+                em vários outros produtos desenvolvidos em conjunto com
+                parceiros e clientes.
+              </p>
+              <p className="text-sm leading-relaxed text-white/70">
+                Engenheiros e desenvolvedores seniores, premiados e
+                reconhecidos por diversas entidades do setor, com experiência
+                que vai de aplicativos móveis e jogos a plataformas de Big
+                Data, dashboards e sistemas financeiros de missão crítica. É
+                essa combinação de senioridade, curiosidade técnica e
+                histórico comprovado que garante que cada projeto seja
+                conduzido com excelência, do planejamento à entrega.
+              </p>
             </Reveal>
           </div>
         </section>
