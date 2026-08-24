@@ -20,8 +20,8 @@ export default function Page() {
         <Problems />
         <VerticalCards />
         <WhyPalmsoft />
-        <Testimonials />
         <HowWeWork />
+        <Testimonials />
         <Strategy />
         <Contact />
       </main>

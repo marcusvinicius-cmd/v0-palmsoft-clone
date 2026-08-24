@@ -45,7 +45,7 @@ export function Problems() {
               Problemas que Ajudamos a Resolver
             </p>
             <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-              Alguma dessas frases parece familiar?
+              Sua empresa enfrenta algum desses desafios?
             </h2>
             <p className="mt-4 text-pretty text-base leading-relaxed text-muted-foreground">
               Transformamos processos manuais com tecnologia, eliminando retrabalho, aumentando a produtividade e impulsionando o lucro do seu negócio.

@@ -5,10 +5,10 @@ import { PartnersMarquee } from "@/components/partners-marquee"
 import { PolygonBackground } from "@/components/polygon-background"
 
 const heroAreas = [
-  { icon: Code2, top: "Software", bottom: "sob medida" },
   { icon: Database, top: "Ciência", bottom: "de Dados" },
   { icon: Brain, top: "Inteligência", bottom: "Artificial" },
   { icon: Share2, top: "Integrações", bottom: "e Automação" },
+  { icon: Code2, top: "Software", bottom: "sob medida" },
 ]
 
 export function Hero() {

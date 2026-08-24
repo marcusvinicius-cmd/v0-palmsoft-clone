@@ -24,8 +24,7 @@ export function VerticalCards() {
               Cases por setor
             </h2>
             <p className="mt-4 text-pretty text-base leading-relaxed text-white/70">
-              Escolha o setor mais próximo do seu negócio e conheça os
-              projetos que já entregamos por lá.
+              Desafios diferentes. Tecnologia aplicada a cada realidade.
             </p>
           </header>
         </Reveal>
