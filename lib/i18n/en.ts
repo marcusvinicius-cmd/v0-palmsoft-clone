@@ -241,4 +241,124 @@ export const en: Dictionary = {
       },
     },
   },
+
+  sobre: {
+    meta: {
+      title: "About | PalmSoft Tecnologia",
+      description: "Get to know PalmSoft's story: more than two decades building technology, from award-winning mobile games to Big Data and Artificial Intelligence platforms.",
+    },
+    hero: {
+      eyebrow: "About PalmSoft",
+      title: "Over two decades turning ideas into technology",
+      body: "From award-winning mobile games to Big Data and Artificial Intelligence platforms: get to know the journey and the team building PalmSoft since 2002.",
+      milestoneCards: {
+        founding: { year: "2002", title: "PalmSoft is born" },
+        expansion: { year: "2011", title: "Expansion" },
+        newOffice: { year: "2014", title: "New office" },
+        aiService: { year: "2020", title: "AI as a Service" },
+      },
+    },
+    timeline: {
+      eyebrow: "Our story",
+      title: "A journey of innovation",
+      milestones: {
+        beginning: {
+          period: "2002",
+          title: "The beginning",
+          body: "PalmSoft is born developing technology solutions focused on Mobile, Games, Cloud, and web-based systems, creating commercial apps for PDAs and mobile games.",
+        },
+        gamesEra: {
+          period: "2005–2009",
+          title: "The games era",
+          body: "We created 26 games and proprietary technologies, plus the Arena 41 portal, which reached over 100,000 subscribers. Our apps totaled more than 1.6 million downloads and international awards.",
+        },
+        enterprisePartnerships: {
+          period: "2010+",
+          title: "Enterprise apps and partnerships",
+          body: "We started developing enterprise apps and games for social networks as well, built an encryption application registered with Brazil's INPI, and took part in projects with major companies, notably MSN Mobile.",
+        },
+        bigData: {
+          period: "2016",
+          title: "Big Data and Deepen",
+          body: "G4Decision, a platform for visualizing large volumes of data with 100% in-house technology, becomes a startup — today known as Deepen, the group's company focused on Artificial Intelligence and Big Data.",
+        },
+        today: {
+          period: "Today",
+          title: "Continuous innovation",
+          body: "We keep building on-demand solutions, our own products like Aegis Access Control, and AI applications, with an award-winning technical team recognized by several industry organizations.",
+        },
+      },
+    },
+    team: {
+      eyebrow: "Our Team",
+      title: "People who've already solved hard problems before",
+      imageAlt: "PalmSoft team gathered at the office",
+      paragraphs: [
+        "Founded in 2002, Palmsoft Tecnologia has a solid track record building on-demand digital solutions. Over the years, we've taken part in projects with major companies, including initiatives like MSN Mobile, as well as building mobile applications, web systems, cloud solutions, and an encryption technology registered with Brazil's INPI.",
+        "In 2016, the experience we built up processing and visualizing large volumes of data led us to create Deepen, the group's company and our arm specialized in Artificial Intelligence and Big Data. Since then, Palmsoft has expanded into machine learning, predictive modeling, computer vision, geolocation, distributed processing, and advanced data analysis.",
+        "Today, we build solutions with LLMs, generative AI, intelligent automation, document analysis, anomaly detection, and decision-support systems. We also work extensively with financial platforms, credit analysis, real-time fraud prevention, risk management, and applications for the energy, fintech, logistics, retail, and operational monitoring sectors.",
+        "We've run numerous custom projects for major companies, building our own products and also co-creating several technology solutions. These include Aegis Access Control, an AI-powered access control system, and Labor Analytics, an operational analysis and management platform recognized by the BBM Innovation Award, along with contributions to several other products built together with partners and clients.",
+        "Senior engineers and developers, award-winning and recognized by several industry organizations, with experience ranging from mobile apps and games to Big Data platforms, dashboards, and mission-critical financial systems. It's this combination of seniority, technical curiosity, and proven track record that ensures every project is carried out with excellence, from planning to delivery.",
+      ],
+    },
+    cta: {
+      title: "Let's write the next chapter together?",
+      body: "Tell us about your business challenge and discover how over 20 years of experience can accelerate your project.",
+      button: "Get in touch",
+    },
+  },
+
+  cases: {
+    meta: {
+      title: "Case Studies | PalmSoft Tecnologia",
+      description: "Explore PalmSoft and Deepen's case studies: data platforms, credit scoring, fraud detection, dashboards, and predictive modeling for major companies.",
+    },
+    hero: {
+      eyebrow: "Our Case Studies",
+      title: "Stories built with cutting-edge technology",
+      body: "See future scenarios in a competitive market and get more predictable results. Explore some of the projects we've delivered for our clients and partners.",
+      cards: {
+        onDemand: {
+          label: "On-Demand",
+          status: "in production",
+          title: "New system module",
+          preview: "Prototype under review",
+          body: "Custom dashboard, integrated with your workflow.",
+          edit: "Edit",
+          export: "Export",
+          cta: "Request a quote",
+        },
+        access: {
+          label: "Access Control",
+          statusLabel: "Status:",
+          statusValue: "Secure",
+        },
+        ai: {
+          label: "AI as a Service",
+        },
+      },
+    },
+    seeCase: "See case study",
+    cta: {
+      title: "Want to build the next case study with us?",
+      body: "Tell us about your business challenge and discover how we can turn it into results.",
+      button: "Get in touch",
+    },
+    detail: {
+      backToAll: "All case studies",
+      technologies: "Technologies",
+      ourRole: "Our role",
+      steps: {
+        before: "Before the Project",
+        challenge: "The Challenge",
+        solution: "Technologies & Methods",
+        impact: "Impact",
+      },
+      cta: {
+        title: "Want a similar result for your business?",
+        back: "Back to case studies",
+        contact: "Get in touch",
+      },
+    },
+  },
 }

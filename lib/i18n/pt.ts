@@ -244,6 +244,126 @@ export const pt = {
       },
     },
   },
+
+  sobre: {
+    meta: {
+      title: "Sobre | PalmSoft Tecnologia",
+      description: "Conheça a história da PalmSoft: mais de duas décadas desenvolvendo tecnologia, de jogos mobile premiados a plataformas de Big Data e Inteligência Artificial.",
+    },
+    hero: {
+      eyebrow: "Sobre a PalmSoft",
+      title: "Mais de duas décadas transformando ideias em tecnologia",
+      body: "De jogos mobile premiados a plataformas de Big Data e Inteligência Artificial: conheça a trajetória e a equipe que constroem a PalmSoft desde 2002.",
+      milestoneCards: {
+        founding: { year: "2002", title: "Nasce a PalmSoft" },
+        expansion: { year: "2011", title: "Expansão" },
+        newOffice: { year: "2014", title: "Nova Sede" },
+        aiService: { year: "2020", title: "I.A. as a Service" },
+      },
+    },
+    timeline: {
+      eyebrow: "Nossa história",
+      title: "Uma trajetória de inovação",
+      milestones: {
+        beginning: {
+          period: "2002",
+          title: "O começo",
+          body: "A PalmSoft nasce desenvolvendo soluções em tecnologia com foco em Mobile, Games, Cloud e sistemas baseados na web, criando apps comerciais para PDAs e jogos para celular.",
+        },
+        gamesEra: {
+          period: "2005–2009",
+          title: "A era dos jogos",
+          body: "Criamos 26 jogos e tecnologias próprias, além do portal Arena 41, que alcançou mais de 100 mil assinantes. Nossos apps somaram mais de 1,6 milhão de downloads e premiações internacionais.",
+        },
+        enterprisePartnerships: {
+          period: "2010+",
+          title: "Apps empresariais e parcerias",
+          body: "Iniciamos o desenvolvimento de apps e games empresariais também para redes sociais, desenvolvemos um aplicativo de criptografia com registro no INPI e participamos de projetos em parceria com grandes empresas, com destaque para o MSN Mobile.",
+        },
+        bigData: {
+          period: "2016",
+          title: "Big Data e a Deepen",
+          body: "O G4Decision, plataforma de visualização de grandes volumes de dados em que 100% das tecnologias foram desenvolvidas internamente, torna-se uma startup — hoje a Deepen, empresa do grupo focada em Inteligência Artificial e Big Data.",
+        },
+        today: {
+          period: "Hoje",
+          title: "Inovação contínua",
+          body: "Seguimos desenvolvendo soluções sob demanda, produtos próprios como o Aegis Access Control e aplicações de IA, com uma equipe técnica premiada e reconhecida por diversas entidades do setor.",
+        },
+      },
+    },
+    team: {
+      eyebrow: "Nossa Equipe",
+      title: "Gente que já resolveu problemas difíceis antes",
+      imageAlt: "Equipe PalmSoft reunida no escritório",
+      paragraphs: [
+        "Fundada em 2002, a Palmsoft Tecnologia possui uma trajetória consolidada no desenvolvimento de soluções digitais sob demanda. Ao longo dos anos, participamos de projetos em parceria com grandes empresas, incluindo iniciativas como o MSN Mobile, além de desenvolver aplicações móveis, sistemas web, soluções em nuvem e uma tecnologia de criptografia com registro no INPI.",
+        "Em 2016, a experiência acumulada no processamento e na visualização de grandes volumes de dados criamos a Deepen, empresa do grupo e nosso braço especializado em Inteligência Artificial e Big Data. Desde então, a Palmsoft ampliou sua atuação em aprendizado de máquina, modelagem preditiva, visão computacional, georreferenciamento, processamento distribuído e análise avançada de dados.",
+        "Atualmente, desenvolvemos soluções com LLMs, IA generativa, automação inteligente, análise documental, detecção de anomalias e sistemas de apoio à tomada de decisão. Trabalhamos bastante também com plataformas financeiras, análise de crédito, prevenção de fraudes em tempo real, gestão de riscos e aplicações para os setores de energia, fintechs, logística, varejo e monitoramento operacional.",
+        "Conduzimos vários projetos personalizados para grandes empresas, desenvolvendo produtos próprios e também participamos em criações conjuntas de diversas soluções tecnológicas. Entre elas estão o Aegis Access Control, voltado ao controle de acesso com inteligência artificial, e o Labor Analytics, plataforma de análise e gestão operacional reconhecida pelo Prêmio BBM de Inovação, além de participações em vários outros produtos desenvolvidos em conjunto com parceiros e clientes.",
+        "Engenheiros e desenvolvedores seniores, premiados e reconhecidos por diversas entidades do setor, com experiência que vai de aplicativos móveis e jogos a plataformas de Big Data, dashboards e sistemas financeiros de missão crítica. É essa combinação de senioridade, curiosidade técnica e histórico comprovado que garante que cada projeto seja conduzido com excelência, do planejamento à entrega.",
+      ],
+    },
+    cta: {
+      title: "Vamos escrever o próximo capítulo juntos?",
+      body: "Conte para a gente o desafio do seu negócio e descubra como mais de 20 anos de experiência podem acelerar o seu projeto.",
+      button: "Entre em contato",
+    },
+  },
+
+  cases: {
+    meta: {
+      title: "Cases | PalmSoft Tecnologia",
+      description: "Conheça os cases da PalmSoft e da Deepen: plataformas de dados, score de crédito, detecção de fraude, dashboards e modelagem preditiva para grandes empresas.",
+    },
+    hero: {
+      eyebrow: "Nossos Cases",
+      title: "Histórias construídas com tecnologia de ponta",
+      body: "Visualize cenários futuros no meio competitivo e tenha mais previsibilidade de resultados. Conheça alguns dos projetos que entregamos para nossos clientes e parceiros.",
+      cards: {
+        onDemand: {
+          label: "On-Demand",
+          status: "em produção",
+          title: "Novo módulo do sistema",
+          preview: "Protótipo em revisão",
+          body: "Painel personalizado, integrado ao seu fluxo de trabalho.",
+          edit: "Editar",
+          export: "Exportar",
+          cta: "Solicitar orçamento",
+        },
+        access: {
+          label: "Controle de Acesso",
+          statusLabel: "Status:",
+          statusValue: "Seguro",
+        },
+        ai: {
+          label: "I.A. as a Service",
+        },
+      },
+    },
+    seeCase: "Ver estudo de caso",
+    cta: {
+      title: "Quer construir o próximo case com a gente?",
+      body: "Conte para a gente o desafio do seu negócio e descubra como podemos transformá-lo em resultados.",
+      button: "Entre em contato",
+    },
+    detail: {
+      backToAll: "Todos os cases",
+      technologies: "Tecnologias",
+      ourRole: "Nossa função",
+      steps: {
+        before: "Antes do Projeto",
+        challenge: "O Desafio",
+        solution: "Tecnologias & Métodos",
+        impact: "Impacto",
+      },
+      cta: {
+        title: "Quer um resultado parecido no seu negócio?",
+        back: "Voltar para os cases",
+        contact: "Entre em contato",
+      },
+    },
+  },
 }
 
 export type Dictionary = typeof pt
