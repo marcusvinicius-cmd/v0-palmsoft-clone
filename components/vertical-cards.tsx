@@ -4,7 +4,7 @@ import { ArrowRightIcon, Building2Icon, LandmarkIcon, TruckIcon, ZapIcon } from 
 import Link from "next/link"
 import { Reveal } from "@/components/reveal"
 import { SpotlightCard } from "@/components/spotlight-card"
-import { verticals } from "@/lib/verticals-data"
+import { verticals, localizeVertical } from "@/lib/verticals-data"
 import { useLanguage } from "@/lib/i18n/context"
 
 const icons = {
@@ -15,7 +15,7 @@ const icons = {
 } as const
 
 export function VerticalCards() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
 
   return (
     <section id="areas" className="bg-[#070f1c] py-20 text-white lg:py-28">
@@ -35,7 +35,8 @@ export function VerticalCards() {
         </Reveal>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {verticals.map((v, i) => {
+          {verticals.map((raw, i) => {
+            const v = localizeVertical(raw, lang)
             const Icon = icons[v.slug]
             return (
               <Reveal key={v.slug} delay={(i % 4) * 100}>

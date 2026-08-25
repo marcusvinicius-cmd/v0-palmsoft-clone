@@ -361,4 +361,16 @@ export const en: Dictionary = {
       },
     },
   },
+
+  areas: {
+    eyebrow: "Areas of Expertise",
+    emptyCases: "New case studies for this sector coming soon.",
+    seeAllCases: "See all case studies",
+    cta: {
+      titlePrefix: "Want to build the next",
+      titleSuffix: "case study with us?",
+      body: "Tell us about your business challenge and discover how we can turn it into results.",
+      button: "Get in touch",
+    },
+  },
 }

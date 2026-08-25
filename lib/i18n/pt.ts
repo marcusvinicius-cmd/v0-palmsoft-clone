@@ -364,6 +364,18 @@ export const pt = {
       },
     },
   },
+
+  areas: {
+    eyebrow: "Áreas de Atuação",
+    emptyCases: "Em breve, novos cases deste setor por aqui.",
+    seeAllCases: "Ver todos os cases",
+    cta: {
+      titlePrefix: "Quer construir o próximo case de",
+      titleSuffix: "com a gente?",
+      body: "Conte para a gente o desafio do seu negócio e descubra como podemos transformá-lo em resultados.",
+      button: "Entre em contato",
+    },
+  },
 }
 
 export type Dictionary = typeof pt
