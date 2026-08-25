@@ -124,8 +124,6 @@ export function SiteHeader() {
             )}
           </nav>
 
-          <LanguageToggle />
-
           <a
             href={WHATSAPP_URL}
             target="_blank"
@@ -136,8 +134,11 @@ export function SiteHeader() {
           </a>
         </div>
 
-        {/* espaçador invisível: equilibra o peso do logo pra centralizar o bloco acima */}
-        <div className="hidden flex-1 lg:block" aria-hidden="true" />
+        {/* mesmo peso (flex-1) do bloco da logo, pra centralizar o menu — e aqui, do
+            lado oposto da logo, mora o botão de idioma, grudado na borda direita */}
+        <div className="hidden flex-1 items-center justify-end lg:flex">
+          <LanguageToggle />
+        </div>
 
         <div className="flex items-center gap-3 lg:hidden">
           <LanguageToggle />
