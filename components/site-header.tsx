@@ -72,7 +72,7 @@ export function SiteHeader() {
         <div className="flex flex-1 items-center">
           <a
             href="/#home"
-            aria-label="PalmSoft - Início"
+            aria-label={t.header.logoAriaLabel}
             tabIndex={logoVisible ? 0 : -1}
             className={cn(
               "transition-opacity duration-500 ease-out",
@@ -84,7 +84,7 @@ export function SiteHeader() {
         </div>
 
         <div className="hidden items-center gap-8 lg:flex">
-          <nav className="flex items-center gap-7" aria-label="Navegação principal">
+          <nav className="flex items-center gap-7" aria-label={t.header.navAriaLabel}>
             {navItems.map((item) =>
               item.children ? (
                 <div key={item.label} className="group relative">
@@ -143,7 +143,7 @@ export function SiteHeader() {
           <LanguageToggle />
           <button
             onClick={() => setOpen((v) => !v)}
-            aria-label={open ? "Fechar menu" : "Abrir menu"}
+            aria-label={open ? t.header.closeMenu : t.header.openMenu}
             aria-expanded={open}
           >
             {open ? <XIcon className="size-6" /> : <MenuIcon className="size-6" />}
@@ -154,7 +154,7 @@ export function SiteHeader() {
       {open && (
         <nav
           className="border-t border-white/10 bg-[#0a1628] px-6 py-4 lg:hidden"
-          aria-label="Navegação móvel"
+          aria-label={t.header.mobileNavAriaLabel}
         >
           <ul className="flex flex-col gap-1">
             {navItems.map((item) => (

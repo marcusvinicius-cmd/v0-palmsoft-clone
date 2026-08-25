@@ -18,6 +18,11 @@ export const pt = {
       aegis: "Aegis",
     },
     cta: "Fale com Especialista",
+    logoAriaLabel: "PalmSoft - Início",
+    navAriaLabel: "Navegação principal",
+    mobileNavAriaLabel: "Navegação móvel",
+    openMenu: "Abrir menu",
+    closeMenu: "Fechar menu",
   },
 
   footer: {
@@ -624,6 +629,120 @@ export const pt = {
           ],
         },
       },
+    },
+  },
+
+  aegis: {
+    meta: {
+      title: "Aegis Access Control | PalmSoft Tecnologia",
+      description: "Toda a gestão do empreendimento de forma fácil e rápida. O Aegis Access Control torna simples e seguro o processo de gestão do acesso em empreendimentos de aluguel de temporada.",
+    },
+    hero: {
+      eyebrow: "Aegis Access Control",
+      title: "Toda a gestão do empreendimento de forma fácil e rápida",
+      paragraphs: [
+        "Com o Aegis Access Control, todo o processo de gestão do acesso ao empreendimento de aluguel de temporada é simples e seguro.",
+        "Temos compatibilidade com a maioria dos equipamentos de mercado, e o acesso é via web, de qualquer lugar do Brasil. A solução pode ser usada diretamente pelo proprietário, ou gestor, e ainda pode ser operada pela equipe de portaria virtual.",
+      ],
+      contactCta: "Entre em contato",
+      featuresCta: "Ver funcionalidades",
+      logoAlt: "Logo do Aegis Access Control",
+    },
+    pains: {
+      title: "Isto é familiar para você ou seu cliente?",
+      illustrationAlt: "Ilustração de uma pessoa organizando cadastros de acesso",
+      items: {
+        governance: {
+          title: "Transtornos e sobrecarga da governança",
+          body: "O processo de gestão de reservas do Airbnb e outras plataformas de curta duração é muito intenso, acarretando transtornos ao condomínio e sobrecarga das equipes de vigilância.",
+        },
+        audit: {
+          title: "Inconsistências de auditoria",
+          body: 'Não há um controle de acesso onde podemos auditar quem acessou o empreendimento — ou quem foi que estacionou na vaga errada — e às vezes as controladoras nas áreas comuns ficam "cheias", impedindo o cadastro de novas faciais.',
+        },
+        manual: {
+          title: "Dependência da portaria e processos manuais",
+          body: "Se o hóspede chega fora do horário comercial, muitas vezes a portaria não consegue garantir a entrada.",
+        },
+      },
+    },
+    institutional: {
+      title: "Inovação digital para construir ou transformar negócios",
+      body: "Somos uma empresa de software focada no desenvolvimento de soluções que incorporam apps de alta tecnologia, impulsionando empresas e negócios com inovação digital, mobilidade, engajamento e nossa expertise em desenvolvimentos multiplataforma, Inteligência Artificial e Big Data.",
+    },
+    features: {
+      eyebrow: "Funcionalidades",
+      title: "Tudo o que o Aegis faz pelo seu empreendimento",
+      groups: {
+        g1: {
+          imageAlt: "Telas do Aegis com a gestão de reservas e o cadastro facial de hóspedes",
+          f1: {
+            title: "Gestão dos imóveis",
+            paragraphs: [
+              "O sistema permite controle individualizado de cada imóvel no empreendimento, possibilitando ao proprietário controlar diretamente o seu loft ou apartamento — e ainda podendo dar um acesso especial para inquilino ou gestor.",
+            ],
+          },
+          f2: {
+            title: "Gestão do acesso a hóspedes",
+            paragraphs: [
+              "Gerenciamento inteligente das reservas. Depois de cadastrados os dados do hóspede (nome, período de estadia, dados do veículo), o sistema prepara um fluxo de recepção totalmente parametrizável, com mensagens de confirmação da data de chegada, cadastro de facial e processo de check-out.",
+              "O processo foi feito para a melhor experiência do hóspede, mas garantindo toda a segurança de que ninguém vai acessar o empreendimento antes ou depois do período definido.",
+            ],
+          },
+        },
+        g2: {
+          imageAlt: "Telas do Aegis com o cadastro de prestadores de serviço e a locação de espaços",
+          f1: {
+            title: "Controle de acessos especiais",
+            paragraphs: [
+              "Além dos hóspedes, o proprietário ou administrador do sistema pode realizar a liberação de acessos recorrentes, como inquilinos, prestadores de serviços e visitantes.",
+              'O sistema permite inclusive agenda de forma recorrente para times de limpeza. O modo "repetir reserva" aproveita dados de solicitações anteriores para facilitar ainda mais o uso.',
+            ],
+          },
+          f2: {
+            title: "Gestão de acesso para áreas especiais",
+            paragraphs: [
+              "Esta funcionalidade é especialmente pensada para proprietários e inquilinos. Contudo, com o aumento de ofertas de áreas especiais, como coworking, este módulo pode ser usado para permitir reservas e até realizar cobrança.",
+            ],
+          },
+        },
+        g3: {
+          imageAlt: "Telas do Aegis com a gestão de unidades e o status de cada imóvel",
+          f1: {
+            title: "Identificação veicular e controle das garagens",
+            paragraphs: [
+              "Temos um módulo complementar, integrado ao sistema de câmeras com reconhecimento de caracteres, que pode ser usado para facilitar a entrada e saída de hóspedes, assim como a identificação de veículos no local.",
+            ],
+          },
+          f2: {
+            title: "Módulo gestor para múltiplos imóveis",
+            paragraphs: [
+              "Muitos proprietários preferem terceirizar o trabalho de gestão do imóvel: neste módulo é possível alocar todos ou uma parte dos seus imóveis a um gestor. Caso o gestor atenda a mais de um cliente, ele precisará de apenas um login para gerir todos eles.",
+            ],
+          },
+        },
+        g4: {
+          imageAlt: "Telas do Aegis com o monitoramento dos equipamentos do sistema",
+          f1: {
+            title: "Monitoramento do status dos equipamentos",
+            paragraphs: [
+              "Não adianta ter o melhor sistema do mundo se a fechadura está offline. Este módulo permite saber o status de cada equipamento no sistema e enviar avisos à zeladoria ou ao time local.",
+            ],
+          },
+          f2: {
+            title: "Prestadores de serviços e reservas recorrentes",
+            paragraphs: [
+              "Cadastre os prestadores de serviços autorizados a acessar o empreendimento (encanadores, diaristas, entregadores) e o período em que eles podem acessar.",
+              "Isto é especialmente importante para agendar manutenções ou limpezas em momentos em que o imóvel esteja vago.",
+            ],
+          },
+        },
+      },
+    },
+    cta: {
+      title: "Vamos juntos fazer história",
+      body: "Ficamos felizes em saber que você possui interesse em entrar em contato conosco. Conte para a gente o desafio do seu empreendimento.",
+      button: "Entre em contato",
     },
   },
 }

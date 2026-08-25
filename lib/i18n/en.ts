@@ -15,6 +15,11 @@ export const en: Dictionary = {
       aegis: "Aegis",
     },
     cta: "Talk to a specialist",
+    logoAriaLabel: "PalmSoft - Home",
+    navAriaLabel: "Main navigation",
+    mobileNavAriaLabel: "Mobile navigation",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
   },
 
   footer: {
@@ -621,6 +626,120 @@ export const en: Dictionary = {
           ],
         },
       },
+    },
+  },
+
+  aegis: {
+    meta: {
+      title: "Aegis Access Control | PalmSoft Tecnologia",
+      description: "Full property management, made easy and fast. Aegis Access Control makes access management for short-term rental properties simple and secure.",
+    },
+    hero: {
+      eyebrow: "Aegis Access Control",
+      title: "Full property management, made easy and fast",
+      paragraphs: [
+        "With Aegis Access Control, the whole process of managing access to a short-term rental property is simple and secure.",
+        "We're compatible with most hardware on the market, and access works over the web, from anywhere in Brazil. The solution can be used directly by the owner or manager, and can also be operated by a virtual front-desk team.",
+      ],
+      contactCta: "Get in touch",
+      featuresCta: "See features",
+      logoAlt: "Aegis Access Control logo",
+    },
+    pains: {
+      title: "Does this sound familiar to you or your client?",
+      illustrationAlt: "Illustration of a person organizing access records",
+      items: {
+        governance: {
+          title: "Hassle and overload for building management",
+          body: "Managing bookings from Airbnb and other short-term rental platforms is intense, causing hassle for the building and overloading security teams.",
+        },
+        audit: {
+          title: "Audit inconsistencies",
+          body: 'There\'s no access control to audit who entered the property — or who parked in the wrong spot — and sometimes the readers in common areas get "full," blocking new facial registrations.',
+        },
+        manual: {
+          title: "Reliance on the front desk and manual processes",
+          body: "If a guest arrives outside business hours, the front desk often can't guarantee entry.",
+        },
+      },
+    },
+    institutional: {
+      title: "Digital innovation to build or transform businesses",
+      body: "We're a software company focused on building solutions that incorporate high-tech apps, driving businesses forward with digital innovation, mobility, engagement, and our expertise in cross-platform development, Artificial Intelligence, and Big Data.",
+    },
+    features: {
+      eyebrow: "Features",
+      title: "Everything Aegis does for your property",
+      groups: {
+        g1: {
+          imageAlt: "Aegis screens showing booking management and guest facial registration",
+          f1: {
+            title: "Property management",
+            paragraphs: [
+              "The system provides individualized control over each property in the development, letting the owner directly manage their loft or apartment — and even grant special access to a tenant or manager.",
+            ],
+          },
+          f2: {
+            title: "Guest access management",
+            paragraphs: [
+              "Smart booking management. Once guest data is registered (name, stay period, vehicle details), the system sets up a fully customizable check-in flow, with arrival-date confirmation messages, facial registration, and checkout.",
+              "The process was built for the best guest experience, while guaranteeing that no one can access the property before or after the set period.",
+            ],
+          },
+        },
+        g2: {
+          imageAlt: "Aegis screens showing service-provider registration and space rentals",
+          f1: {
+            title: "Special access control",
+            paragraphs: [
+              "Beyond guests, the owner or system administrator can grant recurring access, such as for tenants, service providers, and visitors.",
+              'The system even supports recurring schedules for cleaning crews. The "repeat booking" mode reuses data from previous requests to make things even easier.',
+            ],
+          },
+          f2: {
+            title: "Access management for special areas",
+            paragraphs: [
+              "This feature was designed with owners and tenants in mind. But with the rise of special-area offerings, like coworking spaces, this module can also be used to handle bookings and even charge for them.",
+            ],
+          },
+        },
+        g3: {
+          imageAlt: "Aegis screens showing unit management and each property's status",
+          f1: {
+            title: "Vehicle identification and garage control",
+            paragraphs: [
+              "We have an add-on module, integrated with a license-plate-recognition camera system, that can make it easier for guests to enter and exit, as well as identify vehicles on-site.",
+            ],
+          },
+          f2: {
+            title: "Manager module for multiple properties",
+            paragraphs: [
+              "Many owners prefer to outsource property management: this module lets you assign all or part of your properties to a manager. If the manager handles more than one client, they'll only need a single login to manage them all.",
+            ],
+          },
+        },
+        g4: {
+          imageAlt: "Aegis screens showing monitoring of the system's equipment",
+          f1: {
+            title: "Equipment status monitoring",
+            paragraphs: [
+              "There's no point having the best system in the world if the lock is offline. This module lets you check the status of every piece of equipment in the system and send alerts to the maintenance staff or local team.",
+            ],
+          },
+          f2: {
+            title: "Service providers and recurring bookings",
+            paragraphs: [
+              "Register the service providers authorized to access the property (plumbers, cleaners, delivery drivers) and the period during which they can access it.",
+              "This is especially useful for scheduling maintenance or cleaning while the property is vacant.",
+            ],
+          },
+        },
+      },
+    },
+    cta: {
+      title: "Let's make history together",
+      body: "We're glad to know you're interested in getting in touch with us. Tell us about your property's challenge.",
+      button: "Get in touch",
     },
   },
 }
