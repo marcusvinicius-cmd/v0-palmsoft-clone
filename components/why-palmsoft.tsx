@@ -1,32 +1,26 @@
+"use client"
+
 import { LayersIcon, TrendingUpIcon, WrenchIcon } from "lucide-react"
 import { Reveal } from "@/components/reveal"
-
-const reasons = [
-  {
-    title: "Tecnologia sob medida",
-    body: "Não tentamos adaptar o seu problema a uma solução pronta. Entendemos o contexto do negócio e desenvolvemos a tecnologia adequada para cada desafio.",
-    icon: WrenchIcon,
-  },
-  {
-    title: "Capacidade de ponta a ponta",
-    body: "Reunimos software, dados, IA e integrações em um único time, reduzindo a dependência de diferentes fornecedores e facilitando a execução de projetos complexos.",
-    icon: LayersIcon,
-  },
-  {
-    title: "Diminua custos, otimize e melhore a sua lucratividade",
-    body: "Transformamos modelos, dados e ideias em soluções que funcionam dentro da operação, integradas aos sistemas, processos e usuários já utilizados por sua empresa.",
-    icon: TrendingUpIcon,
-  },
-]
+import { useLanguage } from "@/lib/i18n/context"
 
 export function WhyPalmsoft() {
+  const { t } = useLanguage()
+  const r = t.home.whyPalmsoft.reasons
+
+  const reasons = [
+    { ...r.tailored, icon: WrenchIcon },
+    { ...r.endToEnd, icon: LayersIcon },
+    { ...r.profitability, icon: TrendingUpIcon },
+  ]
+
   return (
     <section className="bg-linear-to-b from-[#0a1628] to-[#102544] py-20 text-white lg:py-28">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
           <header className="mx-auto mb-14 max-w-2xl text-center">
             <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-              Por que escolher a Palmsoft
+              {t.home.whyPalmsoft.title}
             </h2>
           </header>
         </Reveal>

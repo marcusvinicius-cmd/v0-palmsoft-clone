@@ -3,17 +3,8 @@
 import { useRef, useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-
-const areas = [
-  "Fintechs",
-  "Desenvolvimento Sob Demanda",
-  "Energia",
-  "Dashboards",
-  "Jogos e Gamificação",
-  "Score de Crédito",
-  "Inteligência Artificial",
-  "Controle de acesso",
-]
+import { useLanguage } from "@/lib/i18n/context"
+import type { Dictionary } from "@/lib/i18n/pt"
 
 // Integração com Calendly em stand by, aguardando aprovação de custo.
 // function buildCalendlyUrl(data: FormData) {
@@ -34,26 +25,27 @@ const areas = [
 //   return `${baseUrl}?${params.toString()}`
 // }
 
-function buildContactEmailUrl(data: FormData) {
+function buildContactEmailUrl(data: FormData, t: Dictionary["home"]["contact"]) {
   const area = (data.get("area") as string) ?? ""
   const nome = (data.get("nome") as string) ?? ""
   const email = (data.get("email") as string) ?? ""
   const orcamento = (data.get("orcamento") as string) ?? ""
   const telefone = (data.get("telefone") as string) ?? ""
 
+  const l = t.emailBodyLabels
   const body = [
-    `Área de interesse: ${area}`,
-    `Nome completo: ${nome}`,
-    `E-mail: ${email}`,
-    `Orçamento previsto: ${orcamento}`,
-    `Telefone: ${telefone}`,
+    `${l.area}: ${area}`,
+    `${l.nome}: ${nome}`,
+    `${l.email}: ${email}`,
+    `${l.orcamento}: ${orcamento}`,
+    `${l.telefone}: ${telefone}`,
   ].join("\n")
 
   const params = new URLSearchParams({
     view: "cm",
     fs: "1",
     to: "contato@palmsoft.com.br",
-    su: "Novo contato pelo site",
+    su: t.emailSubject,
     body,
   })
 
@@ -61,8 +53,12 @@ function buildContactEmailUrl(data: FormData) {
 }
 
 export function Contact() {
+  const { t } = useLanguage()
+  const c = t.home.contact
   const [sent, setSent] = useState(false)
   const formRef = useRef<HTMLFormElement>(null)
+
+  const areas = Object.values(c.areasOptions)
 
   function handleSend() {
     const form = formRef.current
@@ -74,7 +70,7 @@ export function Contact() {
       return
     }
 
-    const url = buildContactEmailUrl(new FormData(form))
+    const url = buildContactEmailUrl(new FormData(form), c)
 
     window.open(url, "_blank", "noopener,noreferrer")
     setSent(true)
@@ -85,14 +81,13 @@ export function Contact() {
       <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2">
         <div className="max-w-md">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
-            Contato
+            {c.eyebrow}
           </p>
           <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            Vamos juntos fazer história
+            {c.title}
           </h2>
           <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
-            Ficamos felizes em saber que possui interesse de entrar em contato
-            conosco :)
+            {c.subtitle}
           </p>
         </div>
 
@@ -100,18 +95,17 @@ export function Contact() {
           {sent ? (
             <div className="flex h-full min-h-64 flex-col items-center justify-center text-center">
               <h3 className="text-xl font-semibold text-foreground">
-                Mensagem enviada!
+                {c.sentTitle}
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                Abrimos um e-mail com seus dados para a nossa equipe. É só
-                revisar e enviar.
+                {c.sentBody}
               </p>
             </div>
           ) : (
             <form ref={formRef} onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-5">
               <div className="flex flex-col gap-2">
                 <Label htmlFor="area">
-                  Área de interesse <span className="text-destructive">*</span>
+                  {c.fields.area} <span className="text-destructive">*</span>
                 </Label>
                 <select
                   id="area"
@@ -121,7 +115,7 @@ export function Contact() {
                   className="h-9 w-full rounded-lg border border-input bg-transparent px-2.5 text-sm text-foreground outline-none transition-colors focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
                 >
                   <option value="" disabled className="text-muted-foreground">
-                    Selecione uma área
+                    {c.fields.areaPlaceholder}
                   </option>
                   {areas.map((a) => (
                     <option key={a} value={a}>
@@ -133,42 +127,42 @@ export function Contact() {
 
               <div className="flex flex-col gap-2">
                 <Label htmlFor="nome">
-                  Nome completo <span className="text-destructive">*</span>
+                  {c.fields.nome} <span className="text-destructive">*</span>
                 </Label>
-                <Input id="nome" name="nome" placeholder="Nome completo" required />
+                <Input id="nome" name="nome" placeholder={c.fields.nome} required />
               </div>
 
               <div className="flex flex-col gap-2">
                 <Label htmlFor="email">
-                  E-mail <span className="text-destructive">*</span>
+                  {c.fields.email} <span className="text-destructive">*</span>
                 </Label>
                 <Input
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="E-mail"
+                  placeholder={c.fields.email}
                   required
                 />
               </div>
 
               <div className="flex flex-col gap-2">
-                <Label htmlFor="orcamento">Orçamento previsto</Label>
+                <Label htmlFor="orcamento">{c.fields.orcamento}</Label>
                 <Input
                   id="orcamento"
                   name="orcamento"
-                  placeholder="Insira um número"
+                  placeholder={c.fields.orcamentoPlaceholder}
                 />
               </div>
 
               <div className="flex flex-col gap-2">
                 <Label htmlFor="telefone">
-                  Telefone <span className="text-destructive">*</span>
+                  {c.fields.telefone} <span className="text-destructive">*</span>
                 </Label>
                 <Input
                   id="telefone"
                   name="telefone"
                   type="tel"
-                  placeholder="(DDD) Telefone"
+                  placeholder={c.fields.telefonePlaceholder}
                   required
                 />
               </div>
@@ -178,7 +172,7 @@ export function Contact() {
                 onClick={handleSend}
                 className="mt-2 w-full rounded-full bg-primary py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
               >
-                Enviar
+                {c.submit}
               </button>
             </form>
           )}

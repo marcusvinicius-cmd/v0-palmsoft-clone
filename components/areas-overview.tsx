@@ -1,40 +1,30 @@
+"use client"
+
 import { BrainCircuitIcon, CodeIcon, BarChart3Icon, WorkflowIcon } from "lucide-react"
 import { Reveal } from "@/components/reveal"
-
-const areas = [
-  {
-    title: "Data & Analytics",
-    body: "Estruturação de dados, pipelines e dashboards que transformam dados brutos em decisões estratégicas.",
-    icon: BarChart3Icon,
-  },
-  {
-    title: "AI & Machine Learning",
-    body: "Modelos preditivos, IA generativa e automação inteligente aplicados a problemas reais do seu negócio.",
-    icon: BrainCircuitIcon,
-  },
-  {
-    title: "Integrações & Automação",
-    body: "Conectamos sistemas, APIs e processos para eliminar retrabalho manual e acelerar a operação.",
-    icon: WorkflowIcon,
-  },
-  {
-    title: "Software Engineering",
-    body: "Sistemas web, mobile e APIs sob medida, construídos com arquitetura escalável e boas práticas de engenharia.",
-    icon: CodeIcon,
-  },
-]
+import { useLanguage } from "@/lib/i18n/context"
 
 /**
  * Faixa não clicável logo após o hero, respondendo à pergunta "o que fazemos".
  */
 export function AreasOverview() {
+  const { t } = useLanguage()
+  const a = t.home.areasOverview.areas
+
+  const areas = [
+    { ...a.data, icon: BarChart3Icon },
+    { ...a.ai, icon: BrainCircuitIcon },
+    { ...a.integrations, icon: WorkflowIcon },
+    { ...a.software, icon: CodeIcon },
+  ]
+
   return (
     <section className="bg-[#0a1628] pb-20 pt-4 text-white lg:pb-24">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
           <header className="mb-14 max-w-2xl">
             <h2 className="text-balance text-2xl font-semibold tracking-tight sm:text-3xl">
-              Expertise Palmsoft
+              {t.home.areasOverview.title}
             </h2>
           </header>
         </Reveal>

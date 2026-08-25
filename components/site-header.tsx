@@ -3,33 +3,30 @@
 import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
 import { Logo } from "@/components/logo"
+import { LanguageToggle } from "@/components/language-toggle"
 import { ChevronDownIcon, MenuIcon, XIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { WHATSAPP_URL } from "@/lib/whatsapp"
-
-type NavItem = {
-  label: string
-  href: string
-  children?: { label: string; href: string }[]
-}
-
-const navItems: NavItem[] = [
-  { label: "Home", href: "/#home" },
-  { label: "Cases", href: "/cases" },
-  { label: "Sobre", href: "/sobre" },
-  {
-    label: "Produtos",
-    href: "/#areas",
-    children: [
-      { label: "I.A.", href: "/ia" },
-      { label: "Aegis", href: "/aegis" },
-    ],
-  },
-]
+import { useLanguage } from "@/lib/i18n/context"
 
 export function SiteHeader() {
   const pathname = usePathname()
   const isHome = pathname === "/"
+  const { t } = useLanguage()
+
+  const navItems = [
+    { label: t.header.nav.home, href: "/#home" },
+    { label: t.header.nav.cases, href: "/cases" },
+    { label: t.header.nav.sobre, href: "/sobre" },
+    {
+      label: t.header.nav.produtos,
+      href: "/#areas",
+      children: [
+        { label: t.header.nav.ia, href: "/ia" },
+        { label: t.header.nav.aegis, href: "/aegis" },
+      ],
+    },
+  ]
 
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -127,27 +124,31 @@ export function SiteHeader() {
             )}
           </nav>
 
+          <LanguageToggle />
+
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-full bg-[#4d9fff] px-6 py-2 text-sm leading-none font-medium text-white transition-colors hover:bg-[#4d9fff]/90"
           >
-            Fale com Especialista
+            {t.header.cta}
           </a>
         </div>
 
         {/* espaçador invisível: equilibra o peso do logo pra centralizar o bloco acima */}
         <div className="hidden flex-1 lg:block" aria-hidden="true" />
 
-        <button
-          className="lg:hidden"
-          onClick={() => setOpen((v) => !v)}
-          aria-label={open ? "Fechar menu" : "Abrir menu"}
-          aria-expanded={open}
-        >
-          {open ? <XIcon className="size-6" /> : <MenuIcon className="size-6" />}
-        </button>
+        <div className="flex items-center gap-3 lg:hidden">
+          <LanguageToggle />
+          <button
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={open}
+          >
+            {open ? <XIcon className="size-6" /> : <MenuIcon className="size-6" />}
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -190,7 +191,7 @@ export function SiteHeader() {
                 onClick={() => setOpen(false)}
                 className="inline-flex w-full items-center justify-center rounded-full bg-[#4d9fff] px-6 py-2 text-sm leading-none font-medium text-white transition-colors hover:bg-[#4d9fff]/90"
               >
-                Fale com Especialista
+                {t.header.cta}
               </a>
             </li>
           </ul>

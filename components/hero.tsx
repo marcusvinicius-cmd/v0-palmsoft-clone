@@ -1,17 +1,23 @@
+"use client"
+
 import Image from "next/image"
 import { Brain, Code2, Database, Share2 } from "lucide-react"
 import { Logo } from "@/components/logo"
 import { PartnersMarquee } from "@/components/partners-marquee"
 import { PolygonBackground } from "@/components/polygon-background"
-
-const heroAreas = [
-  { icon: Database, top: "Ciência", bottom: "de Dados" },
-  { icon: Brain, top: "Inteligência", bottom: "Artificial" },
-  { icon: Share2, top: "Integrações", bottom: "e Automação" },
-  { icon: Code2, top: "Software", bottom: "sob medida" },
-]
+import { useLanguage } from "@/lib/i18n/context"
 
 export function Hero() {
+  const { t } = useLanguage()
+  const areas = t.home.hero.areas
+
+  const heroAreas = [
+    { icon: Database, ...areas.dataAnalytics },
+    { icon: Brain, ...areas.ai },
+    { icon: Share2, ...areas.integrations },
+    { icon: Code2, ...areas.software },
+  ]
+
   return (
     <section
       id="home"
@@ -21,7 +27,7 @@ export function Hero() {
         {/* foto de fundo, sangrando por toda a seção */}
         <Image
           src="/hero-network2.jpg"
-          alt="Rede global de dados e inteligência artificial conectando informações em tempo real"
+          alt={t.home.hero.imageAlt}
           fill
           sizes="100vw"
           className="object-cover"
@@ -42,11 +48,13 @@ export function Hero() {
             <Logo className="h-16 w-auto sm:h-20 lg:h-24" />
 
             <h1 className="mt-6 text-pretty text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-              <span className="text-[#4d9fff]">Inteligência aplicada</span> para
-              tranformar negócios
+              <span className="text-[#4d9fff]">{t.home.hero.titleHighlight}</span>{" "}
+              {t.home.hero.titleRest}
             </h1>
             <p className="mt-6 text-pretty text-base leading-relaxed text-white/90">
-              Há mais de <span className="font-semibold text-[#4d9fff]">20 anos</span> transformando desafios de diferentes setores em soluções de tecnologia.
+              {t.home.hero.bodyPre}{" "}
+              <span className="font-semibold text-[#4d9fff]">{t.home.hero.bodyHighlight1}</span>{" "}
+              {t.home.hero.bodyMid}
             </p>
           </div>
 

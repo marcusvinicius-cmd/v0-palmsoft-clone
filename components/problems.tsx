@@ -1,54 +1,36 @@
+"use client"
+
 import { BarChart3Icon, BoxesIcon, BrainCircuitIcon, CogIcon, LayersIcon, Users2Icon } from "lucide-react"
 import { Reveal } from "@/components/reveal"
 import { SpotlightCard } from "@/components/spotlight-card"
-
-const problems = [
-  {
-    quote: "Precisamos transformar dados em decisões.",
-    icon: BarChart3Icon,
-    asset: "/icon-01-dados-decisoes.svg",
-  },
-  {
-    quote: "Temos processos manuais que precisam ser automatizados.",
-    icon: CogIcon,
-    asset: "/icon-02-automacao.svg",
-  },
-  {
-    quote: "Precisamos integrar sistemas que não conversam.",
-    icon: BoxesIcon,
-    asset: "/icon-03-integracao.svg",
-  },
-  {
-    quote: "Temos uma ideia de IA, mas não sabemos como colocá-la em produção.",
-    icon: BrainCircuitIcon,
-    asset: "/icon-04-ia.svg",
-  },
-  {
-    quote: "Precisamos modernizar um sistema crítico.",
-    icon: LayersIcon,
-    asset: "/icon-05-modernizacao.svg",
-  },
-  {
-    quote: "Precisamos aumentar nossa capacidade de desenvolvimento.",
-    icon: Users2Icon,
-    asset: "/icon-06-equipe-dev.svg",
-  },
-]
+import { useLanguage } from "@/lib/i18n/context"
 
 export function Problems() {
+  const { t } = useLanguage()
+  const items = t.home.problems.items
+
+  const problems = [
+    { quote: items.data, icon: BarChart3Icon, asset: "/icon-01-dados-decisoes.svg" },
+    { quote: items.automation, icon: CogIcon, asset: "/icon-02-automacao.svg" },
+    { quote: items.integration, icon: BoxesIcon, asset: "/icon-03-integracao.svg" },
+    { quote: items.ai, icon: BrainCircuitIcon, asset: "/icon-04-ia.svg" },
+    { quote: items.modernization, icon: LayersIcon, asset: "/icon-05-modernizacao.svg" },
+    { quote: items.team, icon: Users2Icon, asset: "/icon-06-equipe-dev.svg" },
+  ]
+
   return (
     <section id="problemas" className="bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
           <header className="mx-auto mb-14 max-w-2xl text-center">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
-              Problemas que Ajudamos a Resolver
+              {t.home.problems.eyebrow}
             </p>
             <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-              Sua empresa enfrenta algum desses desafios?
+              {t.home.problems.title}
             </h2>
             <p className="mt-4 text-pretty text-base leading-relaxed text-muted-foreground">
-              Transformamos processos manuais com tecnologia, eliminando retrabalho, aumentando a produtividade e impulsionando o lucro do seu negócio.
+              {t.home.problems.subtitle}
             </p>
           </header>
         </Reveal>

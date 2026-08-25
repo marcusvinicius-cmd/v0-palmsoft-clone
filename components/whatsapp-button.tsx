@@ -1,4 +1,7 @@
+"use client"
+
 import { WHATSAPP_URL } from "@/lib/whatsapp"
+import { useLanguage } from "@/lib/i18n/context"
 
 function WhatsappIcon({ className }: { className?: string }) {
   return (
@@ -12,12 +15,13 @@ function WhatsappIcon({ className }: { className?: string }) {
  * Botão flutuante fixo no canto inferior direito, presente em todas as páginas.
  */
 export function WhatsappButton() {
+  const { t } = useLanguage()
   return (
     <a
       href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Fale conosco pelo WhatsApp"
+      aria-label={t.whatsappButton.ariaLabel}
       className="fixed bottom-6 right-6 z-50 flex size-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366]"
     >
       <WhatsappIcon className="size-7" />
