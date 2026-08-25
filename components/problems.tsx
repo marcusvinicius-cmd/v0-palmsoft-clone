@@ -47,9 +47,6 @@ export function Problems() {
             <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
               Sua empresa enfrenta algum desses desafios?
             </h2>
-            <p className="mt-4 text-pretty text-base leading-relaxed text-muted-foreground">
-              Transformamos processos manuais com tecnologia, eliminando retrabalho, aumentando a produtividade e impulsionando o lucro do seu negócio.
-            </p>
           </header>
         </Reveal>
 
@@ -79,6 +76,12 @@ export function Problems() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal>
+          <p className="mx-auto mt-10 max-w-2xl text-pretty text-center text-base leading-relaxed text-muted-foreground">
+            Transformamos processos manuais com tecnologia, eliminando retrabalho, aumentando a produtividade e impulsionando o lucro do seu negócio.
+          </p>
+        </Reveal>
       </div>
     </section>
   )
