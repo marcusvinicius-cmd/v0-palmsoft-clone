@@ -123,13 +123,37 @@
   }
   body {
     @apply bg-background text-foreground;
+    /* trava de segurança: nenhum elemento deve conseguir abrir rolagem lateral na página */
+    overflow-x: hidden;
   }
   html {
     @apply font-sans;
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    /* barra de rolagem customizada (Firefox) */
+    scrollbar-width: thin;
+    scrollbar-color: #4d9fff transparent;
   }
   section[id] {
     scroll-margin-top: 60px;
+  }
+
+  /* barra de rolagem customizada (Chrome/Edge/Safari) */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #4d9fff99;
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #4d9fff;
   }
 }
 

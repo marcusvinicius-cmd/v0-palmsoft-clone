@@ -63,7 +63,7 @@ export function PartnersMarquee() {
   return (
     <div
       aria-label="Clientes e parceiros que confiam na PalmSoft"
-      className="group relative flex mask-[linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]"
+      className="group relative flex overflow-hidden mask-[linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]"
     >
       <div className="flex w-max animate-[marquee_50s_linear_infinite] group-hover:paused motion-reduce:animate-none motion-reduce:flex-wrap motion-reduce:gap-x-14 motion-reduce:px-14">
         <LogoRow />
