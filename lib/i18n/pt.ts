@@ -376,6 +376,256 @@ export const pt = {
       button: "Entre em contato",
     },
   },
+
+  ia: {
+    meta: {
+      title: "Inteligência Artificial & Big Data | Deepen | PalmSoft Tecnologia",
+      description: "Conheça a Deepen, a área de Inteligência Artificial da PalmSoft. Machine Learning, Big Data e Business Intelligence para transformar seus dados em decisões.",
+    },
+    hero: {
+      eyebrow: "Deepen — Inteligência Artificial & Big Data",
+      title: "Dados estão por toda parte",
+      body: "Extraia o máximo possível de insights a partir de nossas análises e consultorias. Machine Learning, Big Data e Inteligência Artificial para transformar seus dados em decisões.",
+      contactCta: "Entre em contato",
+      solutionsCta: "Ver soluções",
+      cards: {
+        deepLearning: {
+          label: "Deep Learning",
+          status: "treinando",
+          epoch: "época 12/20",
+          loss: "loss 0.081 e caindo",
+        },
+        query: {
+          label: "Consulta",
+          question: "Qual a previsão de demanda para o próximo trimestre?",
+          resultPrefix: "+18%",
+          resultSuffix: "projetados para julho",
+        },
+        pipeline: {
+          label: "Pipeline",
+          steps: {
+            collection: "Coleta de dados",
+            processing: "Tratamento",
+            model: "Modelo preditivo",
+            insights: "Insights",
+          },
+        },
+        badge: {
+          label: "consultas",
+          sublabel: "processadas em produção",
+        },
+      },
+    },
+    dataDriven: {
+      eyebrow: "Seja data driven",
+      title: "Seus concorrentes estão usando dados para mais do que gerar simples relatórios",
+      paragraphs: [
+        "Torne-se data driven, data informed e data inspired: formas de fornecer insights relevantes para equipes que precisam tomar decisões e realizar seu trabalho com base em informações concretas.",
+        "Somos experts em Machine Learning, Big Data, Inteligência Artificial e Business Intelligence. Te ajudamos a encontrar insights, melhores predições de mercado e recomendações que possibilitam tomar as melhores decisões para o seu negócio.",
+        "Aplicamos técnicas de Machine Learning, Deep Learning, Inteligência Artificial e Big Data para criar soluções exclusivas que transformam seus dados em informações que aceleram e otimizam a tomada de decisões e a eficiência operacional.",
+      ],
+      highlight: "Como um iceberg, a maior parte do valor dos seus dados está abaixo da superfície — nós mergulhamos para encontrá-lo.",
+      icebergAlt: "Iceberg com a maior parte submersa, representando o valor oculto nos dados",
+      benefits: {
+        decisions: "Tome melhores decisões, mais rápido",
+        insights: "Obtenha insights reais dos seus dados",
+        forecast: "Preveja cenários futuros e reduza custos",
+        resources: "Aproveite ao máximo o seu tempo e recursos",
+        anticipate: "Antecipe necessidades dos seus consumidores",
+        management: "Melhore a gestão do seu negócio como um todo",
+      },
+    },
+    howItWorks: {
+      eyebrow: "Como funciona",
+      title: "Dos dados brutos aos resultados",
+      steps: {
+        stored: {
+          title: "Dados armazenados",
+          body: "Analisamos os dados internos e externos que você armazena.",
+        },
+        market: {
+          title: "Dados de mercado",
+          body: "Correlacionamos com bases públicas e privadas de mercado.",
+        },
+        intelligence: {
+          title: "Inteligência",
+          body: "Aplicamos algoritmos de Inteligência Artificial sobre os dados.",
+        },
+        analysis: {
+          title: "Análise",
+          body: "Entendemos e analisamos perfis e padrões de comportamento.",
+        },
+        solution: {
+          title: "Solução",
+          body: "Construímos modelos e soluções sob medida para o seu negócio.",
+        },
+        results: {
+          title: "Resultados",
+          body: "Você toma as melhores decisões com base nos seus dados.",
+        },
+      },
+    },
+    history: {
+      eyebrow: "Nossa história",
+      title: "Uma spin-off da PalmSoft",
+      earthAlt: "A Terra vista do espaço com um satélite em órbita",
+      paragraphs: [
+        "A Deepen surgiu como fruto de um projeto de desenvolvimento de software a partir da aplicação de estratégias e tecnologias de visualização interativa de dados desenvolvidas pela PalmSoft, empresa de desenvolvimento mobile de Santa Catarina.",
+        "Em outubro de 2016 o projeto se tornou uma startup, passando por processos de seleção e capacitação como Startup Acelerada Inovativa, Sinapse da Inovação (3ª fase), Startup SC e o programa Link Lab da ACATE.",
+      ],
+    },
+    tech: {
+      eyebrow: "Nossas tecnologias",
+      title: "P&D e expertise própria",
+      paragraphs: [
+        "Todas as tecnologias e algoritmos que compõem nossas soluções e consultorias foram desenvolvidos por nossa equipe de P&D, fazendo uso de APIs de uso livre ou criadas a partir de expertise própria.",
+        "Nossas soluções rodam algoritmos de inteligência artificial, machine learning e deep learning sobre o Big Data dos clientes e bases de mercado. Com processamento multithread e dados in memory, permitem a visualização interativa de dados históricos associados a mapas geográficos e conceituais, gerando análises baseadas em algoritmos.",
+      ],
+    },
+    solutions: {
+      eyebrow: "Soluções Deepen",
+      title: "Big Data, Inteligência Artificial, Machine Learning e Análises Preditivas",
+      contactCta: "Entre em contato",
+      items: {
+        maps: {
+          title: "Deepen Maps",
+          body: "Explore livremente o mapa de todo o Brasil, analise dados demográficos e informações empresariais — concentração de colaboradores, potenciais de consumo, clientes e pontos de interesse — e defina estratégias.",
+        },
+        productMix: {
+          title: "Mix de Produtos",
+          body: "Analisamos seus tickets de vendas para entender as forças de atração entre produtos, aumentando o seu potencial de vendas e markup.",
+        },
+        inventory: {
+          title: "Predição de Estoques",
+          body: "Projete sua demanda futura com base nos dados históricos da sua empresa e preveja escassez ou excessos nos níveis de estoque.",
+        },
+        creditScore: {
+          title: "Score Financeiro",
+          body: "Algoritmos avançados geram pontuações precisas e confiáveis para uma avaliação objetiva do risco de crédito de indivíduos ou empresas.",
+        },
+        orderRecommendation: {
+          title: "Recomendação de Pedidos",
+          body: "Sugestão de produtos personalizados com base no histórico de compras, preferências e comportamento do cliente, melhorando conversão e engajamento.",
+        },
+        absencePrediction: {
+          title: "Predição de Faltas",
+          body: "Reduza o número de clientes faltantes e melhore o desempenho da sua equipe, com taxa de precisão de 80% na previsão de faltas.",
+        },
+        serviceOptimization: {
+          title: "Otimização de Serviços",
+          body: "Algoritmos que otimizam recursos, agendamento de tarefas e alocação de pessoal, maximizando a eficiência operacional e reduzindo custos.",
+        },
+        energy: {
+          title: "Deepen Energy",
+          body: "Controle interativo de operações técnicas e comerciais em uma única plataforma, com informações decisivas ao alcance de quem precisa.",
+        },
+        consulting: {
+          title: "Consultorias",
+          body: "Transformamos dados em informações conclusivas: planejamos e executamos PoCs (proof of concept) para validação dos projetos.",
+        },
+      },
+    },
+    consulting: {
+      eyebrow: "Consultorias",
+      title: "Passo a passo do nosso processo de desenvolvimento",
+      modelsTitle: "Modelos de consultoria disponíveis",
+      steps: {
+        assessment: {
+          title: "Avaliação",
+          body: "Reunimos requisitos e avaliamos os dados que você armazena e quais informações externas são necessárias, determinando a abordagem específica para o seu problema.",
+        },
+        dataPrep: {
+          title: "Preparação dos dados",
+          body: "Nossa equipe de cientistas de dados transforma e prepara os dados para exploração e modelagem, codificando-os para fornecer o máximo de informações ao modelo.",
+        },
+        modelDev: {
+          title: "Desenvolvimento do modelo",
+          body: "Criamos e testamos diferentes algoritmos de IA e machine learning, escolhendo os que fornecem a melhor precisão e o menor erro para a solução final.",
+        },
+        poc: {
+          title: "POC",
+          body: "Elaboramos um protótipo que demonstra o poder da IA aplicada ao seu caso, com avaliação de resultados e levantamento dos ajustes para a entrega final.",
+        },
+        integration: {
+          title: "Integração e implantação",
+          body: "Refinamos a eficácia do sistema junto com sua equipe e criamos aplicativos e serviços completos, com visualização amigável ou integrações de back-end via APIs.",
+        },
+        optimization: {
+          title: "Avaliação e otimização",
+          body: "Mesmo após a entrega continuamos acompanhando os resultados, com testes de segurança, desempenho e precisão, implantando melhorias na acurácia do modelo.",
+        },
+      },
+      models: {
+        customerProfile: "Perfil de Clientes",
+        predictive: "Análise Preditiva",
+        bi: "Business Intelligence (B.I.)",
+        productMix: "Mix de Produtos",
+        expansion: "Expansão de Negócios",
+        marketing: "Otimização do Marketing",
+        dataCapture: "Captação e Armazenamento de Dados",
+        custom: "Soluções Customizadas",
+      },
+    },
+    sectors: {
+      eyebrow: "Setores",
+      title: "O que podemos fazer pelo seu negócio?",
+      items: {
+        retail: {
+          title: "Varejo",
+          items: [
+            "Análise do perfil e comportamento do consumidor",
+            "Previsão de demanda e estoques",
+            "Planejamento e previsão de vendas futuras",
+            "Recomendação e composição de mix de produtos",
+          ],
+        },
+        health: {
+          title: "Saúde",
+          items: [
+            "Mapeamento da ocorrência de doenças por região e carteira",
+            "Avaliação de risco de novas doenças e custos atrelados",
+            "Probabilidade de evolução de doentes crônicos",
+            "Projeção de custos",
+          ],
+        },
+        publicSector: {
+          title: "Setor Público",
+          items: [
+            "Identificação das parcelas da população com necessidades mais urgentes",
+            "Avaliação de políticas públicas de desenvolvimento",
+            "Análise do feedback dos cidadãos sobre serviços prestados",
+          ],
+        },
+        education: {
+          title: "Educação",
+          items: [
+            "Controle e redução da evasão escolar",
+            "Captação de novos alunos",
+            "Melhores locais para abertura de novas unidades",
+            "Níveis de desempenho de alunos",
+          ],
+        },
+        industry: {
+          title: "Indústria",
+          items: [
+            "Manutenção preditiva",
+            "People Analytics",
+            "Sortimento de produtos",
+            "Previsão de estoques e demanda",
+          ],
+        },
+        realEstate: {
+          title: "Imobiliário e Construção",
+          items: [
+            "Rentabilidade dos imóveis da carteira",
+            "Identificação da valorização e desvalorização de regiões",
+            "Avaliação do potencial de vendas de um empreendimento",
+            "Tendências de compra e locação",
+          ],
+        },
+      },
+    },
+  },
 }
 
 export type Dictionary = typeof pt

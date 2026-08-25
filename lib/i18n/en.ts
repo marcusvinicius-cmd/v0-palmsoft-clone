@@ -373,4 +373,254 @@ export const en: Dictionary = {
       button: "Get in touch",
     },
   },
+
+  ia: {
+    meta: {
+      title: "Artificial Intelligence & Big Data | Deepen | PalmSoft Tecnologia",
+      description: "Get to know Deepen, PalmSoft's Artificial Intelligence division. Machine Learning, Big Data, and Business Intelligence to turn your data into decisions.",
+    },
+    hero: {
+      eyebrow: "Deepen — Artificial Intelligence & Big Data",
+      title: "Data is everywhere",
+      body: "Extract as much insight as possible from our analyses and consulting. Machine Learning, Big Data, and Artificial Intelligence to turn your data into decisions.",
+      contactCta: "Get in touch",
+      solutionsCta: "See solutions",
+      cards: {
+        deepLearning: {
+          label: "Deep Learning",
+          status: "training",
+          epoch: "epoch 12/20",
+          loss: "loss 0.081 and falling",
+        },
+        query: {
+          label: "Query",
+          question: "What's the demand forecast for next quarter?",
+          resultPrefix: "+18%",
+          resultSuffix: "projected for July",
+        },
+        pipeline: {
+          label: "Pipeline",
+          steps: {
+            collection: "Data collection",
+            processing: "Processing",
+            model: "Predictive model",
+            insights: "Insights",
+          },
+        },
+        badge: {
+          label: "queries",
+          sublabel: "processed in production",
+        },
+      },
+    },
+    dataDriven: {
+      eyebrow: "Be data driven",
+      title: "Your competitors are using data for more than simple reports",
+      paragraphs: [
+        "Become data driven, data informed, and data inspired: ways to deliver relevant insights to teams that need to make decisions and do their work based on concrete information.",
+        "We're experts in Machine Learning, Big Data, Artificial Intelligence, and Business Intelligence. We help you find insights, better market predictions, and recommendations that let you make the best decisions for your business.",
+        "We apply Machine Learning, Deep Learning, Artificial Intelligence, and Big Data techniques to build exclusive solutions that turn your data into information that speeds up and optimizes decision-making and operational efficiency.",
+      ],
+      highlight: "Like an iceberg, most of your data's value sits below the surface — we dive in to find it.",
+      icebergAlt: "An iceberg with most of its mass submerged, representing the hidden value in data",
+      benefits: {
+        decisions: "Make better decisions, faster",
+        insights: "Get real insights from your data",
+        forecast: "Forecast future scenarios and cut costs",
+        resources: "Make the most of your time and resources",
+        anticipate: "Anticipate your customers' needs",
+        management: "Improve the management of your business as a whole",
+      },
+    },
+    howItWorks: {
+      eyebrow: "How it works",
+      title: "From raw data to results",
+      steps: {
+        stored: {
+          title: "Stored data",
+          body: "We analyze the internal and external data you store.",
+        },
+        market: {
+          title: "Market data",
+          body: "We correlate it with public and private market databases.",
+        },
+        intelligence: {
+          title: "Intelligence",
+          body: "We apply Artificial Intelligence algorithms to the data.",
+        },
+        analysis: {
+          title: "Analysis",
+          body: "We understand and analyze profiles and behavior patterns.",
+        },
+        solution: {
+          title: "Solution",
+          body: "We build models and solutions tailored to your business.",
+        },
+        results: {
+          title: "Results",
+          body: "You make the best decisions based on your data.",
+        },
+      },
+    },
+    history: {
+      eyebrow: "Our story",
+      title: "A PalmSoft spin-off",
+      earthAlt: "Earth seen from space with a satellite in orbit",
+      paragraphs: [
+        "Deepen grew out of a software development project applying interactive data visualization strategies and technologies built by PalmSoft, a mobile development company from Santa Catarina, Brazil.",
+        "In October 2016, the project became a startup, going through selection and development programs such as Startup Acelerada Inovativa, Sinapse da Inovação (3rd phase), Startup SC, and ACATE's Link Lab program.",
+      ],
+    },
+    tech: {
+      eyebrow: "Our technology",
+      title: "In-house R&D and expertise",
+      paragraphs: [
+        "All the technologies and algorithms behind our solutions and consulting were developed by our own R&D team, using open APIs or ones built from our own expertise.",
+        "Our solutions run artificial intelligence, machine learning, and deep learning algorithms on clients' Big Data and market databases. With multithreaded processing and in-memory data, they enable interactive visualization of historical data tied to geographic and conceptual maps, generating algorithm-based analyses.",
+      ],
+    },
+    solutions: {
+      eyebrow: "Deepen Solutions",
+      title: "Big Data, Artificial Intelligence, Machine Learning, and Predictive Analytics",
+      contactCta: "Get in touch",
+      items: {
+        maps: {
+          title: "Deepen Maps",
+          body: "Freely explore a map of all of Brazil, analyze demographic data and business information — employee concentration, consumption potential, customers, and points of interest — and set strategies.",
+        },
+        productMix: {
+          title: "Product Mix",
+          body: "We analyze your sales tickets to understand the pull between products, boosting your sales potential and markup.",
+        },
+        inventory: {
+          title: "Inventory Prediction",
+          body: "Project your future demand based on your company's historical data and predict shortages or excess inventory levels.",
+        },
+        creditScore: {
+          title: "Financial Score",
+          body: "Advanced algorithms generate accurate, reliable scores for an objective assessment of the credit risk of individuals or companies.",
+        },
+        orderRecommendation: {
+          title: "Order Recommendation",
+          body: "Personalized product suggestions based on purchase history, preferences, and customer behavior, improving conversion and engagement.",
+        },
+        absencePrediction: {
+          title: "No-Show Prediction",
+          body: "Reduce the number of no-show customers and improve your team's performance, with an 80% accuracy rate in predicting no-shows.",
+        },
+        serviceOptimization: {
+          title: "Service Optimization",
+          body: "Algorithms that optimize resources, task scheduling, and staff allocation, maximizing operational efficiency and cutting costs.",
+        },
+        energy: {
+          title: "Deepen Energy",
+          body: "Interactive control of technical and commercial operations on a single platform, with decisive information within reach of the people who need it.",
+        },
+        consulting: {
+          title: "Consulting",
+          body: "We turn data into conclusive information: we plan and run PoCs (proofs of concept) to validate projects.",
+        },
+      },
+    },
+    consulting: {
+      eyebrow: "Consulting",
+      title: "Step by step through our development process",
+      modelsTitle: "Available consulting models",
+      steps: {
+        assessment: {
+          title: "Assessment",
+          body: "We gather requirements and assess the data you store and what external information is needed, determining the specific approach for your problem.",
+        },
+        dataPrep: {
+          title: "Data preparation",
+          body: "Our data science team transforms and prepares the data for exploration and modeling, encoding it to give the model as much information as possible.",
+        },
+        modelDev: {
+          title: "Model development",
+          body: "We build and test different AI and machine learning algorithms, choosing the ones that offer the best accuracy and lowest error for the final solution.",
+        },
+        poc: {
+          title: "POC",
+          body: "We build a prototype that demonstrates the power of AI applied to your case, evaluating results and identifying adjustments for the final delivery.",
+        },
+        integration: {
+          title: "Integration and deployment",
+          body: "We refine the system's effectiveness together with your team and build complete applications and services, with a friendly interface or backend integrations via APIs.",
+        },
+        optimization: {
+          title: "Evaluation and optimization",
+          body: "Even after delivery, we keep tracking results, with security, performance, and accuracy tests, rolling out improvements to the model's accuracy.",
+        },
+      },
+      models: {
+        customerProfile: "Customer Profiling",
+        predictive: "Predictive Analytics",
+        bi: "Business Intelligence (B.I.)",
+        productMix: "Product Mix",
+        expansion: "Business Expansion",
+        marketing: "Marketing Optimization",
+        dataCapture: "Data Capture & Storage",
+        custom: "Custom Solutions",
+      },
+    },
+    sectors: {
+      eyebrow: "Sectors",
+      title: "What can we do for your business?",
+      items: {
+        retail: {
+          title: "Retail",
+          items: [
+            "Consumer profile and behavior analysis",
+            "Demand and inventory forecasting",
+            "Future sales planning and forecasting",
+            "Product mix recommendation and composition",
+          ],
+        },
+        health: {
+          title: "Healthcare",
+          items: [
+            "Mapping disease occurrence by region and portfolio",
+            "New disease risk assessment and associated costs",
+            "Probability of progression for chronic patients",
+            "Cost projection",
+          ],
+        },
+        publicSector: {
+          title: "Public Sector",
+          items: [
+            "Identifying the segments of the population with the most urgent needs",
+            "Evaluating public development policies",
+            "Analyzing citizen feedback on services provided",
+          ],
+        },
+        education: {
+          title: "Education",
+          items: [
+            "Controlling and reducing dropout rates",
+            "Attracting new students",
+            "Best locations to open new units",
+            "Student performance levels",
+          ],
+        },
+        industry: {
+          title: "Industry",
+          items: [
+            "Predictive maintenance",
+            "People Analytics",
+            "Product assortment",
+            "Inventory and demand forecasting",
+          ],
+        },
+        realEstate: {
+          title: "Real Estate & Construction",
+          items: [
+            "Profitability of the property portfolio",
+            "Identifying appreciation and depreciation across regions",
+            "Assessing a development's sales potential",
+            "Buying and renting trends",
+          ],
+        },
+      },
+    },
+  },
 }
