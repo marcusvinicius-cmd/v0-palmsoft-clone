@@ -9,6 +9,7 @@ import { PolygonBackground } from "@/components/polygon-background"
 import { Reveal } from "@/components/reveal"
 import { getCaseStudiesByVertical } from "@/lib/cases-data"
 import { getVertical, verticals } from "@/lib/verticals-data"
+import { withBasePath } from "@/lib/base-path"
 
 export const dynamicParams = false
 
@@ -167,7 +168,7 @@ export default async function VerticalPage({
                 podemos transformá-lo em resultados.
               </p>
               <a
-                href="/#contato"
+                href={withBasePath("/#contato")}
                 className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[#1d6fff] px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-[#1860e0]"
               >
                 Entre em contato

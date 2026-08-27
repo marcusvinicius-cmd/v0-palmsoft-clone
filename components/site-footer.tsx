@@ -2,6 +2,7 @@
 
 import { Logo } from "@/components/logo"
 import { PolygonBackground } from "@/components/polygon-background"
+import { withBasePath } from "@/lib/base-path"
 
 const siteLinks = [
   { label: "Home", href: "#home" },
@@ -14,14 +15,14 @@ const siteLinks = [
 
 function scrollToSection(href: string) {
   if (!href.startsWith("#")) {
-    window.location.assign(href)
+    window.location.assign(withBasePath(href))
     return
   }
   const id = href.replace("#", "")
   const el = document.getElementById(id)
   if (!el) {
     // anchor belongs to the home page; navigate there
-    window.location.assign(`/${href}`)
+    window.location.assign(withBasePath(`/${href}`))
     return
   }
   const header = document.querySelector("header")

@@ -7,6 +7,7 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { PolygonBackground } from "@/components/polygon-background"
 import { caseStudies, getCaseStudy } from "@/lib/cases-data"
+import { withBasePath } from "@/lib/base-path"
 
 export const dynamicParams = false
 
@@ -229,7 +230,7 @@ export default async function CaseDetailPage({
                 Voltar para os cases
               </Link>
               <a
-                href="/#contato"
+                href={withBasePath("/#contato")}
                 className="inline-flex items-center gap-2 rounded-full bg-[#1d6fff] px-7 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#1860e0]"
               >
                 Entre em contato

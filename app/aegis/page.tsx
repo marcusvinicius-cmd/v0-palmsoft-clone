@@ -7,6 +7,7 @@ import { PolygonBackground } from "@/components/polygon-background"
 import { Reveal } from "@/components/reveal"
 import { Tilt } from "@/components/tilt"
 import { cn } from "@/lib/utils"
+import { withBasePath } from "@/lib/base-path"
 
 export const metadata: Metadata = {
   title: "Aegis Access Control | PalmSoft Tecnologia",
@@ -147,7 +148,7 @@ export default function AegisPage() {
               </div>
               <div className="mt-9 flex flex-wrap gap-4">
                 <a
-                  href="/#contato"
+                  href={withBasePath("/#contato")}
                   className="inline-flex items-center justify-center rounded-full bg-[#1d6fff] px-7 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#1860e0]"
                 >
                   Entre em contato
@@ -314,7 +315,7 @@ export default function AegisPage() {
                 empreendimento.
               </p>
               <a
-                href="/#contato"
+                href={withBasePath("/#contato")}
                 className="mt-9 inline-flex items-center justify-center gap-2 rounded-full bg-[#1d6fff] px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-[#1860e0]"
               >
                 Entre em contato

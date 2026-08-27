@@ -1,6 +1,7 @@
 import { BarChart3Icon, BoxesIcon, BrainCircuitIcon, CogIcon, LayersIcon, Users2Icon } from "lucide-react"
 import { Reveal } from "@/components/reveal"
 import { SpotlightCard } from "@/components/spotlight-card"
+import { withBasePath } from "@/lib/base-path"
 
 const problems = [
   {
@@ -65,7 +66,7 @@ export function Problems() {
                   </div>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={p.asset}
+                    src={withBasePath(p.asset)}
                     alt=""
                     aria-hidden="true"
                     className="size-24 shrink-0"

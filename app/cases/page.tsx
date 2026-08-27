@@ -8,6 +8,7 @@ import { PolygonBackground } from "@/components/polygon-background"
 import { Reveal } from "@/components/reveal"
 import { Tilt } from "@/components/tilt"
 import { caseStudies } from "@/lib/cases-data"
+import { withBasePath } from "@/lib/base-path"
 
 export const metadata: Metadata = {
   title: "Cases | PalmSoft Tecnologia",
@@ -213,7 +214,7 @@ export default function CasesPage() {
               podemos transformá-lo em resultados.
             </p>
             <a
-              href="/#contato"
+              href={withBasePath("/#contato")}
               className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[#1d6fff] px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-[#1860e0]"
             >
               Entre em contato

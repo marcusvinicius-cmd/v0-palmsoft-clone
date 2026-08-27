@@ -11,6 +11,7 @@ import { SpotlightCard } from "@/components/spotlight-card"
 import { Tilt } from "@/components/tilt"
 import { cn } from "@/lib/utils"
 import { PartnersMarquee } from "@/components/partners-marquee"
+import { withBasePath } from "@/lib/base-path"
 
 export const metadata: Metadata = {
   title: "Inteligência Artificial & Big Data | Deepen | PalmSoft Tecnologia",
@@ -228,7 +229,7 @@ export default function IAPage() {
               </p>
               <div className="mt-9 flex flex-wrap gap-4">
                 <a
-                  href="/#contato"
+                  href={withBasePath("/#contato")}
                   className="inline-flex items-center justify-center rounded-full bg-[#1d6fff] px-7 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#1860e0]"
                 >
                   Entre em contato
@@ -579,7 +580,7 @@ export default function IAPage() {
                       {s.body}
                     </p>
                     <a
-                      href="/#contato"
+                      href={withBasePath("/#contato")}
                       className="mt-6 inline-flex w-fit items-center gap-1.5 text-sm font-medium text-[#4d9fff]"
                     >
                       Entre em contato

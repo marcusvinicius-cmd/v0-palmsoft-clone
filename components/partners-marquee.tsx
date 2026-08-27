@@ -1,3 +1,5 @@
+import { withBasePath } from "@/lib/base-path"
+
 const partners = [
   { name: "WEG", file: "weg" },
   { name: "Ambev", file: "ambev" },
@@ -48,7 +50,7 @@ function LogoRow({ ariaHidden = false }: { ariaHidden?: boolean }) {
         // eslint-disable-next-line @next/next/no-img-element
         <img
           key={`${p.file}-${i}`}
-          src={`/${p.file}.svg`}
+          src={withBasePath(`/${p.file}.svg`)}
           alt={ariaHidden ? "" : p.name}
           className="h-11 w-auto shrink-0 opacity-90 transition-opacity hover:opacity-100 sm:h-11"
           loading="lazy"

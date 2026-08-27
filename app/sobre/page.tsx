@@ -12,6 +12,7 @@ import { SiteFooter } from "@/components/site-footer"
 import { PolygonBackground } from "@/components/polygon-background"
 import { Reveal } from "@/components/reveal"
 import { Tilt } from "@/components/tilt"
+import { withBasePath } from "@/lib/base-path"
 
 const milestoneCards = [
   {
@@ -261,7 +262,7 @@ export default function SobrePage() {
                 mais de 20 anos de experiência podem acelerar o seu projeto.
               </p>
               <a
-                href="/#contato"
+                href={withBasePath("/#contato")}
                 className="mt-9 inline-flex items-center justify-center gap-2 rounded-full bg-[#1d6fff] px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-[#1860e0]"
               >
                 Entre em contato
