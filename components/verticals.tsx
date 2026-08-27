@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "@/components/app-image"
 import { Reveal } from "@/components/reveal"
 import { SpotlightCard } from "@/components/spotlight-card"
 import { Tilt } from "@/components/tilt"

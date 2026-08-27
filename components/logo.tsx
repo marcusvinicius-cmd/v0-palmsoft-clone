@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "@/components/app-image"
 import { cn } from "@/lib/utils"
 
 export function Logo({ className }: { className?: string }) {

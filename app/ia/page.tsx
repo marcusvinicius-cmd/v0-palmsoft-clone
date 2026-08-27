@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import Image from "next/image"
+import Image from "@/components/app-image"
 import { ArrowRightIcon, CheckIcon } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
