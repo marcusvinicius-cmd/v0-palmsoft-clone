@@ -1,6 +1,6 @@
 "use client"
 
-import Image from "next/image"
+import Image from "@/components/app-image"
 import { ArrowRightIcon, CheckIcon } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
@@ -13,6 +13,7 @@ import { Tilt } from "@/components/tilt"
 import { cn } from "@/lib/utils"
 import { PartnersMarquee } from "@/components/partners-marquee"
 import { useLanguage } from "@/lib/i18n/context"
+import { withBasePath } from "@/lib/base-path"
 
 export function IaContent() {
   const { t } = useLanguage()
@@ -67,7 +68,7 @@ export function IaContent() {
               </p>
               <div className="mt-9 flex flex-wrap gap-4">
                 <a
-                  href="/#contato"
+                  href={withBasePath("/#contato")}
                   className="inline-flex items-center justify-center rounded-full bg-[#1d6fff] px-7 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#1860e0]"
                 >
                   {ia.hero.contactCta}
@@ -379,7 +380,7 @@ export function IaContent() {
                       {s.body}
                     </p>
                     <a
-                      href="/#contato"
+                      href={withBasePath("/#contato")}
                       className="mt-6 inline-flex w-fit items-center gap-1.5 text-sm font-medium text-[#4d9fff]"
                     >
                       {ia.solutions.contactCta}

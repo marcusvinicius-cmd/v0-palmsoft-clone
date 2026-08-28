@@ -3,17 +3,18 @@
 import { Logo } from "@/components/logo"
 import { PolygonBackground } from "@/components/polygon-background"
 import { useLanguage } from "@/lib/i18n/context"
+import { withBasePath } from "@/lib/base-path"
 
 function scrollToSection(href: string) {
   if (!href.startsWith("#")) {
-    window.location.assign(href)
+    window.location.assign(withBasePath(href))
     return
   }
   const id = href.replace("#", "")
   const el = document.getElementById(id)
   if (!el) {
     // anchor belongs to the home page; navigate there
-    window.location.assign(`/${href}`)
+    window.location.assign(withBasePath(`/${href}`))
     return
   }
   const header = document.querySelector("header")

@@ -1,6 +1,6 @@
 "use client"
 
-import Image from "next/image"
+import Image from "@/components/app-image"
 import Link from "next/link"
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
@@ -10,6 +10,7 @@ import { Reveal } from "@/components/reveal"
 import { localizeCaseStudy, type CaseStudy } from "@/lib/cases-data"
 import { localizeVertical, type Vertical } from "@/lib/verticals-data"
 import { useLanguage } from "@/lib/i18n/context"
+import { withBasePath } from "@/lib/base-path"
 
 export function VerticalContent({
   vertical: rawVertical,
@@ -148,7 +149,7 @@ export function VerticalContent({
                 {a.cta.body}
               </p>
               <a
-                href="/#contato"
+                href={withBasePath("/#contato")}
                 className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[#1d6fff] px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-[#1860e0]"
               >
                 {a.cta.button}

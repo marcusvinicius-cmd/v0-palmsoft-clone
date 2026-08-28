@@ -8,6 +8,7 @@ import { ChevronDownIcon, MenuIcon, XIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { WHATSAPP_URL } from "@/lib/whatsapp"
 import { useLanguage } from "@/lib/i18n/context"
+import { withBasePath } from "@/lib/base-path"
 
 export function SiteHeader() {
   const pathname = usePathname()
@@ -71,7 +72,7 @@ export function SiteHeader() {
         {/* flex-1 nos dois extremos centraliza o menu de verdade no meio da barra */}
         <div className="flex flex-1 items-center">
           <a
-            href="/#home"
+            href={withBasePath("/#home")}
             aria-label={t.header.logoAriaLabel}
             tabIndex={logoVisible ? 0 : -1}
             className={cn(
@@ -89,7 +90,7 @@ export function SiteHeader() {
               item.children ? (
                 <div key={item.label} className="group relative">
                   <a
-                    href={item.href}
+                    href={withBasePath(item.href)}
                     aria-haspopup="menu"
                     className="flex items-center gap-1 text-sm text-white/80 transition-colors hover:text-white"
                   >
@@ -102,7 +103,7 @@ export function SiteHeader() {
                       {item.children.map((c) => (
                         <li key={c.label}>
                           <a
-                            href={c.href}
+                            href={withBasePath(c.href)}
                             className="block rounded-lg px-3 py-2 text-sm text-white/80 transition-colors hover:bg-white/5 hover:text-white"
                           >
                             {c.label}
@@ -115,7 +116,7 @@ export function SiteHeader() {
               ) : (
                 <a
                   key={item.label}
-                  href={item.href}
+                  href={withBasePath(item.href)}
                   className="text-sm text-white/80 transition-colors hover:text-white"
                 >
                   {item.label}
@@ -161,7 +162,7 @@ export function SiteHeader() {
             {navItems.map((item) => (
               <li key={item.label}>
                 <a
-                  href={item.href}
+                  href={withBasePath(item.href)}
                   onClick={() => setOpen(false)}
                   className="block rounded-md px-2 py-2.5 text-sm text-white/80 hover:bg-white/5 hover:text-white"
                 >
@@ -172,7 +173,7 @@ export function SiteHeader() {
                     {item.children.map((c) => (
                       <li key={c.label}>
                         <a
-                          href={c.href}
+                          href={withBasePath(c.href)}
                           onClick={() => setOpen(false)}
                           className="block rounded-md px-2 py-2 text-sm text-white/60 hover:bg-white/5 hover:text-white"
                         >

@@ -1,6 +1,6 @@
 "use client"
 
-import Image from "next/image"
+import Image from "@/components/app-image"
 import Link from "next/link"
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
@@ -8,6 +8,7 @@ import { SiteFooter } from "@/components/site-footer"
 import { PolygonBackground } from "@/components/polygon-background"
 import { localizeCaseStudy, type CaseStudy } from "@/lib/cases-data"
 import { useLanguage } from "@/lib/i18n/context"
+import { withBasePath } from "@/lib/base-path"
 
 export function CaseDetailContent({ case: rawCase }: { case: CaseStudy }) {
   const { t, lang } = useLanguage()
@@ -206,7 +207,7 @@ export function CaseDetailContent({ case: rawCase }: { case: CaseStudy }) {
                 {d.cta.back}
               </Link>
               <a
-                href="/#contato"
+                href={withBasePath("/#contato")}
                 className="inline-flex items-center gap-2 rounded-full bg-[#1d6fff] px-7 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#1860e0]"
               >
                 {d.cta.contact}

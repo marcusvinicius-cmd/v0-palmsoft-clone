@@ -1,6 +1,6 @@
 "use client"
 
-import Image from "next/image"
+import Image from "@/components/app-image"
 import { Brain, Code2, Database, Share2 } from "lucide-react"
 import { Logo } from "@/components/logo"
 import { PartnersMarquee } from "@/components/partners-marquee"

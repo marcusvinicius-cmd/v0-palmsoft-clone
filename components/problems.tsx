@@ -4,6 +4,7 @@ import { BarChart3Icon, BoxesIcon, BrainCircuitIcon, CogIcon, LayersIcon, Users2
 import { Reveal } from "@/components/reveal"
 import { SpotlightCard } from "@/components/spotlight-card"
 import { useLanguage } from "@/lib/i18n/context"
+import { withBasePath } from "@/lib/base-path"
 
 export function Problems() {
   const { t } = useLanguage()
@@ -29,9 +30,6 @@ export function Problems() {
             <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
               {t.home.problems.title}
             </h2>
-            <p className="mt-4 text-pretty text-base leading-relaxed text-muted-foreground">
-              {t.home.problems.subtitle}
-            </p>
           </header>
         </Reveal>
 
@@ -50,7 +48,7 @@ export function Problems() {
                   </div>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={p.asset}
+                    src={withBasePath(p.asset)}
                     alt=""
                     aria-hidden="true"
                     className="size-24 shrink-0"
@@ -61,6 +59,12 @@ export function Problems() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal>
+          <p className="mx-auto mt-10 max-w-2xl text-pretty text-center text-base leading-relaxed text-muted-foreground">
+            {t.home.problems.subtitle}
+          </p>
+        </Reveal>
       </div>
     </section>
   )
