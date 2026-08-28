@@ -1,11 +1,14 @@
 import { SiteHeader } from "@/components/site-header"
 import { Hero } from "@/components/hero"
+import { AreasOverview } from "@/components/areas-overview"
+import { Problems } from "@/components/problems"
+import { VerticalCards } from "@/components/vertical-cards"
+import { WhyPalmsoft } from "@/components/why-palmsoft"
+import { Testimonials } from "@/components/testimonials"
 import { Strategy } from "@/components/strategy"
-import { Team } from "@/components/team"
-import { Areas } from "@/components/areas"
-import { Cases } from "@/components/cases"
-import { Verticals } from "@/components/verticals"
+import { HowWeWork } from "@/components/how-we-work"
 import { Contact } from "@/components/contact"
+import { PartnersMarquee } from "@/components/partners-marquee"
 import { SiteFooter } from "@/components/site-footer"
 
 export default function Page() {
@@ -14,12 +17,17 @@ export default function Page() {
       <SiteHeader />
       <main>
         <Hero />
+        <AreasOverview />
+        <Problems />
+        <VerticalCards />
+        <WhyPalmsoft />
+        <HowWeWork />
+        <Testimonials />
         <Strategy />
-        <Team />
-        <Areas />
-        <Cases />
-        <Verticals />
         <Contact />
+        <div className="bg-[#070f1c] py-10 lg:py-14">
+          <PartnersMarquee />
+        </div>
       </main>
       <SiteFooter />
     </>

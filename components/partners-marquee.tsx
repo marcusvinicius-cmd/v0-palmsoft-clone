@@ -1,3 +1,8 @@
+"use client"
+
+import { useLanguage } from "@/lib/i18n/context"
+import { withBasePath } from "@/lib/base-path"
+
 const partners = [
   { name: "WEG", file: "weg" },
   { name: "Ambev", file: "ambev" },
@@ -48,7 +53,7 @@ function LogoRow({ ariaHidden = false }: { ariaHidden?: boolean }) {
         // eslint-disable-next-line @next/next/no-img-element
         <img
           key={`${p.file}-${i}`}
-          src={`/${p.file}.svg`}
+          src={withBasePath(`/${p.file}.svg`)}
           alt={ariaHidden ? "" : p.name}
           className="h-11 w-auto shrink-0 opacity-90 transition-opacity hover:opacity-100 sm:h-11"
           loading="lazy"
@@ -60,10 +65,11 @@ function LogoRow({ ariaHidden = false }: { ariaHidden?: boolean }) {
 }
 
 export function PartnersMarquee() {
+  const { t } = useLanguage()
   return (
     <div
-      aria-label="Clientes e parceiros que confiam na PalmSoft"
-      className="group relative flex mask-[linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]"
+      aria-label={t.partnersMarquee.ariaLabel}
+      className="group relative flex overflow-hidden mask-[linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]"
     >
       <div className="flex w-max animate-[marquee_50s_linear_infinite] group-hover:paused motion-reduce:animate-none motion-reduce:flex-wrap motion-reduce:gap-x-14 motion-reduce:px-14">
         <LogoRow />

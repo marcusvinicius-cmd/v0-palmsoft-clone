@@ -1,0 +1,32 @@
+<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow5" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="layerGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7FD4FF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#2E6FCB" stop-opacity="0.5"/>
+    </linearGradient>
+  </defs>
+
+  <g filter="url(#glow5)">
+    <!-- bottom layer -->
+    <polygon points="120,160 200,130 120,100 40,130" fill="url(#layerGrad)" fill-opacity="0.25" stroke="#6BC2FF" stroke-width="2.2" stroke-linejoin="round"/>
+    <!-- middle layer -->
+    <polygon points="120,128 200,98 120,68 40,98" fill="url(#layerGrad)" fill-opacity="0.35" stroke="#6BC2FF" stroke-width="2.2" stroke-linejoin="round"/>
+    <!-- top layer -->
+    <polygon points="120,96 200,66 120,36 40,66" fill="url(#layerGrad)" fill-opacity="0.55" stroke="#9FE8FF" stroke-width="2.4" stroke-linejoin="round"/>
+  </g>
+
+  <!-- accent dots -->
+  <g fill="#9FE8FF" filter="url(#glow5)">
+    <circle cx="120" cy="36" r="2.2"/>
+    <circle cx="200" cy="66" r="1.8"/>
+    <circle cx="40" cy="66" r="1.8"/>
+    <circle cx="120" cy="160" r="1.6"/>
+  </g>
+</svg>

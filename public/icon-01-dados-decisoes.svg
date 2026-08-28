@@ -1,0 +1,42 @@
+<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow1" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="barGrad1" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#2E6FCB"/>
+      <stop offset="100%" stop-color="#7FD4FF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- baseline -->
+  <line x1="30" y1="200" x2="210" y2="200" stroke="#3B6FA8" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- bars, ascending -->
+  <g filter="url(#glow1)">
+    <rect x="48"  y="160" width="20" height="40"  rx="3" fill="url(#barGrad1)"/>
+    <rect x="88"  y="130" width="20" height="70"  rx="3" fill="url(#barGrad1)"/>
+    <rect x="128" y="95"  width="20" height="105" rx="3" fill="url(#barGrad1)"/>
+    <rect x="168" y="55"  width="20" height="145" rx="3" fill="url(#barGrad1)"/>
+  </g>
+
+  <!-- particle swoosh flowing into the tallest bar -->
+  <g fill="#8FE3FF" filter="url(#glow1)">
+    <circle cx="34" cy="48" r="2.4"/>
+    <circle cx="50" cy="40" r="2"/>
+    <circle cx="67" cy="36" r="2.6"/>
+    <circle cx="85" cy="34" r="1.8"/>
+    <circle cx="103" cy="34" r="2.4"/>
+    <circle cx="121" cy="36" r="2"/>
+    <circle cx="139" cy="40" r="2.6"/>
+    <circle cx="156" cy="46" r="1.8"/>
+    <circle cx="172" cy="52" r="2.2"/>
+  </g>
+
+  <!-- connecting trend line through the particles -->
+  <path d="M34 48 C 70 30, 130 30, 172 52" fill="none" stroke="#5FB8FF" stroke-width="1.6" stroke-linecap="round" opacity="0.55"/>
+</svg>

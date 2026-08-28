@@ -1,24 +1,13 @@
-import { Reveal } from "@/components/reveal"
+"use client"
 
-const pillars = [
-  {
-    phase: "Planejamento",
-    title: "Antecipatório.",
-    body: "Incorpora um processo contínuo de aprendizagem, combinando-o com a participação e o envolvimento efetivo dos membros da organização, a partir de uma visão holística. O conhecimento do negócio se combina de forma sinérgica e contínua com o conhecimento em tecnologia no processo de planejamento.",
-  },
-  {
-    phase: "Desenvolvimento",
-    title: "Ágil.",
-    body: "As metodologias ágeis já nasceram com a finalidade de aliviar a forma de lidar com problemas complicados. Avaliando constantemente o grau de incerteza e complexidade das demandas e conhecendo o negócio, é possível lidar com a complexidade com excelentes resultados.",
-  },
-  {
-    phase: "Implementação Contínua",
-    title: "Antifrágil.",
-    body: "Para inovar, evoluir e beneficiar-se com choques e mudanças, é preciso adotar uma estratégia de construção contínua de soluções, que se integram a ecossistemas inovadores e que se fortalecem sob estresse.",
-  },
-]
+import { Reveal } from "@/components/reveal"
+import { useLanguage } from "@/lib/i18n/context"
 
 export function Strategy() {
+  const { t } = useLanguage()
+  const p = t.home.strategy.pillars
+  const pillars = [p.planning, p.development, p.implementation]
+
   return (
     <section
       id="estrategia"
@@ -28,10 +17,10 @@ export function Strategy() {
         <Reveal>
           <header className="mb-14 max-w-2xl">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#4d9fff]">
-              Estratégia A³
+              {t.home.strategy.eyebrow}
             </p>
             <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-              Antecipatório, Ágil e Antifrágil
+              {t.home.strategy.title}
             </h2>
           </header>
         </Reveal>

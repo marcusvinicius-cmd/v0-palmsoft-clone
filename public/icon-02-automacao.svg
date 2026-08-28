@@ -1,0 +1,32 @@
+<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow2" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g fill="none" stroke="#6BC2FF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow2)">
+    <!-- big gear, upper area -->
+    <g transform="translate(150,90)">
+      <path d="M0,-46 L5,-46 7,-38 15,-35 22,-40 26,-36 21,-29 24,-21 32,-19 32,-13 24,-11 21,-3 26,4 22,8 15,3 7,6 5,14 -1,14 -3,6 -11,3 -18,8 -22,4 -17,-3 -20,-11 -28,-13 -28,-19 -20,-21 -17,-29 -22,-36 -18,-40 -11,-35 -3,-38 -0.5,-46 Z"/>
+      <circle r="14"/>
+    </g>
+    <!-- small gear, lower left, overlapping -->
+    <g transform="translate(90,150)">
+      <path d="M0,-34 4,-34 5.5,-28 11,-25.5 16,-29.5 19,-26.5 15.5,-21 17.5,-15 24,-13.5 24,-9.5 17.5,-8 15.5,-2.5 19,3 16,6 11,2 5.5,4.5 4,10.5 -0.5,10.5 -2,4.5 -8,2 -13,6 -16,3 -12.5,-2.5 -14.5,-8 -21,-9.5 -21,-13.5 -14.5,-15 -12.5,-21 -16,-26.5 -13,-29.5 -8,-25.5 -2,-28 -0.3,-34 Z"/>
+      <circle r="10"/>
+    </g>
+  </g>
+
+  <!-- accent dots -->
+  <g fill="#9FE8FF" filter="url(#glow2)">
+    <circle cx="150" cy="90" r="2"/>
+    <circle cx="90" cy="150" r="1.6"/>
+    <circle cx="196" cy="70" r="1.8"/>
+    <circle cx="60" cy="170" r="1.6"/>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow6" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- two supporting team members -->
+  <g fill="none" stroke="#6BC2FF" stroke-width="2.2" stroke-linecap="round" filter="url(#glow6)">
+    <circle cx="65" cy="140" r="14"/>
+    <path d="M40,196 C40,170 90,170 90,196"/>
+
+    <circle cx="150" cy="150" r="14"/>
+    <path d="M125,206 C125,180 175,180 175,206"/>
+  </g>
+
+  <!-- highlighted growth figure -->
+  <g filter="url(#glow6)">
+    <circle cx="108" cy="96" r="16" fill="#2E6FCB" stroke="#9FE8FF" stroke-width="2.2"/>
+    <path d="M80,150 C80,122 136,122 136,150" fill="none" stroke="#9FE8FF" stroke-width="2.6" stroke-linecap="round"/>
+  </g>
+
+  <!-- ascending dotted growth path -->
+  <g fill="#9FE8FF" filter="url(#glow6)">
+    <circle cx="150" cy="70" r="2"/>
+    <circle cx="164" cy="58" r="2"/>
+    <circle cx="178" cy="47" r="2.2"/>
+    <circle cx="192" cy="37" r="2.4"/>
+  </g>
+  <path d="M140,80 C155,66 172,52 190,38" fill="none" stroke="#5FB8FF" stroke-width="1.6" stroke-linecap="round" opacity="0.6"/>
+  <!-- arrowhead -->
+  <path d="M182,34 L194,36 L191,48" fill="none" stroke="#9FE8FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow6)"/>
+</svg>

@@ -2,26 +2,19 @@
 
 import { Logo } from "@/components/logo"
 import { PolygonBackground } from "@/components/polygon-background"
-
-const siteLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Áreas de Atuação", href: "#areas" },
-  { label: "I.A.", href: "/ia" },
-  { label: "Aegis", href: "/aegis" },
-  { label: "Cases", href: "/cases" },
-  { label: "Contato", href: "#contato" },
-]
+import { useLanguage } from "@/lib/i18n/context"
+import { withBasePath } from "@/lib/base-path"
 
 function scrollToSection(href: string) {
   if (!href.startsWith("#")) {
-    window.location.assign(href)
+    window.location.assign(withBasePath(href))
     return
   }
   const id = href.replace("#", "")
   const el = document.getElementById(id)
   if (!el) {
     // anchor belongs to the home page; navigate there
-    window.location.assign(`/${href}`)
+    window.location.assign(withBasePath(`/${href}`))
     return
   }
   const header = document.querySelector("header")
@@ -64,6 +57,17 @@ const socials = [
 ]
 
 export function SiteFooter() {
+  const { t } = useLanguage()
+
+  const siteLinks = [
+    { label: t.footer.links.home, href: "#home" },
+    { label: t.footer.links.areas, href: "#areas" },
+    { label: t.footer.links.ia, href: "/ia" },
+    { label: t.footer.links.aegis, href: "/aegis" },
+    { label: t.footer.links.cases, href: "/cases" },
+    { label: t.footer.links.contato, href: "#contato" },
+  ]
+
   return (
     <footer className="relative overflow-hidden bg-[#070f1c] text-white">
       {/* malha rala fechando o site com a mesma assinatura do hero */}
@@ -93,7 +97,7 @@ export function SiteFooter() {
 
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/90">
-            Mapa do site
+            {t.footer.siteMap}
           </h3>
           <ul className="mt-5 space-y-3">
             {siteLinks.map((l) => (
@@ -111,13 +115,13 @@ export function SiteFooter() {
 
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/90">
-            Endereço e Contato
+            {t.footer.addressTitle}
           </h3>
           <div className="mt-5 space-y-1 text-sm text-white/60">
-            <p className="font-medium text-white/80">Endereço:</p>
-            <p>Rod. José Carlos Daux, 5025B</p>
-            <p>Saco Grande, Florianópolis-SC</p>
-            <p className="mt-4 font-medium text-white/80">E-mail:</p>
+            <p className="font-medium text-white/80">{t.footer.addressLabel}</p>
+            <p>{t.footer.addressLine1}</p>
+            <p>{t.footer.addressLine2}</p>
+            <p className="mt-4 font-medium text-white/80">{t.footer.emailLabel}</p>
             <a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=contato@palmsoft.com.br&su=Contato%20via%20site"
               target="_blank"
@@ -132,9 +136,7 @@ export function SiteFooter() {
 
       <div className="relative border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 py-6">
-          <p className="text-xs text-white/40">
-            © 2002-2025, PalmSoft Tecnologia. Todos os direitos reservados.
-          </p>
+          <p className="text-xs text-white/40">{t.footer.copyright}</p>
         </div>
       </div>
     </footer>
