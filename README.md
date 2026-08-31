@@ -1,33 +1,63 @@
-# v0-palmsoft-clone
+# Site PalmSoft
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+Site institucional da PalmSoft Tecnologia, feito em [Next.js](https://nextjs.org).
 
-## Built with v0
+## Desenvolvimento local
 
-This repository is linked to a [v0](https://v0.app) project. You can continue developing by visiting the link below -- start new chats to make changes, and v0 will push commits directly to this repo. Every merge to `main` will automatically deploy.
-
-[Continue working on v0 →](https://v0.app/chat/projects/prj_EiqzdxWpuTGjS1vDV3sD8XKZ368K)
-
-## Getting Started
-
-First, run the development server:
+Pré-requisito: Node.js 20+.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) no navegador. A página inicial fica em `app/page.tsx`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy em produção (Docker)
 
-## Learn More
+O site roda como um servidor Node dentro de um container Docker, escutando na porta **3000** e servindo tudo na raiz (`/`).
 
-To learn more, take a look at the following resources:
+Pré-requisito no servidor: Docker e Docker Compose instalados.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [v0 Documentation](https://v0.app/docs) - learn about v0 and how to use it.
+```bash
+git clone <url-deste-repositorio> palmsoft-site
+cd palmsoft-site
+docker compose up -d --build
+```
+
+Isso builda a imagem e sobe o container em background. O site fica disponível em `http://SERVIDOR:3000/`. Se o servidor já tem um proxy (Nginx/Apache) configurado, basta apontá-lo para a porta 3000.
+
+Se preferir sem `docker compose`, o equivalente manual é:
+
+```bash
+docker build -t palmsoft-site .
+docker run -d --name palmsoft-site --restart unless-stopped -p 3000:3000 palmsoft-site
+```
+
+### Comandos úteis
+
+| O que | Comando |
+|---|---|
+| Ver logs | `docker compose logs -f` |
+| Parar | `docker compose down` |
+| Reiniciar | `docker compose restart` |
+| Atualizar pra nova versão | `git pull && docker compose up -d --build` |
+
+### Variável de ambiente opcional
+
+Por padrão o site é servido na raiz do domínio, sem nenhuma configuração extra. Caso um dia seja necessário publicá-lo dentro de uma subpasta (ex: `http://servidor/palmsoft/`), defina `NEXT_PUBLIC_BASE_PATH` antes do build:
+
+```bash
+NEXT_PUBLIC_BASE_PATH=/palmsoft docker compose up -d --build
+```
+
+## Estrutura
+
+- `app/` — páginas e rotas (Next.js App Router)
+- `components/` — componentes de UI
+- `lib/i18n/` — dicionários e contexto de tradução PT/EN
+- `public/` — imagens e demais arquivos estáticos
+
+## Saiba mais
+
+- [Documentação do Next.js](https://nextjs.org/docs)
