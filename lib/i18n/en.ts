@@ -266,33 +266,94 @@ export const en: Dictionary = {
     timeline: {
       eyebrow: "Our story",
       title: "A journey of innovation",
-      milestones: {
-        beginning: {
-          period: "2002",
-          title: "The beginning",
-          body: "PalmSoft is born developing technology solutions focused on Mobile, Games, Cloud, and web-based systems, creating commercial apps for PDAs and mobile games.",
+      columns: [
+        {
+          entries: [
+            {
+              year: "2002",
+              title: "PalmSoft is born",
+              body: "Developing technologies and solutions in Mobile, Internet-based systems and Cloud.",
+            },
+            {
+              year: "2005",
+              title: "1.6M Downloads",
+              body: "In 2 years we reached the milestone of 26 published mobile games.",
+            },
+            {
+              year: "2007",
+              title: "Awards",
+              body: "Between 2005 and 2007 we received several national and international awards.",
+            },
+          ],
         },
-        gamesEra: {
-          period: "2005–2009",
-          title: "The games era",
-          body: "We created 26 games and proprietary technologies, plus the Arena 41 portal, which reached over 100,000 subscribers. Our apps totaled more than 1.6 million downloads and international awards.",
+        {
+          entries: [
+            {
+              year: "2009",
+              title: "Arena 41",
+              body: "Launch of the Arena 41 gaming portal, reaching more than 100,000 paying subscribers.",
+            },
+            {
+              year: "2009",
+              title: "G4D",
+              body: "Birth of the Graphics for Decision project for Big Data analysis and interpretation.",
+            },
+            {
+              year: "2011",
+              title: "Expansion",
+              body: "Development of apps and games also for social networks. During this period we developed an encryption app registered with Brazil's INPI.",
+            },
+          ],
         },
-        enterprisePartnerships: {
-          period: "2010+",
-          title: "Enterprise apps and partnerships",
-          body: "We started developing enterprise apps and games for social networks as well, built an encryption application registered with Brazil's INPI, and took part in projects with major companies, notably MSN Mobile.",
+        {
+          entries: [
+            {
+              year: "2012",
+              title: "Consulting",
+              body: "Specialized consulting in 3D programming, with applications in visualization, 3D printing, among others.",
+            },
+            {
+              year: "2014",
+              title: "New Headquarters",
+              body: "Relocation to the Business Decor Commercial Center, on SC 401 - Florianópolis.",
+            },
+            {
+              year: "2016",
+              title: "Deepen",
+              body: "Transformation of G4D into Deepen, specialized in Big Data, AI and Predictive Analytics.",
+            },
+            {
+              year: "2018",
+              title: "Fintechs",
+              body: "Development of solutions for connectivity in mobile environments and financial operations.",
+            },
+          ],
         },
-        bigData: {
-          period: "2016",
-          title: "Big Data and Deepen",
-          body: "G4Decision, a platform for visualizing large volumes of data with 100% in-house technology, becomes a startup — today known as Deepen, the group's company focused on Artificial Intelligence and Big Data.",
+        {
+          entries: [
+            {
+              year: "2020",
+              title: "AI as a Service",
+              body: "The company begins its AI as a Service processes.",
+            },
+            {
+              year: "2021",
+              title: "Labor Analytics",
+              body: "Launch of the Labor Analytics LMS, winner of the 2022 BBM Award in the innovation category.",
+            },
+            {
+              year: "2022",
+              title: "Credit Score",
+              body: "Launch of Credit Score.",
+            },
+            {
+              year: "2023",
+              title: "Aegis Access Control",
+              body: "Creation of the Aegis Access Control environment, proprietary technology for access management, control and monitoring.",
+            },
+          ],
         },
-        today: {
-          period: "Today",
-          title: "Continuous innovation",
-          body: "We keep building on-demand solutions, our own products like Aegis Access Control, and AI applications, with an award-winning technical team recognized by several industry organizations.",
-        },
-      },
+      ],
     },
     team: {
       eyebrow: "Our Team",

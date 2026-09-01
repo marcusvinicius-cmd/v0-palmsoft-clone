@@ -20,7 +20,6 @@ export function SobreContent() {
   const { t } = useLanguage()
   const s = t.sobre
   const mc = s.hero.milestoneCards
-  const m = s.timeline.milestones
 
   const milestoneCards = [
     {
@@ -48,8 +47,6 @@ export function SobreContent() {
         "right-2 bottom-0 w-56 [--float-rotate:2deg] motion-safe:animate-[hero-float_6s_ease-in-out_1.6s_infinite] motion-reduce:rotate-2",
     },
   ]
-
-  const milestones = [m.beginning, m.gamesEra, m.enterprisePartnerships, m.bigData, m.today]
 
   return (
     <>
@@ -102,9 +99,9 @@ export function SobreContent() {
 
         {/* linha do tempo */}
         <section className="bg-background py-20 lg:py-28">
-          <div className="mx-auto max-w-3xl px-6">
+          <div className="mx-auto max-w-7xl px-6">
             <Reveal>
-              <header className="mb-14 text-center">
+              <header className="mx-auto mb-14 max-w-2xl text-center">
                 <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
                   {s.timeline.eyebrow}
                 </p>
@@ -114,27 +111,31 @@ export function SobreContent() {
               </header>
             </Reveal>
 
-            <ol className="relative space-y-12 border-l border-border pl-8">
-              {milestones.map((m, i) => (
-                <Reveal key={m.period} delay={i * 80}>
-                  <li className="relative">
-                    <span
-                      aria-hidden="true"
-                      className="absolute -left-[2.44rem] top-1 flex size-3 items-center justify-center rounded-full bg-primary ring-4 ring-primary/15"
-                    />
-                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-                      {m.period}
-                    </p>
-                    <h3 className="mt-2 text-xl font-semibold text-foreground">
-                      {m.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      {m.body}
-                    </p>
-                  </li>
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+              {s.timeline.columns.map((column, ci) => (
+                <Reveal key={ci} delay={ci * 100}>
+                  <ol className="space-y-8 border-l border-dashed border-border pl-6">
+                    {column.entries.map((entry, i) => (
+                      <li key={`${entry.year}-${i}`} className="relative">
+                        <span
+                          aria-hidden="true"
+                          className="absolute -left-[1.62rem] top-1 size-2.5 rounded-full bg-primary ring-4 ring-primary/15"
+                        />
+                        <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">
+                          {entry.year}
+                        </p>
+                        <h3 className="mt-1.5 text-base font-semibold text-foreground">
+                          {entry.title}
+                        </h3>
+                        <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                          {entry.body}
+                        </p>
+                      </li>
+                    ))}
+                  </ol>
                 </Reveal>
               ))}
-            </ol>
+            </div>
           </div>
         </section>
 

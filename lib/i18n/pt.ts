@@ -269,33 +269,94 @@ export const pt = {
     timeline: {
       eyebrow: "Nossa história",
       title: "Uma trajetória de inovação",
-      milestones: {
-        beginning: {
-          period: "2002",
-          title: "O começo",
-          body: "A PalmSoft nasce desenvolvendo soluções em tecnologia com foco em Mobile, Games, Cloud e sistemas baseados na web, criando apps comerciais para PDAs e jogos para celular.",
+      columns: [
+        {
+          entries: [
+            {
+              year: "2002",
+              title: "Nasce a PalmSoft",
+              body: "Desenvolvendo tecnologias e soluções em Mobile, Internet Based e Cloud.",
+            },
+            {
+              year: "2005",
+              title: "1.6 Mi Downloads",
+              body: "Em 2 anos atingimos o marco de 26 jogos mobile publicados.",
+            },
+            {
+              year: "2007",
+              title: "Premiações",
+              body: "Entre 2005 e 2007 recebemos vários prêmios Nacionais e Internacionais.",
+            },
+          ],
         },
-        gamesEra: {
-          period: "2005–2009",
-          title: "A era dos jogos",
-          body: "Criamos 26 jogos e tecnologias próprias, além do portal Arena 41, que alcançou mais de 100 mil assinantes. Nossos apps somaram mais de 1,6 milhão de downloads e premiações internacionais.",
+        {
+          entries: [
+            {
+              year: "2009",
+              title: "Arena 41",
+              body: "Lançamento do portal de jogos Arena 41 atingindo mais de 100 mil assinantes pagos.",
+            },
+            {
+              year: "2009",
+              title: "G4D",
+              body: "Nascimento do projeto Graphics for Decision para análises e interpretações em Big Data.",
+            },
+            {
+              year: "2011",
+              title: "Expansão",
+              body: "Desenvolvimento de Apps e Games também para redes sociais. Neste período desenvolvemos um App de criptografia com registro no INPI.",
+            },
+          ],
         },
-        enterprisePartnerships: {
-          period: "2010+",
-          title: "Apps empresariais e parcerias",
-          body: "Iniciamos o desenvolvimento de apps e games empresariais também para redes sociais, desenvolvemos um aplicativo de criptografia com registro no INPI e participamos de projetos em parceria com grandes empresas, com destaque para o MSN Mobile.",
+        {
+          entries: [
+            {
+              year: "2012",
+              title: "Consultoria",
+              body: "Consultoria especializada em Programação 3D, com aplicações na área de Visualização, Impressão 3D, entre outros.",
+            },
+            {
+              year: "2014",
+              title: "Nova Sede",
+              body: "Mudança de sede para o Centro Comercial Business Decor, na SC 401 - Florianópolis.",
+            },
+            {
+              year: "2016",
+              title: "Deepen",
+              body: "Transformação da G4D em Deepen, especializada em Big Data, I.A. e Análises Preditivas.",
+            },
+            {
+              year: "2018",
+              title: "Fintechs",
+              body: "Desenvolvimento de soluções para conexão em ambiente móveis e de operações financeiras.",
+            },
+          ],
         },
-        bigData: {
-          period: "2016",
-          title: "Big Data e a Deepen",
-          body: "O G4Decision, plataforma de visualização de grandes volumes de dados em que 100% das tecnologias foram desenvolvidas internamente, torna-se uma startup — hoje a Deepen, empresa do grupo focada em Inteligência Artificial e Big Data.",
+        {
+          entries: [
+            {
+              year: "2020",
+              title: "I.A. as a Service",
+              body: "Empresa inicia seus processos de I.A. as a Service.",
+            },
+            {
+              year: "2021",
+              title: "Labor Analytics",
+              body: "Lançamento do LMS Labor Analytics, vencedor do prêmio BBM 2022 na categoria de inovação.",
+            },
+            {
+              year: "2022",
+              title: "Credit Score",
+              body: "Lançamento do Credit Score.",
+            },
+            {
+              year: "2023",
+              title: "Aegis Access Control",
+              body: "Criação do ambiente Aegis Access Control, tecnologia própria para gestão, controle e monitoramento de acessos.",
+            },
+          ],
         },
-        today: {
-          period: "Hoje",
-          title: "Inovação contínua",
-          body: "Seguimos desenvolvendo soluções sob demanda, produtos próprios como o Aegis Access Control e aplicações de IA, com uma equipe técnica premiada e reconhecida por diversas entidades do setor.",
-        },
-      },
+      ],
     },
     team: {
       eyebrow: "Nossa Equipe",
