@@ -188,8 +188,15 @@ export const en: Dictionary = {
     },
 
     strategy: {
-      eyebrow: "A³ Strategy",
-      title: "Anticipatory, Agile, and Antifragile",
+      eyebrow: "Palmsoft A³ Methodology",
+      title: "Anticipatory, Agile, and Adaptable",
+      intro: [
+        "The A³ Methodology is Palmsoft's way of turning business challenges into technology solutions capable of delivering real results and evolving continuously.",
+        "It starts from a simple principle:",
+        "We don't start with technology. We start with the business.",
+        "Before developing software, structuring data, or implementing Artificial Intelligence, we seek to understand the company's context, its processes, its people, its data, and the outcomes that need to be achieved.",
+        "From that understanding, we combine three principles:",
+      ],
       pillars: {
         planning: {
           phase: "Planning",
@@ -203,7 +210,7 @@ export const en: Dictionary = {
         },
         implementation: {
           phase: "Continuous Implementation",
-          title: "Antifragile.",
+          title: "Adaptable.",
           body: "To innovate, evolve, and benefit from shocks and changes, you need a strategy of continuously building solutions that integrate with innovative ecosystems and grow stronger under stress.",
         },
       },

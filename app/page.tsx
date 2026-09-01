@@ -21,9 +21,9 @@ export default function Page() {
         <Problems />
         <VerticalCards />
         <WhyPalmsoft />
+        <Strategy />
         <HowWeWork />
         <Testimonials />
-        <Strategy />
         <Contact />
         <div className="bg-[#070f1c] py-10 lg:py-14">
           <PartnersMarquee />

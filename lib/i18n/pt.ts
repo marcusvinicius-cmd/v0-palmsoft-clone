@@ -191,8 +191,15 @@ export const pt = {
     },
 
     strategy: {
-      eyebrow: "Estratégia A³",
-      title: "Antecipatório, Ágil e Antifrágil",
+      eyebrow: "Metodologia A³ Palmsoft",
+      title: "Antecipatório, Ágil e Adaptável",
+      intro: [
+        "A Metodologia A³ é a forma Palmsoft de transformar desafios de negócio em soluções tecnológicas capazes de gerar resultados reais e evoluir continuamente.",
+        "Ela parte de um princípio simples:",
+        "Não começamos pela tecnologia. Começamos pelo negócio.",
+        "Antes de desenvolver software, estruturar dados ou implementar Inteligência Artificial, buscamos compreender o contexto da empresa, seus processos, suas pessoas, seus dados e os resultados que precisam ser alcançados.",
+        "A partir desse entendimento, combinamos três princípios:",
+      ],
       pillars: {
         planning: {
           phase: "Planejamento",
@@ -206,7 +213,7 @@ export const pt = {
         },
         implementation: {
           phase: "Implementação Contínua",
-          title: "Antifrágil.",
+          title: "Adaptável.",
           body: "Para inovar, evoluir e beneficiar-se com choques e mudanças, é preciso adotar uma estratégia de construção contínua de soluções, que se integram a ecossistemas inovadores e que se fortalecem sob estresse.",
         },
       },

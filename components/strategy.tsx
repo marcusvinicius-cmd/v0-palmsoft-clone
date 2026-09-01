@@ -15,13 +15,23 @@ export function Strategy() {
     >
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
-          <header className="mb-14 max-w-2xl">
+          <header className="mx-auto mb-14 max-w-2xl text-center">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#4d9fff]">
               {t.home.strategy.eyebrow}
             </p>
             <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
               {t.home.strategy.title}
             </h2>
+            <div className="mt-4 space-y-4 text-pretty text-base leading-relaxed text-white/70">
+              {t.home.strategy.intro.map((paragraph, i) => (
+                <p
+                  key={paragraph}
+                  className={i === 2 ? "font-semibold text-white" : undefined}
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </header>
         </Reveal>
 
