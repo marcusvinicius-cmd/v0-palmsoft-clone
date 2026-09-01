@@ -53,9 +53,9 @@ export const en: Dictionary = {
       imageAlt: "Global network of data and artificial intelligence connecting information in real time",
       titleHighlight: "Applied intelligence",
       titleRest: "to transform businesses",
-      bodyHighlight1: "20 years",
-      bodyPre: "For over",
-      bodyMid: "turning challenges from different industries into technology solutions.",
+      bodyHighlight1: "20 years of experience",
+      bodyPre: "More than",
+      bodyMid: "turned into cutting-edge technology to power large enterprises with Artificial Intelligence and Analytics.",
       areas: {
         dataAnalytics: { top: "Data", bottom: "Science" },
         ai: { top: "Artificial", bottom: "Intelligence" },

@@ -56,9 +56,9 @@ export const pt = {
       imageAlt: "Rede global de dados e inteligência artificial conectando informações em tempo real",
       titleHighlight: "Inteligência aplicada",
       titleRest: "para tranformar negócios",
-      bodyHighlight1: "20 anos",
-      bodyPre: "Há mais de",
-      bodyMid: "transformando desafios de diferentes setores em soluções de tecnologia.",
+      bodyHighlight1: "20 anos de experiência",
+      bodyPre: "Mais de",
+      bodyMid: "transformados em tecnologia de ponta para impulsionar grandes empresas com Inteligência Artificial e Analytics.",
       areas: {
         dataAnalytics: { top: "Ciência", bottom: "de Dados" },
         ai: { top: "Inteligência", bottom: "Artificial" },
