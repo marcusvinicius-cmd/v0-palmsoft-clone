@@ -55,14 +55,11 @@ export function Strategy() {
                 {s.title}
               </p>
               <div className="mt-6 space-y-4 text-pretty text-base leading-relaxed text-white/70">
-                {s.intro.map((paragraph, i) => (
-                  <p
-                    key={paragraph}
-                    className={i === 2 ? "font-semibold text-white" : undefined}
-                  >
-                    {paragraph}
-                  </p>
-                ))}
+                <p>{s.intro.lead}</p>
+                <p className="text-lg font-semibold text-white">
+                  {s.intro.highlight}
+                </p>
+                <p>{s.intro.detail}</p>
               </div>
             </header>
           </Reveal>

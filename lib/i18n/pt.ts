@@ -193,13 +193,11 @@ export const pt = {
     strategy: {
       eyebrow: "Metodologia A³ Palmsoft",
       title: "Antecipar, Agilizar e Adaptar",
-      intro: [
-        "A Metodologia A³ é a forma Palmsoft de transformar desafios de negócio em soluções tecnológicas capazes de gerar resultados reais e evoluir continuamente.",
-        "Ela parte de um princípio simples:",
-        "Não começamos pela tecnologia. Começamos pelo negócio.",
-        "Antes de desenvolver software, estruturar dados ou implementar Inteligência Artificial, buscamos compreender o contexto da empresa, seus processos, suas pessoas, seus dados e os resultados que precisam ser alcançados.",
-        "A partir desse entendimento, combinamos três princípios:",
-      ],
+      intro: {
+        lead: "A forma exclusiva Palmsoft de transformar desafios de negócio em tecnologia que gera resultado real e evolui junto com a sua empresa.",
+        highlight: "Não começamos pela tecnologia. Começamos pelo negócio.",
+        detail: "Primeiro entendemos o contexto, os processos, os dados e os resultados esperados. A partir daí, combinamos três princípios:",
+      },
       pillars: {
         planning: {
           title: "ANTECIPAR",

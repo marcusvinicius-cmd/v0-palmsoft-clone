@@ -190,13 +190,11 @@ export const en: Dictionary = {
     strategy: {
       eyebrow: "Palmsoft A³ Methodology",
       title: "Anticipate, Accelerate, and Adapt",
-      intro: [
-        "The A³ Methodology is Palmsoft's way of turning business challenges into technology solutions capable of delivering real results and evolving continuously.",
-        "It starts from a simple principle:",
-        "We don't start with technology. We start with the business.",
-        "Before developing software, structuring data, or implementing Artificial Intelligence, we seek to understand the company's context, its processes, its people, its data, and the outcomes that need to be achieved.",
-        "From that understanding, we combine three principles:",
-      ],
+      intro: {
+        lead: "Palmsoft's unique way of turning business challenges into technology that delivers real results and evolves along with your company.",
+        highlight: "We don't start with technology. We start with the business.",
+        detail: "First we understand the context, the processes, the data, and the expected outcomes. From there, we combine three principles:",
+      },
       pillars: {
         planning: {
           title: "ANTICIPATE",
