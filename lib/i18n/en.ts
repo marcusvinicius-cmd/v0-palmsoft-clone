@@ -113,15 +113,12 @@ export const en: Dictionary = {
       reasons: {
         tailored: {
           title: "Tailor-made technology",
-          body: "We don't try to fit your problem into an off-the-shelf solution. We understand the business context and build the right technology for each challenge.",
         },
         endToEnd: {
           title: "End-to-end capability",
-          body: "We bring software, data, AI, and integrations together in a single team, reducing dependence on multiple vendors and making complex projects easier to execute.",
         },
         profitability: {
           title: "Cut costs, optimize, and boost your profitability",
-          body: "We turn models, data, and ideas into solutions that work within your operation, integrated with the systems, processes, and users your company already uses.",
         },
       },
     },

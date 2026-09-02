@@ -116,15 +116,12 @@ export const pt = {
       reasons: {
         tailored: {
           title: "Tecnologia sob medida",
-          body: "Não tentamos adaptar o seu problema a uma solução pronta. Entendemos o contexto do negócio e desenvolvemos a tecnologia adequada para cada desafio.",
         },
         endToEnd: {
           title: "Capacidade de ponta a ponta",
-          body: "Reunimos software, dados, IA e integrações em um único time, reduzindo a dependência de diferentes fornecedores e facilitando a execução de projetos complexos.",
         },
         profitability: {
           title: "Diminua custos, otimize e melhore a sua lucratividade",
-          body: "Transformamos modelos, dados e ideias em soluções que funcionam dentro da operação, integradas aos sistemas, processos e usuários já utilizados por sua empresa.",
         },
       },
     },
