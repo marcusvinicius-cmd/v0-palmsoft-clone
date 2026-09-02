@@ -199,20 +199,49 @@ export const en: Dictionary = {
       ],
       pillars: {
         planning: {
-          phase: "Planning",
-          title: "Anticipatory.",
-          body: "Incorporates a continuous learning process, combined with the effective participation and involvement of the organization's members, from a holistic view. Business knowledge combines synergistically and continuously with technology knowledge throughout the planning process.",
+          title: "ANTICIPATE",
+          tagline: "Understand before building.",
+          body: "We develop a deep understanding of the business to identify real problems and opportunities, and to prioritize where technology can deliver the greatest impact.",
+          items: [
+            { label: "Business immersion", note: "" },
+            { label: "Diagnosis and root cause analysis", note: "" },
+            { label: "Opportunity mapping", note: "" },
+            {
+              label: "Initiative prioritization",
+              note: "Impact x Feasibility x Data x Complexity x Investment x Risk",
+            },
+          ],
         },
         development: {
-          phase: "Development",
-          title: "Agile.",
-          body: "Agile methodologies were born to make complicated problems easier to handle. By constantly assessing the uncertainty and complexity of demands, and knowing the business, it's possible to handle complexity with excellent results.",
+          title: "ACCELERATE",
+          tagline: "Build to learn.",
+          body: "We build incrementally and collaboratively, testing hypotheses, validating quickly, and learning with every cycle to reduce uncertainty and deliver continuous value.",
+          items: [
+            { label: "Solution design and architecture", note: "" },
+            { label: "Incremental development", note: "" },
+            { label: "Testing and validation", note: "" },
+            { label: "Continuous learning and adjustments", note: "" },
+          ],
         },
         implementation: {
-          phase: "Continuous Implementation",
-          title: "Adaptable.",
-          body: "To innovate, evolve, and benefit from shocks and changes, you need a strategy of continuously building solutions that integrate with innovative ecosystems and grow stronger under stress.",
+          title: "ADAPT",
+          tagline: "Evolve along with the business.",
+          body: "We integrate the solution into the client's ecosystem, monitor results, and continuously evolve it to sustain and expand the value delivered.",
+          items: [
+            { label: "Integration with systems and processes", note: "" },
+            { label: "Monitoring and business indicators", note: "" },
+            { label: "Results analysis and insights", note: "" },
+            { label: "Continuous evolution of the solution", note: "" },
+          ],
         },
+      },
+      summary: {
+        label: "A³ Methodology",
+        items: [
+          { highlight: "ANTICIPATE", rest: "to make better decisions." },
+          { highlight: "ACCELERATE", rest: "to turn strategy into results." },
+          { highlight: "ADAPT", rest: "to keep up with the evolution of technology." },
+        ],
       },
     },
 

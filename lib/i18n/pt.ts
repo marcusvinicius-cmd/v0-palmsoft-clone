@@ -202,20 +202,49 @@ export const pt = {
       ],
       pillars: {
         planning: {
-          phase: "Planejamento",
-          title: "Antecipatório.",
-          body: "Incorpora um processo contínuo de aprendizagem, combinando-o com a participação e o envolvimento efetivo dos membros da organização, a partir de uma visão holística. O conhecimento do negócio se combina de forma sinérgica e contínua com o conhecimento em tecnologia no processo de planejamento.",
+          title: "ANTECIPAR",
+          tagline: "Entender antes de construir.",
+          body: "Compreendemos profundamente o negócio para identificar problemas reais, oportunidades e priorizar onde a tecnologia pode gerar maior impacto.",
+          items: [
+            { label: "Imersão no negócio", note: "" },
+            { label: "Diagnóstico e análise de causas", note: "" },
+            { label: "Mapeamento de oportunidades", note: "" },
+            {
+              label: "Priorização de iniciativas",
+              note: "Impacto x Viabilidade x Dados x Complexidade x Investimento x Risco",
+            },
+          ],
         },
         development: {
-          phase: "Desenvolvimento",
-          title: "Ágil.",
-          body: "As metodologias ágeis já nasceram com a finalidade de aliviar a forma de lidar com problemas complicados. Avaliando constantemente o grau de incerteza e complexidade das demandas e conhecendo o negócio, é possível lidar com a complexidade com excelentes resultados.",
+          title: "AGILIZAR",
+          tagline: "Construir para aprender.",
+          body: "Desenvolvemos de forma incremental e colaborativa, testando hipóteses, validando rapidamente e aprendendo a cada ciclo para reduzir incertezas e entregar valor contínuo.",
+          items: [
+            { label: "Desenho da solução e arquitetura", note: "" },
+            { label: "Desenvolvimento incremental", note: "" },
+            { label: "Testes e validação", note: "" },
+            { label: "Aprendizado e ajustes contínuos", note: "" },
+          ],
         },
         implementation: {
-          phase: "Implementação Contínua",
-          title: "Adaptável.",
-          body: "Para inovar, evoluir e beneficiar-se com choques e mudanças, é preciso adotar uma estratégia de construção contínua de soluções, que se integram a ecossistemas inovadores e que se fortalecem sob estresse.",
+          title: "ADAPTAR",
+          tagline: "Evoluir junto com o negócio.",
+          body: "Integramos a solução ao ecossistema do cliente, monitoramos resultados e evoluímos continuamente para sustentar e ampliar o valor entregue.",
+          items: [
+            { label: "Integração com sistemas e processos", note: "" },
+            { label: "Monitoramento e indicadores de negócio", note: "" },
+            { label: "Análise de resultados e insights", note: "" },
+            { label: "Evolução contínua da solução", note: "" },
+          ],
         },
+      },
+      summary: {
+        label: "Metodologia A³",
+        items: [
+          { highlight: "ANTECIPAR", rest: "para tomar melhores decisões." },
+          { highlight: "AGILIZAR", rest: "para transformar estratégia em resultado." },
+          { highlight: "ADAPTAR", rest: "para acompanhar a evolução da tecnologia." },
+        ],
       },
     },
 
