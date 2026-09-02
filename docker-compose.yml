@@ -1,6 +1,12 @@
+networks:
+  proxy:
+    external: true
+
 services:
   palmsoft:
     build: .
-    ports:
-      - "3000:3000"
     restart: unless-stopped
+    mem_reservation: 128M
+    mem_limit: 384M
+    networks:
+      - proxy
