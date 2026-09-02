@@ -191,37 +191,37 @@ export const pt = {
     },
 
     strategy: {
-      eyebrow: "Metodologia A³ Palmsoft",
-      title: "Antecipar, Agilizar e Adaptar",
+      eyebrow: "Metodologia",
+      titleAccent: "A³",
+      title: "Palmsoft",
+      subline: "Antecipar, Agilizar e Adaptar",
       intro: {
-        lead: "A forma exclusiva Palmsoft de transformar desafios de negócio em tecnologia que gera resultado real e evolui junto com a sua empresa.",
         highlight: "Não começamos pela tecnologia. Começamos pelo negócio.",
-        detail: "Primeiro entendemos o contexto, os processos, os dados e os resultados esperados. A partir daí, combinamos três princípios:",
+        lead: "A forma exclusiva Palmsoft de transformar desafios de negócio em tecnologia que gera resultado real e evolui junto com a sua empresa.",
       },
+
+      principlesLabel: "Como pensamos",
       pillars: {
         planning: {
           title: "ANTECIPAR",
           tagline: "Entender antes de construir.",
           body: "Compreendemos profundamente o negócio para identificar problemas reais, oportunidades e priorizar onde a tecnologia pode gerar maior impacto.",
           items: [
-            { label: "Imersão no negócio", note: "" },
-            { label: "Diagnóstico e análise de causas", note: "" },
-            { label: "Mapeamento de oportunidades", note: "" },
-            {
-              label: "Priorização de iniciativas",
-              note: "Impacto x Viabilidade x Dados x Complexidade x Investimento x Risco",
-            },
+            "Imersão no negócio",
+            "Diagnóstico e análise de causas",
+            "Mapeamento de oportunidades",
+            "Priorização de iniciativas",
           ],
         },
         development: {
           title: "AGILIZAR",
           tagline: "Construir para aprender.",
-          body: "Desenvolvemos de forma incremental e colaborativa, testando hipóteses, validando rapidamente e aprendendo a cada ciclo para reduzir incertezas e entregar valor contínuo.",
+          body: "Desenvolvemos de forma incremental e colaborativa, testando hipóteses, validando rapidamente e aprendendo a cada ciclo para reduzir incertezas.",
           items: [
-            { label: "Desenho da solução e arquitetura", note: "" },
-            { label: "Desenvolvimento incremental", note: "" },
-            { label: "Testes e validação", note: "" },
-            { label: "Aprendizado e ajustes contínuos", note: "" },
+            "Desenho da solução e arquitetura",
+            "Desenvolvimento incremental",
+            "Testes e validação",
+            "Aprendizado e ajustes contínuos",
           ],
         },
         implementation: {
@@ -229,20 +229,94 @@ export const pt = {
           tagline: "Evoluir junto com o negócio.",
           body: "Integramos a solução ao ecossistema do cliente, monitoramos resultados e evoluímos continuamente para sustentar e ampliar o valor entregue.",
           items: [
-            { label: "Integração com sistemas e processos", note: "" },
-            { label: "Monitoramento e indicadores de negócio", note: "" },
-            { label: "Análise de resultados e insights", note: "" },
-            { label: "Evolução contínua da solução", note: "" },
+            "Integração com sistemas e processos",
+            "Monitoramento e indicadores",
+            "Análise de resultados e insights",
+            "Evolução contínua da solução",
           ],
         },
       },
-      summary: {
-        label: "Metodologia A³",
-        items: [
-          { highlight: "ANTECIPAR", rest: "para tomar melhores decisões." },
-          { highlight: "AGILIZAR", rest: "para transformar estratégia em resultado." },
-          { highlight: "ADAPTAR", rest: "para acompanhar a evolução da tecnologia." },
-        ],
+
+      formatsLabel: "Como transformamos isso em projetos",
+      formatsIntro: {
+        title: "Do diagnóstico à solução completa.",
+        body: "Cada desafio possui um nível diferente de maturidade, risco e complexidade. Por isso, a Palmsoft pode atuar em diferentes etapas da jornada.",
+      },
+      resultLabel: "Resultado",
+      formats: {
+        diagnostic: {
+          title: "A³ Diagnóstico",
+          badge: "Consultoria",
+          tagline: "Entender antes de investir.",
+          body: "Realizamos uma imersão no negócio para analisar processos, dados, sistemas e desafios, identificando onde tecnologia, dados e IA podem gerar maior impacto.",
+          itemsLabel: "Entregáveis",
+          items: [
+            "Diagnóstico do cenário atual",
+            "Identificação de gargalos e oportunidades",
+            "Avaliação de dados e maturidade tecnológica",
+            "Mapa de oportunidades e recomendações priorizadas",
+          ],
+          result: "Direcionamento claro sobre onde faz sentido investir e quais iniciativas devem ser priorizadas.",
+        },
+        poc: {
+          title: "A³ POC",
+          badge: "Prova de Conceito",
+          tagline: "Validar antes de escalar.",
+          body: "Desenvolvemos uma POC com escopo e volume de dados controlados para testar a hipótese antes de avançar para um projeto completo.",
+          itemsLabel: "Avaliamos",
+          items: [
+            "Viabilidade técnica",
+            "Qualidade e disponibilidade dos dados",
+            "Desempenho da solução",
+            "Potencial de automação",
+            "Resultados obtidos e possibilidade de escala",
+          ],
+          result: "Evidências para decidir se a solução deve avançar, ser ajustada ou não ser escalada.",
+        },
+        solution: {
+          title: "A³ Solução",
+          badge: "Desenvolvimento Completo",
+          tagline: "Transformar a oportunidade em operação.",
+          body: "Desenvolvemos a solução completa, personalizada para a realidade do negócio, desde arquitetura e engenharia até implantação e integração.",
+          itemsLabel: "Pode envolver",
+          items: [
+            "Software e plataformas personalizadas",
+            "Dados, IA e Machine Learning",
+            "Analytics e Business Intelligence",
+            "Visão computacional e automações",
+            "Integrações com sistemas e processos",
+          ],
+          result: "Uma solução pronta para operar, gerar valor e evoluir junto com o negócio.",
+        },
+      },
+
+      flexNote: {
+        title: "Entramos no estágio em que o seu desafio está.",
+        body: "Você pode começar pelo diagnóstico, validar com uma POC ou ir direto para o desenvolvimento completo. A jornada é flexível. O compromisso é o mesmo: gerar valor real para o seu negócio.",
+      },
+
+      journey: {
+        diagnose: {
+          title: "Diagnosticar",
+          body: "Entender o desafio e identificar oportunidades.",
+        },
+        validate: {
+          title: "Validar",
+          body: "Testar hipóteses e comprovar a viabilidade.",
+        },
+        implement: {
+          title: "Implementar",
+          body: "Desenvolver e integrar a solução ao negócio.",
+        },
+        evolve: {
+          title: "Evoluir",
+          body: "Acompanhar resultados e evoluir continuamente.",
+        },
+      },
+
+      closing: {
+        title: "Negócio + Dados + Engenharia + Inteligência.",
+        body: "Essa é a forma Palmsoft de gerar valor real e sustentável.",
       },
     },
 

@@ -188,37 +188,37 @@ export const en: Dictionary = {
     },
 
     strategy: {
-      eyebrow: "Palmsoft A³ Methodology",
-      title: "Anticipate, Accelerate, and Adapt",
+      eyebrow: "Methodology",
+      titleAccent: "A³",
+      title: "Palmsoft",
+      subline: "Anticipate, Accelerate and Adapt",
       intro: {
-        lead: "Palmsoft's unique way of turning business challenges into technology that delivers real results and evolves along with your company.",
         highlight: "We don't start with technology. We start with the business.",
-        detail: "First we understand the context, the processes, the data, and the expected outcomes. From there, we combine three principles:",
+        lead: "Palmsoft's unique way of turning business challenges into technology that delivers real results and evolves along with your company.",
       },
+
+      principlesLabel: "How we think",
       pillars: {
         planning: {
           title: "ANTICIPATE",
           tagline: "Understand before building.",
           body: "We develop a deep understanding of the business to identify real problems and opportunities, and to prioritize where technology can deliver the greatest impact.",
           items: [
-            { label: "Business immersion", note: "" },
-            { label: "Diagnosis and root cause analysis", note: "" },
-            { label: "Opportunity mapping", note: "" },
-            {
-              label: "Initiative prioritization",
-              note: "Impact x Feasibility x Data x Complexity x Investment x Risk",
-            },
+            "Business immersion",
+            "Diagnosis and root cause analysis",
+            "Opportunity mapping",
+            "Initiative prioritization",
           ],
         },
         development: {
           title: "ACCELERATE",
           tagline: "Build to learn.",
-          body: "We build incrementally and collaboratively, testing hypotheses, validating quickly, and learning with every cycle to reduce uncertainty and deliver continuous value.",
+          body: "We build incrementally and collaboratively, testing hypotheses, validating quickly, and learning with every cycle to reduce uncertainty.",
           items: [
-            { label: "Solution design and architecture", note: "" },
-            { label: "Incremental development", note: "" },
-            { label: "Testing and validation", note: "" },
-            { label: "Continuous learning and adjustments", note: "" },
+            "Solution design and architecture",
+            "Incremental development",
+            "Testing and validation",
+            "Continuous learning and adjustments",
           ],
         },
         implementation: {
@@ -226,20 +226,94 @@ export const en: Dictionary = {
           tagline: "Evolve along with the business.",
           body: "We integrate the solution into the client's ecosystem, monitor results, and continuously evolve it to sustain and expand the value delivered.",
           items: [
-            { label: "Integration with systems and processes", note: "" },
-            { label: "Monitoring and business indicators", note: "" },
-            { label: "Results analysis and insights", note: "" },
-            { label: "Continuous evolution of the solution", note: "" },
+            "Integration with systems and processes",
+            "Monitoring and indicators",
+            "Results analysis and insights",
+            "Continuous evolution of the solution",
           ],
         },
       },
-      summary: {
-        label: "A³ Methodology",
-        items: [
-          { highlight: "ANTICIPATE", rest: "to make better decisions." },
-          { highlight: "ACCELERATE", rest: "to turn strategy into results." },
-          { highlight: "ADAPT", rest: "to keep up with the evolution of technology." },
-        ],
+
+      formatsLabel: "How we turn this into projects",
+      formatsIntro: {
+        title: "From diagnosis to the complete solution.",
+        body: "Every challenge has a different level of maturity, risk, and complexity. That is why Palmsoft can step in at different stages of the journey.",
+      },
+      resultLabel: "Outcome",
+      formats: {
+        diagnostic: {
+          title: "A³ Diagnosis",
+          badge: "Consulting",
+          tagline: "Understand before investing.",
+          body: "We immerse ourselves in the business to analyze processes, data, systems, and challenges, identifying where technology, data, and AI can deliver the greatest impact.",
+          itemsLabel: "Deliverables",
+          items: [
+            "Assessment of the current landscape",
+            "Identification of bottlenecks and opportunities",
+            "Evaluation of data and technological maturity",
+            "Map of opportunities and prioritized recommendations",
+          ],
+          result: "Clear direction on where it makes sense to invest and which initiatives should be prioritized.",
+        },
+        poc: {
+          title: "A³ POC",
+          badge: "Proof of Concept",
+          tagline: "Validate before scaling.",
+          body: "We build a proof of concept with controlled scope and data volume to test the hypothesis before moving on to a full project.",
+          itemsLabel: "We assess",
+          items: [
+            "Technical feasibility",
+            "Data quality and availability",
+            "Solution performance",
+            "Automation potential",
+            "Results achieved and potential to scale",
+          ],
+          result: "Evidence to decide whether the solution should move forward, be adjusted, or not be scaled.",
+        },
+        solution: {
+          title: "A³ Solution",
+          badge: "Full Development",
+          tagline: "Turn the opportunity into operation.",
+          body: "We build the complete solution, tailored to the reality of the business, from architecture and engineering through to deployment and integration.",
+          itemsLabel: "May involve",
+          items: [
+            "Custom software and platforms",
+            "Data, AI, and Machine Learning",
+            "Analytics and Business Intelligence",
+            "Computer vision and automation",
+            "Integrations with systems and processes",
+          ],
+          result: "A solution ready to operate, generate value, and evolve along with the business.",
+        },
+      },
+
+      flexNote: {
+        title: "We step in at whatever stage your challenge is.",
+        body: "You can start with a diagnosis, validate with a proof of concept, or go straight to full development. The journey is flexible. The commitment is the same: to generate real value for your business.",
+      },
+
+      journey: {
+        diagnose: {
+          title: "Diagnose",
+          body: "Understand the challenge and identify opportunities.",
+        },
+        validate: {
+          title: "Validate",
+          body: "Test hypotheses and prove feasibility.",
+        },
+        implement: {
+          title: "Implement",
+          body: "Build and integrate the solution into the business.",
+        },
+        evolve: {
+          title: "Evolve",
+          body: "Track results and keep evolving continuously.",
+        },
+      },
+
+      closing: {
+        title: "Business + Data + Engineering + Intelligence.",
+        body: "That is the Palmsoft way of generating real, sustainable value.",
       },
     },
 
