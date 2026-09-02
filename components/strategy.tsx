@@ -37,26 +37,26 @@ export function Strategy() {
   return (
     <section
       id="estrategia"
-      className="bg-linear-to-b from-[#0a1628] to-[#070f1c] py-20 text-white lg:py-28"
+      className="bg-background py-20 lg:py-28"
     >
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid items-start gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           {/* coluna esquerda: título e explicação, centralizados na altura dos cards */}
           <Reveal>
             <header className="text-center">
-              <h2 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
+              <h2 className="text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
                 {s.eyebrow}
               </h2>
               <span
                 aria-hidden="true"
-                className="mx-auto mt-5 block h-0.5 w-16 rounded-full bg-[#4d9fff]"
+                className="mx-auto mt-5 block h-0.5 w-16 rounded-full bg-primary"
               />
-              <p className="mt-5 text-balance text-base font-semibold uppercase tracking-[0.22em] text-[#4d9fff] sm:text-lg">
+              <p className="mt-5 text-balance text-base font-semibold uppercase tracking-[0.22em] text-primary sm:text-lg">
                 {s.title}
               </p>
-              <div className="mt-6 space-y-4 text-pretty text-base leading-relaxed text-white/70">
+              <div className="mt-6 space-y-4 text-pretty text-base leading-relaxed text-muted-foreground">
                 <p>{s.intro.lead}</p>
-                <p className="text-lg font-semibold text-white">
+                <p className="text-lg font-semibold text-foreground">
                   {s.intro.highlight}
                 </p>
                 <p>{s.intro.detail}</p>
@@ -70,34 +70,34 @@ export function Strategy() {
               const PillarIcon = pillarIcons[i]
               return (
                 <Reveal key={pillar.title} delay={i * 120}>
-                  <article className="rounded-2xl border border-white/10 bg-white/4 p-6 transition-colors hover:border-[#4d9fff]/40">
+                  <article className="rounded-2xl bg-card p-6 ring-1 ring-border transition-colors hover:ring-primary/40">
                     <div className="flex items-start gap-4">
                       <span
                         aria-hidden="true"
-                        className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-[#1d6fff]/15 text-sm font-bold tabular-nums text-[#4d9fff]"
+                        className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-sm font-bold tabular-nums text-primary"
                       >
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       <div className="flex-1">
-                        <h3 className="text-xl font-semibold tracking-tight text-[#4d9fff]">
+                        <h3 className="text-xl font-semibold tracking-tight text-primary">
                           {pillar.title}
                         </h3>
-                        <p className="mt-0.5 text-sm font-medium text-white/80">
+                        <p className="mt-0.5 text-sm font-medium text-foreground">
                           {pillar.tagline}
                         </p>
                       </div>
                       <PillarIcon
                         aria-hidden="true"
-                        className="size-6 shrink-0 text-[#4d9fff]/70"
+                        className="size-6 shrink-0 text-primary/70"
                       />
                     </div>
 
                     <span
                       aria-hidden="true"
-                      className="mt-5 block h-px w-full bg-white/10"
+                      className="mt-5 block h-px w-full bg-border"
                     />
 
-                    <p className="mt-5 text-sm leading-relaxed text-white/60">
+                    <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
                       {pillar.body}
                     </p>
 
@@ -108,14 +108,14 @@ export function Strategy() {
                           <li key={item.label} className="flex items-start gap-3">
                             <ItemIcon
                               aria-hidden="true"
-                              className="mt-0.5 size-4 shrink-0 text-[#4d9fff]"
+                              className="mt-0.5 size-4 shrink-0 text-primary"
                             />
                             <div>
-                              <p className="text-sm leading-snug text-white/85">
+                              <p className="text-sm leading-snug text-foreground">
                                 {item.label}
                               </p>
                               {item.note && (
-                                <p className="mt-0.5 text-xs leading-snug text-white/45">
+                                <p className="mt-0.5 text-xs leading-snug text-muted-foreground">
                                   {item.note}
                                 </p>
                               )}
