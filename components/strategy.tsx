@@ -44,12 +44,16 @@ export function Strategy() {
           {/* coluna esquerda: título e explicação, centralizados na altura dos cards */}
           <Reveal>
             <header className="text-center">
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#4d9fff]">
+              <h2 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
                 {s.eyebrow}
-              </p>
-              <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-                {s.title}
               </h2>
+              <span
+                aria-hidden="true"
+                className="mx-auto mt-5 block h-0.5 w-16 rounded-full bg-[#4d9fff]"
+              />
+              <p className="mt-5 text-balance text-base font-semibold uppercase tracking-[0.22em] text-[#4d9fff] sm:text-lg">
+                {s.title}
+              </p>
               <div className="mt-6 space-y-4 text-pretty text-base leading-relaxed text-white/70">
                 {s.intro.map((paragraph, i) => (
                   <p

@@ -192,7 +192,7 @@ export const pt = {
 
     strategy: {
       eyebrow: "Metodologia A³ Palmsoft",
-      title: "Antecipatório, Ágil e Adaptável",
+      title: "Antecipar, Agilizar e Adaptar",
       intro: [
         "A Metodologia A³ é a forma Palmsoft de transformar desafios de negócio em soluções tecnológicas capazes de gerar resultados reais e evoluir continuamente.",
         "Ela parte de um princípio simples:",

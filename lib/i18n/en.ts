@@ -189,7 +189,7 @@ export const en: Dictionary = {
 
     strategy: {
       eyebrow: "Palmsoft A³ Methodology",
-      title: "Anticipatory, Agile, and Adaptable",
+      title: "Anticipate, Accelerate, and Adapt",
       intro: [
         "The A³ Methodology is Palmsoft's way of turning business challenges into technology solutions capable of delivering real results and evolving continuously.",
         "It starts from a simple principle:",
